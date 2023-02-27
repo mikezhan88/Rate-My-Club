@@ -13,9 +13,8 @@ export default function RegisterPage() {
            <div className='register-smalltext'><p>Please Fill Out The Following Information To Join Our Deck!</p></div>
            
            
-           
-           <div className='register-page-backdrop'>
            <span>
+           <div className='register-page-backdrop'>
                 <input type='text' className='register-clubname-box' placeholder='Club Name *' ></input>
                 <input type='text' className='register-abbreviation-box'placeholder='Club Abbreviation *' ></input>
                 <input type='text' className='register-email-box'placeholder='Club Email *' ></input>
@@ -24,21 +23,10 @@ export default function RegisterPage() {
                     <p>Club Description *</p>
                 </div>
                 <input type='textarea' className='register-description-box'placeholder='' ></input>
-                <div className='register-select-box'>
-                    <SelectBasicExample/>
-                </div>
-                
-                
-                
-               
-
-                
-
-                
-            </span>
+     
             </div>
             
-            
+            </span>
                 
             
          </React.Fragment>

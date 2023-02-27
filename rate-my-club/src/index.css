@@ -327,12 +327,24 @@ code {
   top: 110px;
 }
 
-a:register-select-box {
-  display:flex;
-  font-size: 13px;
+/* <---------------------------------REGISTER USER PAGE STYLING--------------------------------------> */
+
+
+
+.register-user-backdrop{
+  position: absolute;
+  top: 290px;
+  right: 15vw;
+  left: 15vw;
+  background-color: white;
+  border-radius: 5px;
+  padding: 0px 0px;
+  width: 70vw;
+  height: 600px;
+  border-color: #577B5F;
+  border-style: solid;
+  
 }
-
-
 
 
 
