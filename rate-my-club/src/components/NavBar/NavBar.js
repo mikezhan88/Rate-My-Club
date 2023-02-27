@@ -4,6 +4,28 @@ import React, {useState, useEffect, useRef} from 'react';
 export default function NavBar() {
 
   const [open, setOpen] = useState(false);
+
+  let menu = useRef();
+
+  useEffect(() => {
+    let handler = (e)=>{
+      if(!menu.current.contains(e.target)){
+        setOpen(false);
+        console.log(menu.current);
+      }      
+    };
+
+    document.addEventListener("mousedown", handler);
+    
+
+    return() =>{
+      document.removeEventListener("mousedown", handler);
+    }
+
+  });
+
+
+
   return (
     <div className='navBar'>
       <Link to='/'>
@@ -16,7 +38,7 @@ export default function NavBar() {
           <button className='navBar-button'>Login</button>
         </Link>
        
-        <div className='navbar-menu-container'>
+        <div className='navbar-menu-container' ref={menu}>
               <div className='navbar-menu-trigger'onClick={()=>{setOpen(!open)}}>
                 
                   <button className='navBar-button'>Register</button>
