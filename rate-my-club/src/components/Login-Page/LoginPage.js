@@ -7,6 +7,8 @@ export default function LoginPage() {
     <React.Fragment>
         <NavBar/>
         <div className='login-page'>
+        <img src={require("../images/logo.png")} className='login-logo' alt="logo" />
+        
         
             <div className='login-container'>
                 <span className='login-bigtext'>LOGIN</span>

@@ -144,6 +144,7 @@ code {
 }
 
 .navbar-dropdownItem{
+  position: relative;
   display: flex;
   margin: 10px;
 }
@@ -180,6 +181,9 @@ code {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-right: 10%;
+  margin-left: 10%;
+
   row-gap: 10px;
 }
 
@@ -221,6 +225,7 @@ code {
 .club-register-input {
   border: 0.5px solid black;
   font-family: 'Open Sans';
+  border-radius: 5px;
   font-size: 16px;
   padding-left: 10px;
   width: 50vw;
@@ -241,7 +246,7 @@ code {
 
 .register-button {
   background-color: #577B5F;
-  border-radius: 18px;
+  border-radius: 8px;
   font-family: 'Open Sans';
   font-size: 16px;
   border: none;
@@ -261,18 +266,21 @@ code {
 
 /* <---------------------------------REGISTER USER PAGE STYLING--------------------------------------> */
 
-.register-user-backdrop{
-  position: absolute;
-  top: 290px;
-  right: 15vw;
-  left: 15vw;
+.register-user-page-backdrop{
+  position: relative;
+  margin-top: 120px;
+  bottom: 40px;
   background-color: white;
-  border-radius: 5px;
-  padding: 0px 0px;
+  border-radius: 10px;
   width: 70vw;
-  height: 600px;
-  border-color: #577B5F;
-  border-style: solid;
+  height: 450px;
+  border: 0.7px solid black;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+  justify-content: center;
+  align-items: center;
 }
 
 /* <---------------------------------LOGIN PAGE STYLING--------------------------------------> */
@@ -280,9 +288,12 @@ code {
 .login-page {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  top: 150px;
+  top: 50px;
+  margin-right: 10%;
+  margin-left: 10%;
 }
 
 .login-container {
@@ -298,6 +309,14 @@ code {
   row-gap: 18px;
   justify-content: center;
   align-items: center;
+}
+
+.login-logo {
+  position: relative;
+  display: flex;
+  
+  width: 150px;
+  /* top: 50px; */
 }
 
 .login-bigtext {
