@@ -13,8 +13,6 @@ code {
     monospace;
 }
 
-
-
 /* <------------------------------LANDING PAGE STYLING--------------------------------------> */
 
 .main {
@@ -183,7 +181,6 @@ code {
   align-items: center;
   margin-right: 10%;
   margin-left: 10%;
-
   row-gap: 10px;
 }
 
@@ -230,6 +227,7 @@ code {
   padding-left: 10px;
   width: 50vw;
   height: 50px;
+  border-radius: 5px;
 }
 
 .club-description-text {
@@ -264,7 +262,7 @@ code {
   border: 0.5px solid #577B5F;
 }
 
-/* <---------------------------------REGISTER USER PAGE STYLING--------------------------------------> */
+/* <---------------------------------REGISTER USER PAGE STYLING--------------------------------> */
 
 .register-user-page-backdrop{
   position: relative;
