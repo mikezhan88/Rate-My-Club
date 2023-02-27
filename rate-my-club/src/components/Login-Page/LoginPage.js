@@ -6,6 +6,7 @@ export default function LoginPage() {
   return (
     <React.Fragment>
         <NavBar/>
+        <img src={require("../images/logo.png")} className='register-logo' alt="logo" />
         <div className='login-page'>
             <div className='login-container'>
                 <span className='login-bigtext'>LOGIN</span>
@@ -21,7 +22,7 @@ export default function LoginPage() {
                     <img src={require("../images/google-logo.png")} className='google-logo' alt="search"/>
                     Continue with Google
                 </button>
-                <span className='register-redirect'>Are you a club? <span/>
+                <span className='register-redirect'>Are you a new club? <span/>
                     <Link to='/register' style={{ textDecoration: 'none' }}>
                         <span className='register-here'>Register here</span>
                     </Link>
