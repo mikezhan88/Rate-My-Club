@@ -6,24 +6,17 @@ export default function RegisterUserPage() {
     return (
           <React.Fragment>
            <NavBar></NavBar>
-           <img src={require("../images/logo.png")} className='register-logo' alt="logo" />
-           <div className='register-largetext'><p>Welcome to Rate My Club!</p></div>
-           <div className='register-smalltext'><p>Please Fill Out The Following Information To Create Your Profile!</p></div>
-           
-           
-           <span>
-           <div className='register-user-backdrop'>
-                <input type='text' className='register-clubname-box' placeholder='Full Name *' ></input>
-                <input type='text' className='register-abbreviation-box'placeholder='Nickname' ></input>
-                <input type='text' className='register-email-box'placeholder='Email *' ></input>
-                <input type='text' className='register-website-box'placeholder='Password *' ></input>
-                
-     
-            </div>
-            
-            </span>
-                
-            
+           <div className='register-page'>
+                <img src={require("../images/logo.png")} className='register-logo' alt="logo" />
+                <div className='register-largetext'>Welcome to Rate My Club!</div>
+                <div className='register-user-page-backdrop'>
+                    <input type='text' className='club-register-input' placeholder='Full Name *' ></input>
+                    <input type='text' className='club-register-input' placeholder='Nick Name' ></input>
+                    <input type='text' className='club-register-input' placeholder='Email Address *' ></input>
+                    <input type='text' className='club-register-input' placeholder='Password *' ></input>
+                    <button type='button' className='register-button'>Register</button>
+                </div>
+           </div>   
          </React.Fragment>
   )
 }
