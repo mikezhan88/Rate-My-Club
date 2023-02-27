@@ -8,8 +8,12 @@ export default function LoginPage() {
         <NavBar/>
         <div className='login-page'>
         <img src={require("../images/logo.png")} className='login-logo' alt="logo" />
+<<<<<<< HEAD
         
         
+=======
+
+>>>>>>> 8208138dac788e1264478226b8995723bfef42ce
             <div className='login-container'>
                 <span className='login-bigtext'>LOGIN</span>
                 <input type='text' className='login-input' placeholder='Email Address' ></input>
