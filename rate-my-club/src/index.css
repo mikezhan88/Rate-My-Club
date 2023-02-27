@@ -292,6 +292,16 @@ code {
   top: 50px;
   margin-right: 10%;
   margin-left: 10%;
+<<<<<<< HEAD
+=======
+
+
+}
+
+.login-logo {
+  position: relative;
+  width: 150px;
+>>>>>>> 8208138dac788e1264478226b8995723bfef42ce
 }
 
 .login-container {
