@@ -7,6 +7,7 @@ export default function LoginPage() {
     <React.Fragment>
         <NavBar/>
         <div className='login-page'>
+        
             <div className='login-container'>
                 <span className='login-bigtext'>LOGIN</span>
                 <input type='text' className='login-input' placeholder='Email Address' ></input>
