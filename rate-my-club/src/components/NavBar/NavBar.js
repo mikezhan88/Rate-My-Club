@@ -51,7 +51,7 @@ export default function NavBar() {
                           <DropdownItem text = {"Create a New Club"}/>
                         </Link>
                         <Link to='/registerUser' style={{ textDecoration: 'none', color: 'black' }}>
-                        <DropdownItem text = {"Create a User Profile"}/>
+                          <DropdownItem text = {"Create a User Profile"}/>
                         </Link>
                        
                     </ul>

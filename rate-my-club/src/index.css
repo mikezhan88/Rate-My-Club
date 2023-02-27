@@ -142,6 +142,7 @@ code {
 }
 
 .navbar-dropdownItem{
+  position: relative;
   display: flex;
   margin: 10px;
 }
@@ -221,6 +222,7 @@ code {
 .club-register-input {
   border: 0.5px solid black;
   font-family: 'Open Sans';
+  border-radius: 5px;
   font-size: 16px;
   padding-left: 10px;
   width: 50vw;
@@ -284,12 +286,14 @@ code {
 .login-page {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   top: 50px;
   margin-right: 10%;
   margin-left: 10%;
+
+
 }
 
 .login-logo {
@@ -310,6 +314,14 @@ code {
   row-gap: 18px;
   justify-content: center;
   align-items: center;
+}
+
+.login-logo {
+  position: relative;
+  display: flex;
+  
+  width: 150px;
+  /* top: 50px; */
 }
 
 .login-bigtext {
