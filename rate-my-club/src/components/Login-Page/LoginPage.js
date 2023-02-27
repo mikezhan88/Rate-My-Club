@@ -8,6 +8,7 @@ export default function LoginPage() {
         <NavBar/>
         <img src={require("../images/logo.png")} className='register-logo' alt="logo" />
         <div className='login-page'>
+        
             <div className='login-container'>
                 <span className='login-bigtext'>LOGIN</span>
                 <input type='text' className='login-input' placeholder='Email Address' ></input>
