@@ -188,7 +188,7 @@ code {
   border-radius: 5px;
   padding: 0px 0px;
   width: 70vw;
-  height: 100%;
+  height: 1000px;
   border-color: #577B5F;
   border-style: solid;
   
@@ -268,6 +268,31 @@ code {
   top: 460px;
 }
 
+.register-select-box {
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: 0;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  left: 10vw;
+  right: 10vw;
+  position: absolute;
+  width: 50vw;
+  height: 50px;
+  top: 710px;
+}
+
+.register-select-menu {
+  background: #FFFFFF;
+  right: 0px;
+  position: absolute;
+  width: fit-content;
+  height: 50px;
+  
+  display: flex;
+}
+
+
 .register-text {
   left: 10vw;
   right: 10vw;
@@ -280,7 +305,7 @@ code {
 
 .register-logo {
   position: absolute;
-  width: 16vw;
+  width: 150px;
   /* height: 100px; */
   top: 50px;
   left: 42vw;
@@ -300,6 +325,11 @@ code {
   font-size: 1.1em;
   position: relative;
   top: 110px;
+}
+
+a:register-select-box {
+  display:flex;
+  font-size: 13px;
 }
 
 
