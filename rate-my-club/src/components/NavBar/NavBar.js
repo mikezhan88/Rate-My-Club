@@ -50,7 +50,10 @@ export default function NavBar() {
                         <Link to='/register' style={{ textDecoration: 'none', color: 'black' }}>
                           <DropdownItem text = {"Create a New Club"}/>
                         </Link>
+                        <Link to='/registerUser' style={{ textDecoration: 'none', color: 'black' }}>
                         <DropdownItem text = {"Create a User Profile"}/>
+                        </Link>
+                       
                     </ul>
                 </div>
             
@@ -68,3 +71,6 @@ function DropdownItem(props){
         </li>
     );
   }
+
+
+
