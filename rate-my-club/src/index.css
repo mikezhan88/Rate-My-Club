@@ -7,12 +7,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
   width: 100vw;
+  font-family: 'Open Sans';
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
 
 /* <------------------------------LANDING PAGE STYLING--------------------------------------> */
 
@@ -140,8 +143,6 @@ code {
   border-radius: 8px;
   padding: 0px 0px;
   width: 250px;
-  
-
 }
 
 .navbar-dropdownItem{
@@ -175,3 +176,133 @@ code {
   transform: translateY(-20px);
   transition: var(--speed) ease;
 }
+
+/* <---------------------------------REGISTER PAGE STYLING--------------------------------------> */
+
+.register-page-backdrop{
+  position: absolute;
+  top: 290px;
+  right: 15vw;
+  left: 15vw;
+  background-color: white;
+  border-radius: 5px;
+  padding: 0px 0px;
+  width: 70vw;
+  height: 100%;
+  border-color: #577B5F;
+  border-style: solid;
+  
+}
+
+.register-page-backdrop:hover{
+  box-shadow: 2px 4px 4px 4px #577B5F;
+}
+
+.register-clubname-box {
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: 0;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  left: 10vw;
+  right: 10vw;
+  position: absolute;
+  width: 50vw;
+  height: 50px;
+  top: 50px;
+}
+
+.register-abbreviation-box {
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: 0;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  left: 10vw;
+  right: 10vw;
+  position: absolute;
+  width: 50vw;
+  height: 50px;
+  top: 150px;
+}
+
+.register-email-box {
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: 0;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  left: 10vw;
+  right: 10vw;
+  position: absolute;
+  width: 50vw;
+  height: 50px;
+  top: 250px;
+}
+
+.register-website-box {
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: 0;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  left: 10vw;
+  right: 10vw;
+  position: absolute;
+  width: 50vw;
+  height: 50px;
+  top: 350px;
+}
+
+.register-description-box {
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: 0;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  left: 10vw;
+  right: 10vw;
+  position: absolute;
+  width: 50vw;
+  height: 200px;
+  top: 460px;
+}
+
+.register-text {
+  left: 10vw;
+  right: 10vw;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  color: #000000;
+  position: absolute;
+  top: 415px;
+}
+
+.register-logo {
+  position: absolute;
+  width: 16vw;
+  /* height: 100px; */
+  top: 50px;
+  left: 42vw;
+  right: 42vw;
+}
+
+.register-largetext {
+  text-align: center;
+  font-size: 1.7em;
+  position: relative;
+  top: 120px;
+  font-weight: 5700;
+}
+
+.register-smalltext {
+  text-align: center;
+  font-size: 1.1em;
+  position: relative;
+  top: 110px;
+}
+
+
+
+
+
