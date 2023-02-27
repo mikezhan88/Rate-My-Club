@@ -13,8 +13,6 @@ code {
     monospace;
 }
 
-
-
 /* <------------------------------LANDING PAGE STYLING--------------------------------------> */
 
 .main {
@@ -183,7 +181,10 @@ code {
   align-items: center;
   margin-right: 10%;
   margin-left: 10%;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7206cd231b49b80b5343e8ac5ed96c8f203a34f4
   row-gap: 10px;
 }
 
@@ -230,6 +231,7 @@ code {
   padding-left: 10px;
   width: 50vw;
   height: 50px;
+  border-radius: 5px;
 }
 
 .club-description-text {
@@ -264,7 +266,7 @@ code {
   border: 0.5px solid #577B5F;
 }
 
-/* <---------------------------------REGISTER USER PAGE STYLING--------------------------------------> */
+/* <---------------------------------REGISTER USER PAGE STYLING--------------------------------> */
 
 .register-user-page-backdrop{
   position: relative;
@@ -291,9 +293,21 @@ code {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+<<<<<<< HEAD
   top: 50px;
   margin-right: 10%;
   margin-left: 10%;
+=======
+  flex-direction: column;
+  top: 50px;
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+.login-logo {
+  position: relative;
+  width: 150px;
+>>>>>>> 7206cd231b49b80b5343e8ac5ed96c8f203a34f4
 }
 
 .login-container {
