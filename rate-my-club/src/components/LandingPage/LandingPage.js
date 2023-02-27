@@ -17,7 +17,7 @@ export default function LandingPage() {
                             <span className='button-text'>All Clubs</span>
                         </button>
                     </Link>
-                    <Link to='userpage'>
+                    <Link to='/userpage'>
                         <button className='landing-button'>
                             <img src={require("../images/profile-icon.png")} className='profile-icon' alt="search"/>
                             <span className='button-text'>Profile</span>
