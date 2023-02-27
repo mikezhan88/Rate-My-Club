@@ -1,7 +1,31 @@
-import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
+import React, {useState, useEffect, useRef} from 'react';
 
 export default function NavBar() {
+
+  const [open, setOpen] = useState(false);
+
+  let menu = useRef();
+
+  useEffect(() => {
+    let handler = (e)=>{
+      if(!menu.current.contains(e.target)){
+        setOpen(false);
+        console.log(menu.current);
+      }      
+    };
+
+    document.addEventListener("mousedown", handler);
+    
+
+    return() =>{
+      document.removeEventListener("mousedown", handler);
+    }
+
+  });
+
+
+
   return (
     <div className='navBar'>
       <Link to='/'>
@@ -13,10 +37,34 @@ export default function NavBar() {
         <Link to='/login'>
           <button className='navBar-button'>Login</button>
         </Link>
-        <Link to='/register'>
-        <button className='navBar-button'>Register</button>
-        </Link>
-      </span>
+       
+        <div className='navbar-menu-container' ref={menu}>
+              <div className='navbar-menu-trigger'onClick={()=>{setOpen(!open)}}>
+                
+                  <button className='navBar-button'>Register</button>
+                 
+                </div>
+            
+                <div className= {`navbar-dropdown-menu ${open? 'active' : 'inactive'}`}>
+                    <ul>
+                        <Link to='/register' style={{ textDecoration: 'none', color: 'black' }}>
+                          <DropdownItem text = {"Create a New Club"}/>
+                        </Link>
+                        <DropdownItem text = {"Create a User Profile"}/>
+                    </ul>
+                </div>
+            
+          </div>
+          </span>
+      
     </div>
   )
 }
+
+function DropdownItem(props){
+    return(
+        <li className= 'navbar-dropdownItem'>
+            <a>{props.text}</a>
+        </li>
+    );
+  }
