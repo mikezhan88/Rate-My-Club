@@ -1,6 +1,8 @@
 import React from 'react'
 import NavBar from '../NavBar/NavBar'
 import {Link} from 'react-router-dom'
+import Form from 'react-bootstrap/Form';
+
 
 export default function RegisterPage() {
     return (
@@ -21,6 +23,10 @@ export default function RegisterPage() {
                     <p>Club Description *</p>
                 </div>
                 <input type='textarea' className='register-description-box'placeholder='' ></input>
+                <div className='register-select-box'>
+                    <SelectBasicExample/>
+                </div>
+                
      
             </div>
             
@@ -31,13 +37,20 @@ export default function RegisterPage() {
   )
 }
 
-// function textBoxes(props){
-//     return(
-//         <li className= 'register-page-text'>
-//             <input type='text' className='register-page-text'placeholder={props.text} ></input>
-//         </li>
-//     );
-//   }
+function SelectBasicExample() {
+    return (
+        <li className='register-select-menu'>
+      <Form.Select>
+        <option>Select Commitment Level</option>
+        <option value="1">Less than 1 hour</option>
+        <option value="2">1-3 hours</option>
+        <option value="3">3-5 hours</option>
+        <option value="4">5-7 hours</option>
+        <option value="5">7+ hours</option>
+      </Form.Select>
+      </li>
+    );
+  }
 
 
 
