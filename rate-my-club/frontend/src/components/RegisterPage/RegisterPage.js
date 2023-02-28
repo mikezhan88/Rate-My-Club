@@ -24,7 +24,7 @@ export default function RegisterPage() {
 
                     <div className='club-description-text'>Club Description *</div>
                     <textarea className='register-description-box'></textarea>
-                    <button type='button' className='register-button'>Register Club</button>
+                    <button type='button' className='register-button'>Register</button>
                 </div>
            </div>      
          </React.Fragment>
