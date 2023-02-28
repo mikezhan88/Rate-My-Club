@@ -36,14 +36,6 @@ function App() {
         <Route exact path="/login" element= {<LoginPage/>} />
         <Route exact path="/registeruser" element= {<RegisterUserPage/>} />
       </Routes>
-
-        <div className="App">
-            <header className="App-header">
-                <h1>React and flask</h1>
-                {/* Calling a data from setdata for showing */}
-                <p>{data.date}</p>
-            </header>
-        </div>
     </React.Fragment>
 
 
