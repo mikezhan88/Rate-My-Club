@@ -324,12 +324,15 @@ textarea:focus{
 }
 
 .dropdown-item.selected {
-  background-color: #d9d9d9;
+  /* background-color: #577B5F; */
+  color: #577B5F;
 }
 
 .dropdown-item:hover {
-  background-color: #d9d9d9;
+  background-color: #577B5F;
+  color: #f7f2e5;
 }
+
 
 .dropdown-tags {
   display: flex;
@@ -343,7 +346,8 @@ textarea:focus{
 } */
 
 .dropdown-tag-item {
-  background-color: #d9d9d9;
+  background-color: #577B5F;
+  color: white;
   padding: 4px 7px;
   border-radius: 2px;
   display: flex;
@@ -679,12 +683,13 @@ textarea:focus{
 }
 
 .all-clubs-dropdown-item.selected {
-  background-color: #577B5F;
-  color: #f7f2e5;
+  /* background-color: #577B5F; */
+  color: #577B5F;
 }
 
 .all-clubs-dropdown-item:hover {
-  background-color: #d9d9d9;
+  background-color: #577B5F;
+  color: #f7f2e5;
 }
 
 .all-clubs-dropdown-tags {
