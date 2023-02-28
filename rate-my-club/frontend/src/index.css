@@ -26,12 +26,15 @@ select {
   padding-left: 1%;
 }
 
+input:focus {
+  outline-color: #577B5F;
+}
+
+textarea:focus{
+  outline-color: #577B5F;
+}
 
 
-/* select:hover {
-  background-color: #f7f2e5;
-  
-} */
 /* <------------------------------LANDING PAGE STYLING--------------------------------------> */
 
 .main {
@@ -249,6 +252,38 @@ select {
   border-radius: 5px;
 }
 
+.club-description-text {
+  width: 50vw;
+}
+
+.register-description-box {
+  border: 0.5px solid #777777;
+  width: 50vw;
+  height: 200px;
+  font-family: 'Open Sans';
+  font-size: 16px;
+}
+
+.register-button {
+  background-color: #577B5F;
+  border-radius: 8px;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  border: none;
+  color: white;  
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  height: 37px;
+  width: 115px;
+  transition-duration: 0.4s;
+}
+
+.register-button:hover {
+  background-color: white;
+  color: black;
+  border: 0.5px solid #577B5F;
+}
+
 .dropdown-container {
   text-align: left;
   border: 0.5px solid black;
@@ -302,6 +337,11 @@ select {
   gap: 5px;
 }
 
+/* 
+.dropdown-tags>* {
+  flex: 1 1 10px;
+} */
+
 .dropdown-tag-item {
   background-color: #d9d9d9;
   padding: 4px 7px;
@@ -320,38 +360,6 @@ select {
 .close-icon {
   width: 18px;
   height: 18px;
-}
-
-.club-description-text {
-  width: 50vw;
-}
-
-.register-description-box {
-  border: 0.5px solid #777777;
-  width: 50vw;
-  height: 200px;
-  font-family: 'Open Sans';
-  font-size: 16px;
-}
-
-.register-button {
-  background-color: #577B5F;
-  border-radius: 8px;
-  font-family: 'Open Sans';
-  font-size: 16px;
-  border: none;
-  color: white;  
-  font-weight: bold;
-  letter-spacing: 0.5px;
-  height: 37px;
-  width: 115px;
-  transition-duration: 0.4s;
-}
-
-.register-button:hover {
-  background-color: white;
-  color: black;
-  border: 0.5px solid #577B5F;
 }
 
 /* <---------------------------------REGISTER USER PAGE STYLING--------------------------------> */
@@ -520,14 +528,27 @@ select {
   row-gap: 60px;
 }
 
+.filter-backdrop {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 60px;
+  column-gap: 30px;
+  padding-left: 1%;
+  height: 100vw;
+  margin-left: 3vw;
+  margin-right: 3vw;
+
+}
+
 .allclubs-page-backdrop{
   position: relative;
   /* margin-top: 20px; */
   bottom: 40px;
   background-color: white;
   border-radius: 10px;
-  width: 94vw;
-  height: 450px;
+  height: 100vw;
   border: 0.7px solid black;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -535,6 +556,8 @@ select {
   row-gap: 25px;
   justify-content: center;
   padding-left: 15px;
+  margin-right: 20px;
+  margin-top: 110px;
   /* align-items: center; */
 }
 
@@ -542,27 +565,149 @@ select {
   position: relative;
   top: 40px;
   font-size: 2em;
-  padding-left: 1%;
-  text-decoration-line: underline;
-  text-decoration-thickness: 2px;
+  
+  /* text-decoration-line: underline;
+  text-decoration-thickness: 2px; */
 }
 
 .clubs-filter {
+  background-color: #131b1b;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 45px;
+    justify-content: left;
+    width: 350px;
+    border-radius: 5px;
+    border-color: #577B5F;
+    height: 400px;
+    padding-right: 20px;
+    padding-left: 10px;
+    border: 0.7px solid #577B5F;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+
+.clubs-text{
+  position: relative;
+  top: 15px;
+  font-size: 1.2em;
+  font-weight: 500;
+  color: white;
+  
+}
+
+.clubs-search-bar {
+  background: #FFFFFF;
+  border: 1px solid #777777;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  font-family: 'Open Sans';
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  padding-left: 10px;
+  position: absolute;
+  width: 530px;
+  height: 40px;
+}
+
+.clubs-search-div {
   position: relative;
   display: flex;
-  flex-direction: row;
-  column-gap: 25px;
+  flex-direction: column;
+  row-gap: 35px;
   justify-content: left;
-  margin-right: 10%;
+  width: 100vw;
 }
 
-.option {
-  background-color: #ffffff;
+.clubs-search-icon {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 12px;
+  margin-left: 505px; 
 }
 
-select option{
-  background-color: #f7f2e5;
+
+/* <------------------------------DROPDOWN FOR CLUBS PAGE STYLING--------------------------------------> */
+
+
+.all-clubs-dropdown-container {
+  text-align: left;
+  border: 1px solid ;
+  font-family: 'Open Sans';
+  background-color:white;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  border-radius: 5px;
 }
+
+
+.all-clubs-dropdown-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  background-color: white;
+  border-radius: 8px;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  border: none;
+  color: black;  
+  height: 30px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  
+}
+
+.all-clubs-dropdown-menu {
+  position: absolute;
+  transform: translateY(4px);
+  width: 17vw;
+  border: 1px solid #777777;
+  border-radius: 5px;
+  overflow: auto;
+  max-height: 150px;
+  background-color: white;
+}
+
+.all-clubs-dropdown-item {
+  padding: 5px;
+  padding-left: 8px;
+  color: black;
+}
+
+.all-clubs-dropdown-item.selected {
+  background-color: #577B5F;
+  color: #f7f2e5;
+}
+
+.all-clubs-dropdown-item:hover {
+  background-color: #d9d9d9;
+}
+
+.all-clubs-dropdown-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.all-clubs-dropdown-tag-item {
+  background-color: #d9d9d9;
+  padding: 4px 7px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+}
+
+.all-clubs-dropdown-tag-close {
+  display: flex;
+  align-items: center;
+  padding-top: 2px;
+  padding-left: 3px;
+}
+
 
 
 
