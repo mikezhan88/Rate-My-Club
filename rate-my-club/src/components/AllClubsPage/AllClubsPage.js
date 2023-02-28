@@ -3,6 +3,8 @@ import NavBar from '../NavBar/NavBar'
 import Form from 'react-bootstrap/Form';
 import React, {useState, useEffect, useRef} from 'react';
 import {Link} from 'react-router-dom'
+import Dropdown from './DropdownAllClubs';
+import { categoriesOptions, sizeOptions, commitmentOptions } from '../RegisterPage/DropdownObjects';
 
 
 
@@ -13,31 +15,25 @@ export default function AllClubsPage() {
            
            <div className='clubs-page'>
              <div className='clubs-largetext'>Explore Clubs</div>
-             <div className='clubs-filter'>
-              <SelectCommitment/>
-              <SelectSize/>
-              {/* <SelectCategory/> */}
-              <div className='select'>
-              <select name="slct" id="slct">
-     
-              <option>Category</option>
-              <option value="1">Fraternity</option>
-              <option value="2">Cabbage</option>
-              <option value="3">Art</option>
-              <option value="4">Cultural</option>
-              <option value="5">Consulting</option>
-      
-              </select>
+             <div style={{ borderTop: "1px solid black ", width: "250px"}}></div>
+             </div> 
+             <div className='filter-backdrop'>
+                <div className='clubs-filter'>
+                  <div className='clubs-text'>Filter Clubs</div>
+                   
+                    <Dropdown null placeholder='Club Size' options={ sizeOptions }></Dropdown>
+                    <Dropdown null placeholder='Commitment Level' options={ commitmentOptions }></Dropdown>
+                    <Dropdown isMulti placeholder='Categories' options={ categoriesOptions }></Dropdown>
+                </div>
+                <div className='clubs-search-div'>
+                  <input type='text' className='clubs-search-bar'placeholder='Search Club Name...' ></input>
+                  <img src={require("../images/search-icon.png")} className='clubs-search-icon' alt="search"/>
+                  <div className='allclubs-page-backdrop'>
+                    
+                  </div>
+                </div>
               </div>
-             </div>
-             <div className='allclubs-page-backdrop'>
-                <input type='text' className='club-register-input' placeholder='Full Name *' ></input>
-                <input type='text' className='club-register-input' placeholder='Nickname *' ></input>
-                <input type='text' className='club-register-input' placeholder='Email *' ></input>
-                <input type='text' className='club-register-input' placeholder='Password *' ></input>
-                <button type='button' className='register-button'>Register</button>
-              </div>
-           </div>     
+               
          </React.Fragment>
   )
 }
