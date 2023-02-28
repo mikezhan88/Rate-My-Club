@@ -19,6 +19,7 @@ export default function RegisterPage() {
                     <span>Select Categories</span>
                     <span>Club Size</span>
                     <span>Commitment Level</span>
+                    <SelectCommitment></SelectCommitment>
                     <div className='club-description-text'>Club Description *</div>
                     <textarea className='register-description-box'></textarea>
                     <button type='button' className='register-button'>Register</button>
@@ -28,9 +29,9 @@ export default function RegisterPage() {
   )
 }
 
-function SelectBasicExample() {
+function SelectCommitment() {
     return (
-        <li className='register-select-menu'>
+        // <li className='register-select-menu'>
       <Form.Select>
         <option>Select Commitment Level</option>
         <option value="1">Less than 1 hour</option>
@@ -39,17 +40,10 @@ function SelectBasicExample() {
         <option value="4">5-7 hours</option>
         <option value="5">7+ hours</option>
       </Form.Select>
-      </li>
+      // </li>
     );
   }
 
-// function textBoxes(props){
-//     return(
-//         <li className= 'register-page-text'>
-//             <input type='text' className='register-page-text'placeholder={props.text} ></input>
-//         </li>
-//     );
-//   }
 
 
 
