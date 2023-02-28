@@ -17,9 +17,11 @@ export default function RegisterPage() {
                     <input type='text' className='club-register-input' placeholder='Club Email Address *' ></input>
                     <input type='text' className='club-register-input' placeholder='Password *' ></input>
                     <input type='text' className='club-register-input' placeholder='Club Website' ></input>
+
                     <Dropdown isMulti placeholder='Select Categories *' options={ categoriesOptions }></Dropdown>
                     <Dropdown null placeholder='Club Size *' options={ sizeOptions }></Dropdown>
                     <Dropdown null placeholder='Commitment Level *' options={ commitmentOptions }></Dropdown>
+
                     <div className='club-description-text'>Club Description *</div>
                     <textarea className='register-description-box'></textarea>
                     <button type='button' className='register-button'>Register</button>
