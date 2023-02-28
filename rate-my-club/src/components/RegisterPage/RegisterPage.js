@@ -1,6 +1,7 @@
 import React from 'react'
 import NavBar from '../NavBar/NavBar'
-import Form from 'react-bootstrap/Form';
+import Dropdown from './Dropdown';
+import { categoriesOptions, sizeOptions, commitmentOptions } from './DropdownObjects';
 
 export default function RegisterPage() {
     return (
@@ -16,9 +17,9 @@ export default function RegisterPage() {
                     <input type='text' className='club-register-input' placeholder='Club Email Address *' ></input>
                     <input type='text' className='club-register-input' placeholder='Password *' ></input>
                     <input type='text' className='club-register-input' placeholder='Club Website' ></input>
-                    <span>Select Categories</span>
-                    <span>Club Size</span>
-                    <span>Commitment Level</span>
+                    <Dropdown isMulti placeholder='Select Categories *' options={ categoriesOptions }></Dropdown>
+                    <Dropdown null placeholder='Club Size *' options={ sizeOptions }></Dropdown>
+                    <Dropdown null placeholder='Commitment Level *' options={ commitmentOptions }></Dropdown>
                     <div className='club-description-text'>Club Description *</div>
                     <textarea className='register-description-box'></textarea>
                     <button type='button' className='register-button'>Register</button>
@@ -28,28 +29,7 @@ export default function RegisterPage() {
   )
 }
 
-function SelectBasicExample() {
-    return (
-        <li className='register-select-menu'>
-      <Form.Select>
-        <option>Select Commitment Level</option>
-        <option value="1">Less than 1 hour</option>
-        <option value="2">1-3 hours</option>
-        <option value="3">3-5 hours</option>
-        <option value="4">5-7 hours</option>
-        <option value="5">7+ hours</option>
-      </Form.Select>
-      </li>
-    );
-  }
 
-// function textBoxes(props){
-//     return(
-//         <li className= 'register-page-text'>
-//             <input type='text' className='register-page-text'placeholder={props.text} ></input>
-//         </li>
-//     );
-//   }
 
 
 
