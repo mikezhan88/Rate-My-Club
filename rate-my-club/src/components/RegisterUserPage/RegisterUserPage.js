@@ -12,12 +12,12 @@ export default function RegisterPage() {
                 <div className='register-largetext'>Welcome to Rate My Club!</div>
                 <div className='register-user-page-backdrop'>
                     <input type='text' className='club-register-input' placeholder='Full Name *' ></input>
-                    <input type='text' className='club-register-input' placeholder='Nickname *' ></input>
-                    <input type='text' className='club-register-input' placeholder='Email *' ></input>
+                    <input type='text' className='club-register-input' placeholder='Nick Name' ></input>
+                    <input type='text' className='club-register-input' placeholder='Email Address *' ></input>
                     <input type='text' className='club-register-input' placeholder='Password *' ></input>
                     <button type='button' className='register-button'>Register</button>
                 </div>
-           </div>      
+           </div>   
          </React.Fragment>
   )
 }
