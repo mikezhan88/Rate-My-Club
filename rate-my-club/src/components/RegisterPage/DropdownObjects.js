@@ -32,3 +32,9 @@ export const commitmentOptions = [
     { value: '5-7', label: '5-7 hours'},
     { value: '7+', label: '7+ hours'}
 ];
+
+export const sortOptions = [
+    { value: 'alphabetical', label: 'Alphabetical'},
+    { value: 'reviews', label: 'Reviews'},
+    { value: 'date', label: 'Date'}
+];
