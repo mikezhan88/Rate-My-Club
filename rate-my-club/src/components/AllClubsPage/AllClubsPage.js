@@ -38,6 +38,7 @@ export default function AllClubsPage() {
                     <a href = "http://ucladsp.com" target="_blank">
                        <div className='clubs-display'>
                           <img src={require("../images/dsp.jpg")}className = 'clubs-img'/>
+                          <div style={{ borderTop: "1px solid #577B5F ", width: "200px"}}></div>
                           <a style = {{color:'black'}}>Delta Sigma Pi</a>
                           <div className='clubs-card-tags'>
                             <div className='clubs-tag-item'>Fraternity</div>
@@ -48,6 +49,7 @@ export default function AllClubsPage() {
                     <a href = "http://aiche.seas.ucla.edu/" target="_blank">
                       <div className='clubs-display'>
                         <img src={require("../images/aiche.png")} className = 'clubs-img'/>
+                        <div style={{ borderTop: "1px solid #577B5F ", width: "200px"}}></div>
                         <a style = {{color:'black'}}>AIChE</a>
                         <div className='clubs-card-tags'>
                           <div className='clubs-tag-item'>Engineering</div>
@@ -57,6 +59,7 @@ export default function AllClubsPage() {
                     <a href = "https://theperspectivesproject.com/" target="_blank">
                       <div className='clubs-display'>
                         <img src={require("../images/pp.png")}className = 'clubs-img'/>
+                        <div style={{ borderTop: "1px solid #577B5F ", width: "200px"}}></div>
                         <a style = {{color:'black'}}>Perspectives Project</a>
                         <div className='clubs-card-tags'>
                           <div className='clubs-tag-item'>Cultural</div>
