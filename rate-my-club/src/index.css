@@ -34,6 +34,10 @@ textarea:focus{
   outline-color: #577B5F;
 }
 
+a:-webkit-any-link {
+  text-decoration: none;
+}
+
 
 /* <------------------------------LANDING PAGE STYLING--------------------------------------> */
 
@@ -556,12 +560,15 @@ textarea:focus{
   border: 0.7px solid black;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
-  flex-direction: column;
-  row-gap: 25px;
-  justify-content: center;
-  padding-left: 15px;
+  flex-direction: row;
+  column-gap: 60px;
+  justify-content: top;
+  align-content: center;
+  padding-top: 30px;
+  padding-left: 70px;
   margin-right: 20px;
   margin-top: 110px;
+  width: 800px;
   /* align-items: center; */
 }
 
@@ -569,9 +576,6 @@ textarea:focus{
   position: relative;
   top: 40px;
   font-size: 2em;
-  
-  /* text-decoration-line: underline;
-  text-decoration-thickness: 2px; */
 }
 
 .clubs-filter-sort {
@@ -598,7 +602,8 @@ textarea:focus{
 }
 
 .clubs-sort {
-  background-color: #74a67f;
+  background-color: #9ec9a7;
+  /* background-color: #689090; */
     position: relative;
     display: flex;
     flex-direction: column;
@@ -655,6 +660,69 @@ textarea:focus{
   margin-left: 505px; 
 }
 
+.clubs-display {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0px;
+  justify-content: left;
+  width: 200px;
+  border-radius: 5px;
+  height: 300px;
+  border: 1px solid #577B5F;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+
+  /*option 2*/
+  /* background-color: #577B5F; */
+}
+
+.clubs-display:hover {
+  transform: scale(1.05);
+}
+
+.clubs-tag-item {
+  background-color: #577B5F;
+  color: white;
+  /*option 2*/
+  /* background-color: white;
+  color: black; */
+
+  padding: 4px 7px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: 15px;
+}
+
+.clubs-img {
+  height: 220px;
+  width: 200px;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.clubs-card-tags {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  column-gap: 10px;
+  border-radius: 8px;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  border: none;
+  color: black;  
+  padding-top: 7px;
+  padding-bottom: 5px;
+  padding-left: 3px;
+  height:auto;
+
+  
+}
+
+
+
+
 
 /* <------------------------------DROPDOWN FOR CLUBS PAGE STYLING--------------------------------------> */
 
@@ -668,6 +736,7 @@ textarea:focus{
   border-radius: 5px;
   font-size: 16px;
   border-radius: 5px;
+  
 }
 
 
@@ -682,14 +751,11 @@ textarea:focus{
   font-size: 16px;
   border: none;
   color: black;  
-  height: 30px;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 16px;
   padding-right: 16px;
   height:auto;
-
-  
 }
 
 .all-clubs-dropdown-menu {
