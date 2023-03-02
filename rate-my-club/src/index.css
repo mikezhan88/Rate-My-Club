@@ -560,7 +560,7 @@ a:-webkit-any-link {
   column-gap: 42px;
   padding: 0px 30px 30px 30px;
   justify-content: left;
-  max-width: 64vw;
+  max-width: 66vw;
   flex-wrap: wrap;
   height: auto;
 }
