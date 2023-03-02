@@ -3,7 +3,7 @@ from fastapi import FastAPI
 import datetime
 from dotenv import dotenv_values
 from pymongo import MongoClient
-from routes import router as book_router
+from routes import router as review_router
 
 x = datetime.datetime.now()
 
@@ -29,8 +29,8 @@ def shutdown_db_client():
 async def root():
     return {"message": "Welcome to the PyMongo tutorial!"}
 
-#include routes for /book
-app.include_router(book_router, tags=["books"], prefix="/book")
+#include routes for /review
+app.include_router(review_router, tags=["reviews"], prefix="/review")
 
 '''
 # Route for seeing a data
