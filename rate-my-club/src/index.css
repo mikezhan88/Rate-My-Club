@@ -530,52 +530,45 @@ a:-webkit-any-link {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
   margin-right: 10%;
   margin-left: 3vw;
-  row-gap: 60px;
+  row-gap: 55px;
 }
 
 .filter-backdrop {
   position: relative;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  margin-top: 60px;
+  margin-top: 45px;
   column-gap: 30px;
-  padding-left: 1%;
   height: 100vw;
   margin-left: 3vw;
   margin-right: 3vw;
-
 }
 
 .allclubs-page-backdrop{
   position: relative;
-  /* margin-top: 20px; */
   bottom: 40px;
   background-color: white;
   border-radius: 10px;
-  height: 100vw;
+  margin-right: 30px;
   border: 0.7px solid black;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: row;
-  column-gap: 60px;
-  justify-content: top;
-  align-content: center;
-  padding-top: 30px;
-  padding-left: 70px;
-  margin-right: 20px;
-  margin-top: 110px;
-  width: 800px;
-  /* align-items: center; */
+  margin-top: 115px;
+  column-gap: 42px;
+  padding: 0px 30px 30px 30px;
+  justify-content: left;
+  max-width: 64vw;
+  flex-wrap: wrap;
+  height: auto;
 }
 
 .clubs-largetext {
   position: relative;
   top: 40px;
-  font-size: 2em;
+  font-size: 2.5em;
 }
 
 .clubs-filter-sort {
@@ -585,39 +578,43 @@ a:-webkit-any-link {
 }
 
 .clubs-filter {
-  background-color: #131b1b;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    row-gap: 45px;
-    justify-content: left;
-    width: 250px;
-    border-radius: 5px;
-    border-color: #577B5F;
-    height: 400px;
-    padding-right: 20px;
-    padding-left: 10px;
-    border: 0.7px solid #577B5F;
-    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  /* background-color: #131b1b; */
+  background-color: #577B5F;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 45px;
+  justify-content: left;
+  width: 250px;
+  border-radius: 5px;
+  border-color: #577B5F;
+  height: 400px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 5px;
+  border: 0.7px solid #577B5F;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
 }
 
 .clubs-sort {
-  background-color: #9ec9a7;
+  /* background-color: #9ec9a7; */
   /* background-color: #689090; */
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    row-gap: 45px;
-    justify-content: left;
-    width: 250px;
-    border-radius: 5px;
-    border-color: #577B5F;
-    height: 170px;
-    padding-right: 20px;
-    padding-left: 10px;
-    margin-top: 50px;
-    border: 0.7px solid #577B5F;
-    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  background-color: #577B5F;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 45px;
+  justify-content: left;
+  width: 250px;
+  border-radius: 5px;
+  border-color: #577B5F;
+  height: 170px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 5px;
+  margin-top: 30px;
+  border: 0.7px solid #577B5F;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
 }
 
 .clubs-text{
@@ -626,7 +623,6 @@ a:-webkit-any-link {
   font-size: 1.2em;
   font-weight: 500;
   color: white;
-  
 }
 
 .clubs-search-bar {
@@ -639,8 +635,8 @@ a:-webkit-any-link {
   letter-spacing: 0.5px;
   padding-left: 10px;
   position: absolute;
-  width: 530px;
-  height: 40px;
+  width: 40vw;
+  height: 45px;
 }
 
 .clubs-search-div {
@@ -656,24 +652,20 @@ a:-webkit-any-link {
   position: absolute;
   width: 18px;
   height: 18px;
-  top: 12px;
-  margin-left: 505px; 
+  top: 16px;
+  margin-left: 39vw; 
 }
 
 .clubs-display {
   position: relative;
   display: flex;
   flex-direction: column;
-  row-gap: 0px;
-  justify-content: left;
+  margin-top: 30px;
   width: 200px;
   border-radius: 5px;
   height: 300px;
   border: 1px solid #577B5F;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-  /*option 2*/
-  /* background-color: #577B5F; */
 }
 
 .clubs-display:hover {
@@ -683,10 +675,6 @@ a:-webkit-any-link {
 .clubs-tag-item {
   background-color: #577B5F;
   color: white;
-  /*option 2*/
-  /* background-color: white;
-  color: black; */
-
   padding: 4px 7px;
   border-radius: 2px;
   display: flex;
@@ -708,20 +696,20 @@ a:-webkit-any-link {
   column-gap: 10px;
   border-radius: 8px;
   font-family: 'Open Sans';
-  font-size: 16px;
-  border: none;
-  color: black;  
+  font-size: 14px;
   padding-top: 7px;
   padding-bottom: 5px;
-  padding-left: 3px;
+  padding-left: 12px;
   height:auto;
-
-  
 }
 
-
-
-
+.club-name-tag {
+  padding-left: 12px;
+  padding-top: 7px;
+  padding-bottom: 3px;
+  color: black;
+  font-size: 18px;
+}
 
 /* <------------------------------DROPDOWN FOR CLUBS PAGE STYLING--------------------------------------> */
 
