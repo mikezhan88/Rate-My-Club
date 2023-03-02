@@ -672,6 +672,9 @@ a:-webkit-any-link {
   border: 1px solid #577B5F;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
+
+  /*option 2*/
+  /* background-color: #577B5F; */
 }
 
 .clubs-display:hover {
@@ -681,6 +684,10 @@ a:-webkit-any-link {
 .clubs-tag-item {
   background-color: #577B5F;
   color: white;
+  /*option 2*/
+  /* background-color: white;
+  color: black; */
+
   padding: 4px 7px;
   border-radius: 2px;
   display: flex;
@@ -693,6 +700,24 @@ a:-webkit-any-link {
   height: 220px;
   width: 200px;
   border-radius: 8px 8px 0px 0px;
+}
+
+.clubs-card-tags {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  column-gap: 10px;
+  border-radius: 8px;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  border: none;
+  color: black;  
+  padding-top: 7px;
+  padding-bottom: 5px;
+  padding-left: 3px;
+  height:auto;
+
+  
 }
 
 
@@ -731,8 +756,6 @@ a:-webkit-any-link {
   padding-left: 16px;
   padding-right: 16px;
   height:auto;
-
-  
 }
 
 .all-clubs-dropdown-menu {

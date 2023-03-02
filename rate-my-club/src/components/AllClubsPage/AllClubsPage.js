@@ -39,7 +39,7 @@ export default function AllClubsPage() {
                        <div className='clubs-display'>
                           <img src={require("../images/dsp.jpg")}className = 'clubs-img'/>
                           <a style = {{color:'black'}}>Delta Sigma Pi</a>
-                          <div className='all-clubs-dropdown-input'>
+                          <div className='clubs-card-tags'>
                             <div className='clubs-tag-item'>Fraternity</div>
                             <div className='clubs-tag-item'>Business</div>
                           </div>
@@ -49,7 +49,7 @@ export default function AllClubsPage() {
                       <div className='clubs-display'>
                         <img src={require("../images/aiche.png")} className = 'clubs-img'/>
                         <a style = {{color:'black'}}>AIChE</a>
-                        <div className='all-clubs-dropdown-input'>
+                        <div className='clubs-card-tags'>
                           <div className='clubs-tag-item'>Engineering</div>
                         </div>
                       </div>
@@ -58,7 +58,7 @@ export default function AllClubsPage() {
                       <div className='clubs-display'>
                         <img src={require("../images/pp.png")}className = 'clubs-img'/>
                         <a style = {{color:'black'}}>Perspectives Project</a>
-                        <div className='all-clubs-dropdown-input'>
+                        <div className='clubs-card-tags'>
                           <div className='clubs-tag-item'>Cultural</div>
                           <div className='clubs-tag-item'>Social</div>
                         </div>
