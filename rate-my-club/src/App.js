@@ -5,6 +5,8 @@ import RegisterPage from './components/RegisterPage/RegisterPage';
 import LoginPage from './components/Login-Page/LoginPage';
 import RegisterUserPage from './components/RegisterUserPage/RegisterUserPage';
 import AllClubsPage from './components/AllClubsPage/AllClubsPage';
+import ClubPage from './components/ClubPage/ClubPage';
+import UserPage from './components/UserProfilePage/UserProfilePage';
 import NavBar from './components/NavBar/NavBar';
 
 
@@ -17,6 +19,8 @@ function App() {
         <Route exact path="/login" element= {<LoginPage/>} />
         <Route exact path="/registeruser" element= {<RegisterUserPage/>} />
         <Route exact path="/allclubs" element= {<AllClubsPage/>} />
+        <Route exact path="/clubpage" element= {<ClubPage/>} />
+        <Route exact path="/userpage" element= {<UserPage/>} />
       </Routes>
     </React.Fragment>
   );

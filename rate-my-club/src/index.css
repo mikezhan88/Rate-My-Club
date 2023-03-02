@@ -671,7 +671,6 @@ a:-webkit-any-link {
   height: 300px;
   border: 1px solid #577B5F;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
 
   /*option 2*/
   /* background-color: #577B5F; */
@@ -699,7 +698,7 @@ a:-webkit-any-link {
 .clubs-img {
   height: 220px;
   width: 200px;
-  border-radius: 8px 8px 0px 0px;
+  border-radius: 6x 6px 0px 0px;
 }
 
 .clubs-card-tags {
@@ -805,3 +804,269 @@ a:-webkit-any-link {
   padding-top: 2px;
   padding-left: 3px;
 }
+
+
+
+/* <------------------------------CLUBS PROFILE PAGE STYLING--------------------------------------> */
+
+
+.club-profile-page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  /* align-items: center; */
+  margin-right: 10%;
+  margin-left: 3vw;
+  row-gap: 30px;
+}
+
+
+
+
+.club-profile-backdrop{
+  position: relative;
+  margin-top: 50px;
+  bottom: 40px;
+  background-color: white;
+  border-radius: 10px;
+  height: auto;
+  border: 0.7px solid black;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+  justify-content: top;
+  align-content: center;
+  /* padding-top: px; */
+  padding-left: 40px;
+  /* margin-right: 20px; */
+  padding-right: 60px;
+  padding-bottom: 50px;
+  width: 700px;
+  /* align-items: center; */
+}
+
+.club-review {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0px;
+  justify-content: left;
+  width: 200px;
+  height: 220px;
+  border: 1px solid #577B5F;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 10px;
+}
+
+.stars {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+  justify-content: center;
+  width: 200px;
+}
+
+.total-review{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0px;
+  justify-content: center;
+  width: 200px;
+  height: 220px;
+  padding: 10px;
+  text-align: center;
+  align-items: center;
+  row-gap: 5px;
+}
+
+.review-display{
+  position: relative;
+  bottom: 40px;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  column-gap: 35px;
+  justify-content: center;
+  align-content: center;
+  width: 700px;
+}
+
+.club-profile-button {
+  background-color: #577B5F;
+  border-radius: 8px;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  border: none;
+  color: white;  
+  height: 30px;
+  width: fit-content;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition-duration: 0.4s;
+}
+
+.club-profile-button:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid #577B5F;
+}
+
+
+.club-largetext {
+  position: relative;
+  font-size: 2em;
+  display: flex;
+  flex-direction: row;
+  top: 40px;
+  column-gap: 10px;
+}
+
+.club-smalltext {
+  position: relative;
+  font-size: 1.0em;
+  display:flex;
+  flex-direction: column;
+  row-gap: 2px;
+  margin-top: 15px;
+}
+
+.club-mediumtext {
+  position: relative;
+  font-size: 1.1em;
+  display:flex;
+  flex-direction: column;
+  row-gap: 1px;
+  margin-top: 15px;
+}
+
+.bookmark{
+  color: #577B5F;
+  size: 80;
+}
+
+.bookmark:hover{
+  color:#577B5F;
+  size: 30;
+}
+
+.profile-tags {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+  justify-content: left;
+  width: fit-content;
+}
+
+/* <------------------------------USER PROFILE PAGE STYLING--------------------------------------> */
+
+
+.user-page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  /* align-items: center; */
+  margin-right: 10%;
+  margin-left: 3vw;
+  row-gap: 50px;
+}
+
+.user-backdrop{
+  position: relative;
+  margin-top: 50px;
+  bottom: 40px;
+  background-color: white;
+  border-radius: 10px;
+  height: auto;
+  border: 0.7px solid black;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+  justify-content: top;
+  align-content: center;
+  /* padding-top: px; */
+  padding-left: 40px;
+  /* margin-right: 20px; */
+  padding-right: 60px;
+  padding-bottom: 50px;
+  width: auto;
+  /* align-items: center; */
+}
+
+.user-review-display{
+  position: relative;
+  /* bottom: 40px; */
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  column-gap: 35px;
+  justify-content: left;
+  align-content: left;
+  width: 800px;
+}
+
+.edit-buttons {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+  justify-content: bottom;
+  width: fit-content;
+  
+}
+
+.edit-review-button {
+  background-color: #577B5F;
+  border-radius: 8px;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  color: white;  
+  height: 40px;
+  width: fit-content;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition-duration: 0.4s;
+}
+
+.delete-review-button {
+  background-color: #D74D4D;
+  border-radius: 8px;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  color: white;  
+  height: 40px;
+  width: fit-content;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition-duration: 0.4s;
+}
+
+.edit-review-button:hover {
+  background-color: white;
+  color: #577B5F;
+  border: 2px solid #577B5F;
+}
+
+.delete-review-button:hover {
+  background-color: white;
+  color: #D74D4D;;
+  border: 2px solid #D74D4D;
+}
+
+.bookmark-club-display{
+  display: flex;
+  position: relative;
+  flex-direction: row;
+}
+
+

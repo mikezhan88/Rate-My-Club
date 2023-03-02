@@ -35,7 +35,7 @@ export default function AllClubsPage() {
                   <input type='text' className='clubs-search-bar'placeholder='Search Club Name...' ></input>
                   <img src={require("../images/search-icon.png")} className='clubs-search-icon' alt="search"/>
                   <div className='allclubs-page-backdrop'>
-                    <a href = "http://ucladsp.com" target="_blank">
+                    <a href = "/clubpage" target="_blank">
                        <div className='clubs-display'>
                           <img src={require("../images/dsp.jpg")}className = 'clubs-img'/>
                           <div style={{ borderTop: "1px solid #577B5F ", width: "200px"}}></div>
