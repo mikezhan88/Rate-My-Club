@@ -29,7 +29,7 @@ export default function ClubPage() {
                         <div className='clubs-tag-item'>Professional</div>
                     </div>
                 </div>
-                <InstagramFeed token="IGQVJYVUk4bnBtZAU5aUHd6RWhoQUxfRWZAQVGFFS1B2MGY0dTN6TlFfS1lMdmN0cUczU3pqT0hidUp1M3FZAdzJaNTZAZATkZAJYzV2Q2stVFZAGdVRPWDBzSFJzRGZAkeGs1X0xDUmkxNUZAmdlJEWFJDQ2g0QgZDZD"  counter="6"/>  
+                {/* <InstagramFeed token="IGQVJYVUk4bnBtZAU5aUHd6RWhoQUxfRWZAQVGFFS1B2MGY0dTN6TlFfS1lMdmN0cUczU3pqT0hidUp1M3FZAdzJaNTZAZATkZAJYzV2Q2stVFZAGdVRPWDBzSFJzRGZAkeGs1X0xDUmkxNUZAmdlJEWFJDQ2g0QgZDZD"  counter="6"/>   */}
                 <div className='club-profile-backdrop'>
                     <div className='clubs-largetext'>Description</div>
                     <div style={{ borderBottom: "1px solid black ", width: "200px"}}></div>
