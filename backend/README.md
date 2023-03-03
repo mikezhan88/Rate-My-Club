@@ -1,4 +1,11 @@
+# Environment Setup
+Create venv: "python3 -m venv <name>"
+Activate venv: "source <name>/bin/activate"
+Download dependencies: "python -m pip install 'fastapi[all]' 'pymongo[srv]' python-dotenv"
+
 # Backend Usage
+Move into backend folder prior to running commands below
+
 Main file is "server.py" which can be run using: 'python -m uvicorn server:app --reload'  
   
 This will update upon any changes made to server.py or its dependencies.
