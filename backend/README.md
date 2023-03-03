@@ -1,6 +1,8 @@
 # Environment Setup
 Create venv: "python3 -m venv <name>"
+
 Activate venv: "source <name>/bin/activate"
+
 Download dependencies: "python -m pip install 'fastapi[all]' 'pymongo[srv]' python-dotenv"
 
 # Backend Usage
