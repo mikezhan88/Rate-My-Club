@@ -7,26 +7,26 @@ export const AllClubsArray = [
     {
         img: img1,
         clubName: 'Delta Sigma Pi',
-        tags: 'Fraternity'
+        tags: ['Greek Life', 'Business']
     },
     {
         img: img2,
         clubName: 'Devx',
-        tags: 'Engineering'
+        tags: ['Engineering']
     },
     {
         img: img3,
         clubName: 'ACA',
-        tags: 'Cultural'
+        tags: ['Cultural', 'Dance']
     },
     {
         img: img2,
         clubName: 'Cabbage Club',
-        tags: 'Recreation'
+        tags: ['Recreation', 'Service']
     },
     {
         img: img1,
         clubName: 'Product Space',
-        tags: 'Enginering'
+        tags: ['Enginering']
     },
 ]

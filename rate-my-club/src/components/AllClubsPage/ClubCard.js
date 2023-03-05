@@ -5,7 +5,13 @@ export default function ClubCard(props) {
             <img src={props.img} className='clubs-img' />
             <div className='club-name-tag'>{props.clubName}</div>
             <div className='clubs-card-tags'>
-              <div className='clubs-tag-item'>{props.tags}</div>
+                {
+                    props.tags.map((tag) => {
+                        return (
+                            <div className='clubs-tag-item'>{tag}</div>
+                        )
+                    })
+                }
             </div>
         </div>
       </a>
