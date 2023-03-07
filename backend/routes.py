@@ -1,8 +1,8 @@
-from fastapi import APIRouter, Body, Request, Response, HTTPException, status
+from fastapi import APIRouter, Body, Request, Response, HTTPException, status, File, UploadFile
 from fastapi.encoders import jsonable_encoder
 from typing import List
 
-from models import Review, ReviewUpdate
+from models import Review, ReviewUpdate, Club
 
 router = APIRouter()
 
@@ -63,3 +63,38 @@ def delete_review(id: str, request: Request, response: Response):
         return response
 
     raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Review with ID {id} not found")
+
+
+@router.post("/", response_description="Create new club", status_code=status.HTTP_201_CREATED, response_model=Club)
+def create_club(request: Request, club: Club = Body(...)):
+    club = jsonable_encoder(club)
+    new_club = request.app.database["clubs"].insert_one(club)
+    created_club = request.app.database["clubs"].find_one(
+        {"_club_id": new_club.inserted_id}
+    )
+
+    return created_club
+
+
+@router.put("/{_club_id}/edit", response_description="Edit club page")
+def edit_club(request: Request, club: Club = Body(...)):
+    update_data = club.dict(exclude_unset=True, exclude_none=True)
+    update_data = jsonable_encoder(update_data)
+
+    if not update_data:
+        raise HTTPException(detail=f"Empty club data in request", status_code=status.HTTP_400_BAD_REQUEST)
+    
+    updated_club = request.app.database["clubs"].update_one(
+        {"_club_id": club.id, "$set": update_data}
+    )
+
+    if updated_club.modified_count == 0:
+        raise HTTPException(detail=f"Club with id: {club.id} not found", status_code=status.HTTP_404_NOT_FOUND)
+    
+    existing_club = request.app.database["clubs"].find_one({"_club_id": club.id})
+    
+    if existing_club:
+        return existing_club
+    else:
+        raise HTTPException(detail=f"Club with id: {club.id} not found", status_code=status.HTTP_404_NOT_FOUND)
+      

@@ -36,3 +36,11 @@ class ReviewUpdate(BaseModel):
                 "rating": 2.0
             }
         }
+
+class Club(BaseModel):
+    club_id: str = Field(default_factory=uuid.uuid4, alias="_club_id")
+    name: str = Field(...)
+    about: Optional[str] = Field(...)
+    email: Optional[str] = Field(...)
+    profile_picture: Optional[str] = None
+
