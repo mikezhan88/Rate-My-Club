@@ -15,14 +15,11 @@ export default function UserPage() {
         <React.Fragment>
             <NavBar/>
             <div className='user-page'>
-                <div className='club-largetext'>
-                    Welcome, Chilly Tiger
-                </div>
+                <div className='clubs-largetext'>Welcome, Chilly Tiger</div>
                 <div style={{ borderTop: "1px solid black ", width: "320px"}}></div>
-            
                 <div className='user-backdrop'>
-                    <div className='clubs-largetext'>My Bookmarks</div>
-                    <div style={{ borderBottom: "1px solid black ", width: "200px"}}></div>
+                    <div className='user-page-subheading'>My Bookmarks</div>
+                    <div style={{ borderBottom: "1px solid black ", width: "190px"}}></div>
                     <div className='user-review-display'>
                         <div className='bookmark-club-display'>
                     <div className='bookmark'> <HeaderIcon inactiveIcon={< BsFillBookmarkStarFill size={43}/>} activeIcon={<BsBookmarkStar size={43}/>}></HeaderIcon></div>
@@ -67,11 +64,8 @@ export default function UserPage() {
                         </div>
                     </div>
 
-
-
-
-                    <div className='clubs-largetext'>My Reviews</div>
-                    <div style={{ borderBottom: "1px solid black ", width: "200px"}}></div>
+                    <div className='user-page-subheading'>My Reviews</div>
+                    <div style={{ borderBottom: "1px solid black ", width: "150px"}}></div>
                     <div className='user-review-display'>
                     <div className='club-review'>
                                 <div className='stars'>

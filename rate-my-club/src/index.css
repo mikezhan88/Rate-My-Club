@@ -568,7 +568,7 @@ a:-webkit-any-link {
 .clubs-largetext {
   position: relative;
   top: 40px;
-  font-size: 2.5em;
+  font-size: 2em;
 }
 
 .clubs-filter-sort {
@@ -811,9 +811,6 @@ a:-webkit-any-link {
   row-gap: 30px;
 }
 
-
-
-
 .club-profile-backdrop{
   position: relative;
   margin-top: 50px;
@@ -905,16 +902,6 @@ a:-webkit-any-link {
   border: 2px solid #577B5F;
 }
 
-
-.club-largetext {
-  position: relative;
-  font-size: 2em;
-  display: flex;
-  flex-direction: row;
-  top: 40px;
-  column-gap: 10px;
-}
-
 .club-smalltext {
   position: relative;
   font-size: 1.0em;
@@ -960,15 +947,14 @@ a:-webkit-any-link {
   display: flex;
   flex-direction: column;
   justify-content: left;
-  /* align-items: center; */
-  margin-right: 10%;
+  margin-right: 3vw;
   margin-left: 3vw;
   row-gap: 50px;
 }
 
 .user-backdrop{
   position: relative;
-  margin-top: 50px;
+  margin-top: 40px;
   bottom: 40px;
   background-color: white;
   border-radius: 10px;
@@ -977,16 +963,16 @@ a:-webkit-any-link {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
-  row-gap: 50px;
+  row-gap: 10px;
   justify-content: top;
   align-content: center;
-  /* padding-top: px; */
   padding-left: 40px;
-  /* margin-right: 20px; */
-  padding-right: 60px;
   padding-bottom: 50px;
-  width: auto;
-  /* align-items: center; */
+}
+
+.user-page-subheading {
+  font-size: 1.7em;
+  margin-top: 40px;
 }
 
 .user-review-display{
