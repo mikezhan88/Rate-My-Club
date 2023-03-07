@@ -40,17 +40,5 @@ export const user = {
             date: 'January 25, 2022',
             content: 'Got to work on an awesome project with other developers.'
         },
-        {
-            rating: 2,
-            clubName: 'Cabbage Patch Club',
-            date: 'April 12, 2022',
-            content: 'Terrible club!'
-        },
-        {
-            rating: 2,
-            clubName: 'Cabbage Patch Club',
-            date: 'April 12, 2022',
-            content: 'Terrible club!'
-        },
     ]
 }

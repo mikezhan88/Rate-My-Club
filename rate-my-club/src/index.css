@@ -805,7 +805,6 @@ a:-webkit-any-link {
   display: flex;
   flex-direction: column;
   justify-content: left;
-  /* align-items: center; */
   margin-right: 10%;
   margin-left: 3vw;
   row-gap: 30px;
@@ -825,13 +824,10 @@ a:-webkit-any-link {
   row-gap: 50px;
   justify-content: top;
   align-content: center;
-  /* padding-top: px; */
   padding-left: 40px;
-  /* margin-right: 20px; */
   padding-right: 60px;
   padding-bottom: 50px;
   width: 700px;
-  /* align-items: center; */
 }
 
 .club-review {
@@ -844,6 +840,7 @@ a:-webkit-any-link {
   border: 1px solid #577B5F;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   padding: 15px;
+  flex-shrink: 0;
 }
 
 .stars {
