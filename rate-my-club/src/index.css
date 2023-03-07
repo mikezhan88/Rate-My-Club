@@ -568,7 +568,7 @@ a:-webkit-any-link {
 .clubs-largetext {
   position: relative;
   top: 40px;
-  font-size: 2.5em;
+  font-size: 2em;
 }
 
 .clubs-filter-sort {
@@ -805,14 +805,10 @@ a:-webkit-any-link {
   display: flex;
   flex-direction: column;
   justify-content: left;
-  /* align-items: center; */
   margin-right: 10%;
   margin-left: 3vw;
   row-gap: 30px;
 }
-
-
-
 
 .club-profile-backdrop{
   position: relative;
@@ -828,35 +824,37 @@ a:-webkit-any-link {
   row-gap: 50px;
   justify-content: top;
   align-content: center;
-  /* padding-top: px; */
   padding-left: 40px;
-  /* margin-right: 20px; */
   padding-right: 60px;
   padding-bottom: 50px;
   width: 700px;
-  /* align-items: center; */
 }
 
 .club-review {
   position: relative;
   display: flex;
   flex-direction: column;
-  row-gap: 0px;
   justify-content: left;
-  width: 200px;
-  height: 220px;
+  width: 230px;
+  height: 250px;
   border: 1px solid #577B5F;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  padding: 10px;
+  padding: 15px;
+  flex-shrink: 0;
 }
 
 .stars {
   position: relative;
   display: flex;
   flex-direction: row;
-  column-gap: 10px;
   justify-content: center;
-  width: 200px;
+  color: #577B5F;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.star {
+  padding-right: 3px;
 }
 
 .total-review{
@@ -865,7 +863,7 @@ a:-webkit-any-link {
   flex-direction: column;
   row-gap: 0px;
   justify-content: center;
-  width: 200px;
+  width: 180px;
   height: 220px;
   padding: 10px;
   text-align: center;
@@ -905,16 +903,6 @@ a:-webkit-any-link {
   border: 2px solid #577B5F;
 }
 
-
-.club-largetext {
-  position: relative;
-  font-size: 2em;
-  display: flex;
-  flex-direction: row;
-  top: 40px;
-  column-gap: 10px;
-}
-
 .club-smalltext {
   position: relative;
   font-size: 1.0em;
@@ -938,11 +926,6 @@ a:-webkit-any-link {
   size: 80;
 }
 
-.bookmark:hover{
-  color:#577B5F;
-  size: 30;
-}
-
 .profile-tags {
   position: relative;
   display: flex;
@@ -960,15 +943,14 @@ a:-webkit-any-link {
   display: flex;
   flex-direction: column;
   justify-content: left;
-  /* align-items: center; */
-  margin-right: 10%;
+  margin-right: 3vw;
   margin-left: 3vw;
   row-gap: 50px;
 }
 
 .user-backdrop{
   position: relative;
-  margin-top: 50px;
+  margin-top: 40px;
   bottom: 40px;
   background-color: white;
   border-radius: 10px;
@@ -977,38 +959,42 @@ a:-webkit-any-link {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
-  row-gap: 50px;
+  row-gap: 10px;
   justify-content: top;
   align-content: center;
-  /* padding-top: px; */
   padding-left: 40px;
-  /* margin-right: 20px; */
-  padding-right: 60px;
   padding-bottom: 50px;
-  width: auto;
-  /* align-items: center; */
+}
+
+.user-page-subheading {
+  font-size: 1.7em;
+  margin-top: 40px;
 }
 
 .user-review-display{
   position: relative;
-  /* bottom: 40px; */
-  height: auto;
+  margin-top: 10px;
   display: flex;
   flex-direction: row;
   column-gap: 35px;
   justify-content: left;
   align-content: left;
-  width: 800px;
+  margin-right: 5vw;
+  padding-bottom: 40px;
+  overflow-x: scroll;
+}
+
+.review-content {
+  position: relative;
+  height: 80px;
 }
 
 .edit-buttons {
   position: relative;
   display: flex;
   flex-direction: row;
-  column-gap: 10px;
-  justify-content: bottom;
-  width: fit-content;
-  
+  column-gap: 20px;
+  justify-content: center;
 }
 
 .edit-review-button {
@@ -1044,19 +1030,24 @@ a:-webkit-any-link {
 .edit-review-button:hover {
   background-color: white;
   color: #577B5F;
-  border: 2px solid #577B5F;
+  border: 0.5px solid #577B5F;
 }
 
 .delete-review-button:hover {
   background-color: white;
   color: #D74D4D;;
-  border: 2px solid #D74D4D;
+  border: 0.5px solid #D74D4D;
 }
 
 .bookmark-club-display{
   display: flex;
   position: relative;
   flex-direction: row;
+}
+
+.userpage-bookmark {
+  padding-top: 30px;
+  color: #577B5F;
 }
 
 

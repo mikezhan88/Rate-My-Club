@@ -1,5 +1,3 @@
-
-
 import NavBar from '../NavBar/NavBar'
 import Form from 'react-bootstrap/Form';
 import React, {useState, useEffect, useRef, useCallback} from 'react';
