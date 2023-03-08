@@ -15,7 +15,7 @@ def create_review(request: Request, review: Review = Body(...)):
         {"_id": new_review.inserted_id}
     )
 
-    return create_review
+    return created_review
 
 
 #GET /reviews
