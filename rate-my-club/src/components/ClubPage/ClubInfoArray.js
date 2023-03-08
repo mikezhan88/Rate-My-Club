@@ -6,6 +6,10 @@ export const club = {
     clubSize: '50-100 people',
     commitmentLevel: '3-5 hours',
     description: 'We believe that no one should forge through their career journey alone — which is why we’ve built a strong culture of mentorship to help members unlock their career potential. Thanks to the guidance and professional network we provide, our members have continually found success in achieving their career goals. From investment banking to entertainment, we have years of collective experience working at top companies under our belt.',
+    updates: [
+        {content: "Spring Rush begins April 2nd!"},
+        {content: "Info session at 7:30 tonight"}
+    ],
     reviews: [
         {
             rating: 5,

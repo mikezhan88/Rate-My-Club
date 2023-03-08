@@ -4,6 +4,7 @@ import { BsBookmarkStar, BsFillBookmarkStarFill} from "react-icons/bs";
 import { club } from './ClubInfoArray'
 import { AverageRating, AverageRatingStars } from './ClubRating';
 import ClubReviews from './ClubReviews';
+import ClubUpdates from './ClubUpdates';
 
 export default function ClubPage() {
     return ( 
@@ -49,6 +50,9 @@ export default function ClubPage() {
                     </div>
                     <div className='club-updates'>
                         <div className='clubs-text'>Recent Updates</div>
+                            <div className='update-backdrop'>
+                                <ClubUpdates club={club}/> 
+                            </div>
                     </div>
                 </div>
             </div>
