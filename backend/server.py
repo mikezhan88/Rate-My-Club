@@ -4,6 +4,7 @@ import datetime
 from dotenv import dotenv_values
 from pymongo import MongoClient
 from routes import router as review_router
+import certifi
 
 x = datetime.datetime.now()
 
@@ -17,7 +18,7 @@ app = FastAPI()
 
 @app.on_event("startup")
 def startup_db_client():
-    app.mongodb_client = MongoClient(config["ATLAS_URL"])
+    app.mongodb_client = MongoClient(config["ATLAS_URL"], tlsCAFile=certifi.where())
     app.database = app.mongodb_client[config["DB"]]
     print("Connected to the MongoDB database!")
 
