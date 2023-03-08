@@ -3,7 +3,7 @@ from fastapi import FastAPI
 import datetime
 from dotenv import dotenv_values
 from pymongo import MongoClient
-from routes import router as review_router
+from routes import reviews_router, clubs_router
 import certifi
 
 x = datetime.datetime.now()
@@ -31,7 +31,8 @@ async def root():
     return {"message": "Welcome to the PyMongo tutorial!"}
 
 #include routes for /review
-app.include_router(review_router, tags=["reviews"], prefix="/review")
+app.include_router(reviews_router, tags=["reviews"], prefix="/review")
+app.include_router(clubs_router, tags=["clubs"], prefix="/clubs")
 
 '''
 # Route for seeing a data

@@ -45,14 +45,30 @@ class Club(BaseModel):
     profile_picture: str = Field(...)
 
     class Config:
-            allow_population_by_field_name = True
-            schema_extra = {
-                "example": {
-                    "_id": "066de609-b04a-4b30-b46c-32537c7f1f6e",
-                    "name": "Rocket Project",
-                    "about": "Cool Space Club",
-                    "email": "rocket@gmail.com",
-                    "profile_picture": "boop"
-                }
+        allow_population_by_field_name = True
+        schema_extra = {
+            "example": {
+                "_id": "066de609-b04a-4b30-b46c-32537c7f1f6e",
+                "name": "Rocket Project",
+                "about": "Cool Space Club",
+                "email": "rocket@gmail.com",
+                "profile_picture": "boop"
             }
+        }
 
+
+class ClubUpdate(BaseModel):
+    name: Optional[str]
+    about: Optional[str]
+    email: Optional[str]
+    profile_picture: Optional[str]
+
+    class Config:
+        allow_population_by_field_name = True
+        schema_extra = {
+            "example": {
+                "name": "DSP",
+                "about": "XiO",
+                "email": "dsp@xio.com"
+            }
+        }
