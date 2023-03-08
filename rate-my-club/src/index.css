@@ -707,6 +707,8 @@ a:-webkit-any-link {
   font-size: 18px;
 }
 
+
+
 /* <------------------------------DROPDOWN FOR CLUBS PAGE STYLING--------------------------------------> */
 
 
@@ -799,7 +801,7 @@ a:-webkit-any-link {
   display: flex;
   flex-direction: column;
   justify-content: left;
-  margin-right: 3vw;
+  margin-right: 10%;
   margin-left: 3vw;
 }
 
@@ -821,7 +823,7 @@ a:-webkit-any-link {
   padding-right: 40px;
   padding-bottom: 20px;
   margin-top: 70px;
-  width: 55%;
+  width: 60%;
 }
 
 .club-name {
@@ -959,6 +961,46 @@ a:-webkit-any-link {
   align-content: left;
   padding-bottom: 40px;
   overflow-x: scroll;
+}
+
+.overall-club-profile{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  column-gap: 30px;
+}
+
+.club-updates {
+  background-color: #577B5F;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 45px;
+  justify-content: left;
+  width: 30%;
+  border-radius: 5px;
+  border-color: #577B5F;
+  height: fit-content;
+  margin-top: 30px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 30px;
+  border: 0.7px solid #577B5F;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+
+.update-backdrop{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  background-color: #fff;
+  border: 0.7px solid #f7f2e5;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  border-radius: 3px;
+  padding: 10px;
+  font-weight: 400;
 }
 
 /* <------------------------------USER PROFILE PAGE STYLING--------------------------------------> */

@@ -4,6 +4,7 @@ import { BsBookmarkStar, BsFillBookmarkStarFill} from "react-icons/bs";
 import { club } from './ClubInfoArray'
 import { AverageRating, AverageRatingStars } from './ClubRating';
 import ClubReviews from './ClubReviews';
+import ClubUpdates from './ClubUpdates';
 
 export default function ClubPage() {
     return ( 
@@ -28,22 +29,30 @@ export default function ClubPage() {
                         }
                     </div>
                 </div>
-                <div className='club-profile-backdrop'>
-                    <div className='club-subheading'>Description</div>
-                    <div style={{ borderBottom: "1px solid black ", width: "130px"}}></div>
-                    <div className='club-description'>{club.description}</div>
-                    <div className='club-subheading'>Reviews</div>
-                    <div style={{ borderBottom: "1px solid black ", width: "90px"}}></div>
-                    <div className='review-display'>
-                        <div className='review-summary'>
-                            <div>Overall Rating</div>
-                            <AverageRating club={club}/>
-                            <AverageRatingStars club={club}/>
-                            <button className='club-profile-button'>Write a Review</button>
+                <div className='overall-club-profile'>
+                    <div className='club-profile-backdrop'>
+                        <div className='club-subheading'>Description</div>
+                        <div style={{ borderBottom: "1px solid black ", width: "130px"}}></div>
+                        <div className='club-description'>{club.description}</div>
+                        <div className='club-subheading'>Reviews</div>
+                        <div style={{ borderBottom: "1px solid black ", width: "90px"}}></div>
+                        <div className='review-display'>
+                            <div className='review-summary'>
+                                <div>Overall Rating</div>
+                                <AverageRating club={club}/>
+                                <AverageRatingStars club={club}/>
+                                <button className='club-profile-button'>Write a Review</button>
+                            </div>
+                            <div className='reviews'> 
+                                <ClubReviews club={club}/>
+                            </div>
                         </div>
-                        <div className='reviews'> 
-                            <ClubReviews club={club}/>
-                        </div>
+                    </div>
+                    <div className='club-updates'>
+                        <div className='clubs-text'>Recent Updates</div>
+                            <div className='update-backdrop'>
+                                <ClubUpdates club={club}/> 
+                            </div>
                     </div>
                 </div>
             </div>
