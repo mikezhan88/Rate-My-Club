@@ -328,7 +328,6 @@ a:-webkit-any-link {
 }
 
 .dropdown-item.selected {
-  /* background-color: #577B5F; */
   color: #577B5F;
 }
 
@@ -344,14 +343,9 @@ a:-webkit-any-link {
   gap: 5px;
 }
 
-/* 
-.dropdown-tags>* {
-  flex: 1 1 10px;
-} */
-
 .dropdown-tag-item {
-  background-color: #577B5F;
-  color: white;
+  background-color: #bebebe;
+  color: black;
   padding: 4px 7px;
   border-radius: 2px;
   display: flex;
@@ -805,9 +799,8 @@ a:-webkit-any-link {
   display: flex;
   flex-direction: column;
   justify-content: left;
-  margin-right: 10%;
+  margin-right: 3vw;
   margin-left: 3vw;
-  row-gap: 30px;
 }
 
 .club-profile-backdrop{
@@ -821,13 +814,19 @@ a:-webkit-any-link {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
-  row-gap: 50px;
+  row-gap: 10px;
   justify-content: top;
   align-content: center;
-  padding-left: 40px;
-  padding-right: 60px;
-  padding-bottom: 50px;
-  width: 700px;
+  padding-left: 35px;
+  padding-right: 40px;
+  padding-bottom: 20px;
+  margin-top: 70px;
+  width: 55%;
+}
+
+.club-name {
+  position: relative;
+  font-size: 2.2em;
 }
 
 .club-review {
@@ -857,59 +856,41 @@ a:-webkit-any-link {
   padding-right: 3px;
 }
 
-.total-review{
-  position: relative;
+.review-summary {
   display: flex;
   flex-direction: column;
-  row-gap: 0px;
-  justify-content: center;
-  width: 180px;
-  height: 220px;
-  padding: 10px;
-  text-align: center;
   align-items: center;
-  row-gap: 5px;
+  justify-content: center;
+  row-gap: 3px;
 }
 
 .review-display{
   position: relative;
   bottom: 40px;
-  height: auto;
   display: flex;
   flex-direction: row;
   column-gap: 35px;
-  justify-content: center;
-  align-content: center;
-  width: 700px;
+  padding-top: 50px;
 }
 
 .club-profile-button {
   background-color: #577B5F;
   border-radius: 8px;
   font-family: 'Open Sans';
-  font-size: 16px;
+  font-size: 14px;
   border: none;
   color: white;  
   height: 30px;
-  width: fit-content;
   padding-left: 10px;
   padding-right: 10px;
   transition-duration: 0.4s;
+  margin-top: 20px;
 }
 
 .club-profile-button:hover {
   background-color: white;
   color: black;
-  border: 2px solid #577B5F;
-}
-
-.club-smalltext {
-  position: relative;
-  font-size: 1.0em;
-  display:flex;
-  flex-direction: column;
-  row-gap: 2px;
-  margin-top: 15px;
+  border: 0.5px solid #577B5F;
 }
 
 .club-mediumtext {
@@ -923,7 +904,7 @@ a:-webkit-any-link {
 
 .bookmark{
   color: #577B5F;
-  size: 80;
+  padding-top: 10px;
 }
 
 .profile-tags {
@@ -933,6 +914,51 @@ a:-webkit-any-link {
   column-gap: 10px;
   justify-content: left;
   width: fit-content;
+}
+
+.club-heading {
+  display: flex;
+  flex-direction: row;
+  padding-top: 40px;
+  gap: 10px;
+}
+
+.club-tagline {
+  padding-top: 3px;
+  color: #777777;
+}
+
+.club-tags {
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+  padding-top: 45px;
+  padding-left: 20px;
+}
+
+.club-subheading {
+  padding-top: 30px;
+  font-size: 1.5em;
+}
+
+.club-description {
+  padding-top: 10px;
+  line-height: 25px;
+}
+
+.average-rating {
+  font-size: 3em;
+}
+
+.reviews {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  column-gap: 30px;
+  justify-content: left;
+  align-content: left;
+  padding-bottom: 40px;
+  overflow-x: scroll;
 }
 
 /* <------------------------------USER PROFILE PAGE STYLING--------------------------------------> */
@@ -1050,4 +1076,12 @@ a:-webkit-any-link {
   color: #577B5F;
 }
 
+.club-smalltext {
+  position: relative;
+  font-size: 1.0em;
+  display:flex;
+  flex-direction: column;
+  row-gap: 2px;
+  margin-top: 15px;
+}
 
