@@ -44,3 +44,12 @@ class Club(BaseModel):
     email: Optional[str] = Field(...)
     profile_picture: Optional[str] = None
 
+    class Config:
+            schema_extra = {
+                "example": {
+                    "_club_id": "066de609-b04a-4b30-b46c-32537c7f1f6e",
+                    "name": "Rocket Project",
+                    "email": "rocket@gmail.com"
+                }
+            }
+
