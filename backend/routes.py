@@ -65,7 +65,7 @@ def delete_review(id: str, request: Request, response: Response):
     raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Review with ID {id} not found")
 
 
-@router.post("/", response_description="Create new club", status_code=status.HTTP_201_CREATED, response_model=Club)
+@router.post("/{_club_id}/", response_description="Create new club", status_code=status.HTTP_201_CREATED, response_model=Club)
 def create_club(request: Request, club: Club = Body(...)):
     club = jsonable_encoder(club)
     new_club = request.app.database["clubs"].insert_one(club)

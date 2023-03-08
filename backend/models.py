@@ -40,7 +40,7 @@ class ReviewUpdate(BaseModel):
 class Club(BaseModel):
     club_id: str = Field(default_factory=uuid.uuid4, alias="_club_id")
     name: str = Field(...)
-    about: Optional[str] = Field(...)
+    about: Optional[str] = None
     email: Optional[str] = Field(...)
     profile_picture: Optional[str] = None
 
