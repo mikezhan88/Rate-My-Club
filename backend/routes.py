@@ -70,7 +70,7 @@ def create_club(request: Request, club: Club = Body(...)):
     club = jsonable_encoder(club)
     new_club = request.app.database["clubs"].insert_one(club)
     created_club = request.app.database["clubs"].find_one(
-        {"_club_id": new_club.inserted_id}
+        {"_id": new_club.inserted_id}
     )
 
     return created_club
