@@ -1,9 +1,10 @@
-from flask import Flask
+#from flask import Flask
 from fastapi import FastAPI
 import datetime
 from dotenv import dotenv_values
 from pymongo import MongoClient
-from routes import router as book_router
+from routes import reviews_router, clubs_router
+import certifi
 
 x = datetime.datetime.now()
 
@@ -17,7 +18,7 @@ app = FastAPI()
 
 @app.on_event("startup")
 def startup_db_client():
-    app.mongodb_client = MongoClient(config["ATLAS_URL"])
+    app.mongodb_client = MongoClient(config["ATLAS_URL"], tlsCAFile=certifi.where())
     app.database = app.mongodb_client[config["DB"]]
     print("Connected to the MongoDB database!")
 
@@ -29,8 +30,9 @@ def shutdown_db_client():
 async def root():
     return {"message": "Welcome to the PyMongo tutorial!"}
 
-#include routes for /book
-app.include_router(book_router, tags=["books"], prefix="/book")
+#include routes for /review
+app.include_router(reviews_router, tags=["reviews"], prefix="/review")
+app.include_router(clubs_router, tags=["clubs"], prefix="/clubs")
 
 '''
 # Route for seeing a data

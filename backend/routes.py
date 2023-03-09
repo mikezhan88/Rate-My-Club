@@ -1,65 +1,117 @@
-from fastapi import APIRouter, Body, Request, Response, HTTPException, status
+from fastapi import APIRouter, Body, Request, Response, HTTPException, status, File, UploadFile
 from fastapi.encoders import jsonable_encoder
 from typing import List
 
-from models import Book, BookUpdate
+from models import *
 
-router = APIRouter()
+reviews_router = APIRouter()
+clubs_router = APIRouter()
 
-#POST /book example
-@router.post("/", response_description="Create a new book", status_code=status.HTTP_201_CREATED, response_model=Book)
-def create_book(request: Request, book: Book = Body(...)):
-    book = jsonable_encoder(book)
-    new_book = request.app.database["books"].insert_one(book)
-    created_book = request.app.database["books"].find_one(
-        {"_id": new_book.inserted_id}
+#POST /review
+@reviews_router.post("/", response_description="Create a new review", status_code=status.HTTP_201_CREATED, response_model=Review)
+def create_review(request: Request, review: Review = Body(...)):
+    review = jsonable_encoder(review)
+    new_review = request.app.database["reviews"].insert_one(review)
+    created_review = request.app.database["reviews"].find_one(
+        {"_id": new_review.inserted_id}
     )
 
-    return created_book
+    return created_review
 
 
-#GET /book example
-@router.get("/", response_description="List all books", response_model=List[Book])
-def list_books(request: Request):
-    books = list(request.app.database["books"].find(limit=100))
-    return books
+#GET /reviews
+@reviews_router.get("/", response_description="List all reviews", response_model=List[Review])
+def list_reviews(request: Request):
+    reviews = list(request.app.database["reviews"].find(limit=100))
+    return reviews
 
 
-#Get /book{id} example
-@router.get("/{id}", response_description="Get a single book by id", response_model=Book)
-def find_book(id: str, request: Request):
-    if (book := request.app.database["books"].find_one({"_id": id})) is not None:
-        return book
-    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Book with ID {id} not found")
+#Get /review{id}
+@reviews_router.get("/{id}", response_description="Get a single review by id", response_model=Review)
+def find_review(id: str, request: Request):
+    if (review := request.app.database["reviews"].find_one({"_id": id})) is not None:
+        return review
+    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Review with ID {id} not found")
 
 
-#PUT /book{id} example
-@router.put("/{id}", response_description="Update a book", response_model=Book)
-def update_book(id: str, request: Request, book: BookUpdate = Body(...)):
-    book = {k: v for k, v in book.dict().items() if v is not None}
-    if len(book) >= 1:
-        update_result = request.app.database["books"].update_one(
-            {"_id": id}, {"$set": book}
+#PUT /review{id}
+@reviews_router.put("/{id}", response_description="Update a review", response_model=Review)
+def update_review(id: str, request: Request, review: ReviewUpdate = Body(...)):
+    review = {k: v for k, v in review.dict().items() if v is not None}
+    if len(review) >= 1:
+        update_result = request.app.database["reviews"].update_one(
+            {"_id": id}, {"$set": review}
         )
 
         if update_result.modified_count == 0:
-            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Book with ID {id} not found")
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Review with ID {id} not found")
 
     if (
-        existing_book := request.app.database["books"].find_one({"_id": id})
+        existing_review := request.app.database["reviews"].find_one({"_id": id})
     ) is not None:
-        return existing_book
+        return existing_review
 
-    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Book with ID {id} not found")
+    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Review with ID {id} not found")
 
 
-#DELETE /book{id} example
-@router.delete("/{id}", response_description="Delete a book")
-def delete_book(id: str, request: Request, response: Response):
-    delete_result = request.app.database["books"].delete_one({"_id": id})
+#DELETE /review{id}
+@reviews_router.delete("/{id}", response_description="Delete a review")
+def delete_review(id: str, request: Request, response: Response):
+    delete_result = request.app.database["reviews"].delete_one({"_id": id})
 
     if delete_result.deleted_count == 1:
-        response.status_code = status.HTTP_204_NO_CONTENT
+        response.status_code = status.HTTP_202_ACCEPTED
         return response
 
-    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Book with ID {id} not found")
+    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Review with ID {id} not found")
+
+#POST /club
+@clubs_router.post("/", response_description="Create new club", status_code=status.HTTP_201_CREATED, response_model=Club)
+def create_club(request: Request, club: Club = Body(...)):
+    club = jsonable_encoder(club)
+    new_club = request.app.database["clubs"].insert_one(club)
+    created_club = request.app.database["clubs"].find_one(
+        {"_id": new_club.inserted_id}
+    )
+
+    return created_club
+
+#PUT /club
+@clubs_router.put("/{id}", response_description="Edit club page", response_model=Club)
+def edit_club(id: str, request: Request, club: ClubUpdate = Body(...)):
+    club = {k: v for k, v in club.dict().items() if v is not None}
+    if len(club) >= 1:
+        update_result = request.app.database["clubs"].update_one(
+            {"_id": id}, {"$set": club}
+        )
+
+        if update_result.modified_count == 0:
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Club with ID {id} not found")
+
+    if (
+        existing_club := request.app.database["clubs"].find_one({"_id": id})
+    ) is not None:
+        return existing_club
+
+    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Club with ID {id} not found")
+
+
+@clubs_router.delete("/{id}", response_description="Delete Club")
+def delete_club(id: str, request: Request, response: Response):
+    delete_result = request.app.database["clubs"].delete_one({"_id": id})
+
+    if delete_result.deleted_count == 1:
+        response.status_code = status.HTTP_202_ACCEPTED
+        return response
+
+    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Club with ID {id} not found")
+
+
+@clubs_router.get("/", response_description="Find club through ID", response_model=Club)
+def find_club(id: str, request: Request):
+    club = request.app.database["clubs"].find_one({"_id": id})
+    if club is not None:
+        return club
+    
+    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Club with ID {id} not found")
+
