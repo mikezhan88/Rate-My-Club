@@ -1,5 +1,6 @@
 import React from 'react'
 import { BsStarFill, BsStar } from "react-icons/bs";
+import {Link} from 'react-router-dom'
 
 export default function ClubReview(props) {
   return (
@@ -20,7 +21,9 @@ export default function ClubReview(props) {
             </div>
             <p className='review-content'>{props.content}</p>
             <div className='edit-buttons'>
-                <button className='edit-review-button'>Edit Review</button>
+                <Link to='/editreview'>
+                    <button className='edit-review-button'>Edit Review</button>
+                </Link>
                 <button className='delete-review-button'>Delete Review</button>
             </div>
         </div>
