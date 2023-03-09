@@ -5,6 +5,7 @@ import { club } from './ClubInfoArray'
 import { AverageRating, AverageRatingStars } from './ClubRating';
 import ClubReviews from './ClubReviews';
 import ClubUpdates from './ClubUpdates';
+import {Link} from 'react-router-dom'
 
 export default function ClubPage() {
     return ( 
@@ -18,6 +19,7 @@ export default function ClubPage() {
                     <div>
                         <div className='club-name'>{club.clubName}</div>
                         <div className='club-tagline'>{club.tagLine}</div>
+                        <a href={"http://" +club.clubWebsite} ><div className='club-website'>{club.clubWebsite}</div></a>
                     </div>
                     <div className='club-tags'>
                         {
@@ -41,7 +43,9 @@ export default function ClubPage() {
                                 <div>Overall Rating</div>
                                 <AverageRating club={club}/>
                                 <AverageRatingStars club={club}/>
-                                <button className='club-profile-button'>Write a Review</button>
+                                <Link to='/newreview'>
+                                    <button className='club-profile-button'>Write a Review</button>
+                                </Link>
                             </div>
                             <div className='reviews'> 
                                 <ClubReviews club={club}/>
@@ -70,6 +74,8 @@ function HeaderIcon({ inactiveIcon, activeIcon }) {
         </div>
     );
 }
+
+
 
            
       

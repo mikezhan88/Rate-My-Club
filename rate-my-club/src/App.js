@@ -7,6 +7,8 @@ import RegisterUserPage from './components/RegisterUserPage/RegisterUserPage';
 import AllClubsPage from './components/AllClubsPage/AllClubsPage';
 import ClubPage from './components/ClubPage/ClubPage';
 import UserPage from './components/UserProfilePage/UserProfilePage';
+import WriteReviewPage from './components/ReviewPage/WriteReview';
+import EditReviewPage from './components/ReviewPage/EditReview';
 import NavBar from './components/NavBar/NavBar';
 
 
@@ -21,6 +23,9 @@ function App() {
         <Route exact path="/allclubs" element= {<AllClubsPage/>} />
         <Route exact path="/clubpage" element= {<ClubPage/>} />
         <Route exact path="/userpage" element= {<UserPage/>} />
+        <Route exact path="/newreview" element= {<WriteReviewPage/>} />
+        <Route exact path="/editreview" element= {<EditReviewPage/>} />
+        
       </Routes>
     </React.Fragment>
   );
