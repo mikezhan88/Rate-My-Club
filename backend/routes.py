@@ -77,7 +77,7 @@ def create_club(request: Request, club: Club = Body(...)):
     return created_club
 
 #PUT /club
-@clubs_router.put("/{id}", response_description="Edit club page", response_model=Club, tags=["clubs"])
+@clubs_router.put("/{id}", response_description="Edit club page", response_model=Club)
 def edit_club(id: str, request: Request, club: ClubUpdate = Body(...)):
     club = {k: v for k, v in club.dict().items() if v is not None}
     if len(club) >= 1:
@@ -105,3 +105,13 @@ def delete_club(id: str, request: Request, response: Response):
         return response
 
     raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Club with ID {id} not found")
+
+
+@clubs_router.get("/", response_description="Find club through ID", response_model=Club)
+def find_club(id: str, request: Request):
+    club = request.app.database["clubs"].find_one({"_id": id})
+    if club is not None:
+        return club
+    
+    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Club with ID {id} not found")
+
