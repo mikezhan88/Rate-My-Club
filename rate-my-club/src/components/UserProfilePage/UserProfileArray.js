@@ -12,13 +12,13 @@ export const user = {
         },
         {
             img: img2,
-            clubName: 'DevX',
+            clubName: 'AIChE',
             tags: ['Engineering']
         },
         {
             img: img3,
-            clubName: 'ACA',
-            tags: ['Cultural', 'Dance']
+            clubName: 'Perspectives Project',
+            tags: ['Cultural', 'Service']
         }
     ],
     reviews: [

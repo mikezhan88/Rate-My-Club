@@ -11,13 +11,13 @@ export const AllClubsArray = [
     },
     {
         img: img2,
-        clubName: 'Devx',
+        clubName: 'AIChE',
         tags: ['Engineering']
     },
     {
         img: img3,
-        clubName: 'ACA',
-        tags: ['Cultural', 'Dance']
+        clubName: 'Perspectives Project',
+        tags: ['Cultural', 'Service']
     },
     {
         img: img2,
