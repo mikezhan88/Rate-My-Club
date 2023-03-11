@@ -1,4 +1,4 @@
-import { AllClubsArray, oldArray } from "./AllClubsArray";
+import { AllClubsArray, oldArray, listClubs } from "./AllClubsArray";
 //import React, { useEffect, useState } from "react";
 import ClubCard from "./ClubCard";
 
@@ -57,6 +57,8 @@ import ClubCard from "./ClubCard";
 
 
 export default function ClubList() {
+    
+    console.log(AllClubsArray)
     return (
         <div className='allclubs-page-backdrop'>
             { allClubComponents }

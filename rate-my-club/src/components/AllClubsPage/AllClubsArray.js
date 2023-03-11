@@ -2,6 +2,8 @@ import img1 from "../images/dsp.jpg"
 import img2 from "../images/aiche.png"
 import img3 from "../images/pp.png"
 
+//export var AllClubsArray = new Array()
+
 // export const oldArray = [
 //     {
 //         img: img1,
@@ -65,7 +67,7 @@ export const oldArray =[
   ]
 
 
-const listClubs = async () => {
+export const listClubs = async () => {
     const response = await fetch('http://localhost:8000/clubs/', {    
         method: 'GET',           
       });
@@ -79,7 +81,8 @@ const listClubs = async () => {
     console.log(Object.values(clubs))
     
     return Object.values(clubs);
-  }
+}
 
-
-export const AllClubsArray = listClubs();
+//Top Level Await
+export const AllClubsArray = await listClubs();
+console.log(AllClubsArray)
