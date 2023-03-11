@@ -1,6 +1,9 @@
+import {id} from '../AllClubsPage/ClubCard';
+
+/*
 export const club = {
-    clubName: 'Delta Sigma Pi',
-    tagLine: 'Premier Co-ed Professional Business Fraternity',
+    name: 'Delta Sigma Pi',
+    email: 'Premier Co-ed Professional Business Fraternity',
     clubWebsite: 'www.ucladsp.com',
     tags: ['Greek Life', 'Business'],
     clubSize: '50-100 people',
@@ -31,3 +34,33 @@ export const club = {
         },
     ]
 }
+*/
+
+await id
+
+export const getClub = async() => {
+    const response = await fetch("http://localhost:8000/clubs/"+id, {
+        method: 'GET',
+    });
+    const myJson = await response.json();
+
+    return JSON.parse(myJson);
+}
+
+export const getReviews = async() => {
+    const response = await fetch("http://localhost:8000/clubs/"+id+"/reviews", {
+        method: 'GET',
+    });
+
+    const myJson = await response.json(); //extract JSON from the http response
+
+    var reviews = JSON.parse(myJson);
+    for(var i in reviews) {
+        i = JSON.parse(i);
+    }
+    
+    return Object.values(reviews);
+}
+
+export const club = await getClub();
+export const reviews = await getReviews();

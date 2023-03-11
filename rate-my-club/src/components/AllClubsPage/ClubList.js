@@ -71,8 +71,9 @@ export default function ClubList() {
 const allClubComponents = AllClubsArray.map((club) => { 
     return (
         <ClubCard 
-            img={club["profile_picture"]}
-            clubName={club["name"]}
+            id={club["_id"]}
+            profile_picture={club["profile_picture"]}
+            name={club["name"]}
             tags={club["tags"]}
         />
     );

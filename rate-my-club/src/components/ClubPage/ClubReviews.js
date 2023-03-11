@@ -18,7 +18,6 @@ export default function ClubReviews(props) {
                     </div>
                     <div className='club-smalltext'>
                         <a style={{fontWeight: 'bold'}}>Anonymous User</a>
-                        <a style={{fontStyle: 'italic'}}>{review.date}</a>
                     </div>
                     <p className='review-content'>{review.content}</p>
                 </div>

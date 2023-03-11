@@ -96,7 +96,7 @@ def edit_club(id: str, request: Request, club: ClubUpdate = Body(...)):
 
     raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Club with ID {id} not found")
 
-#DELTE /club{id}
+#DELTE /clubs/{id}
 @clubs_router.delete("/{id}", response_description="Delete Club")
 def delete_club(id: str, request: Request, response: Response):
     delete_result = request.app.database["clubs"].delete_one({"_id": id})
@@ -107,8 +107,8 @@ def delete_club(id: str, request: Request, response: Response):
 
     raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Club with ID {id} not found")
 
-#GET /club{id}
-@clubs_router.get("/{id}", response_description="Find club through ID", response_model=Club)
+#GET /clubs/{id}
+@clubs_router.get("/{id}", response_description="Find club through ID")
 def find_club(id: str, request: Request):
     club = request.app.database["clubs"].find_one({"_id": id})
     if club is not None:
@@ -125,5 +125,12 @@ async def list_clubs(request: Request, response: Response, name=None):
     out = json.dumps(clubs, indent=2)
     print(out)
     return out
-    
 
+#Get /clubs/{club_id}/reviews
+@clubs_router.get("/{id}/reviews", response_description="Get a list of reviews associated with a club")
+def find_reviews_by_club(id: str, request: Request, response: Response):
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    response.headers["Access-Control-Allow-Credentials"] = "true"
+    if (reviews := list(request.app.database["reviews"].find({ "club_id" : id }))) is not None:
+        return reviews
+    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Review with club_id {id} not found")

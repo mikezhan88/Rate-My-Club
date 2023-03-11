@@ -6,7 +6,7 @@ class Review(BaseModel):
     id: str = Field(default_factory=uuid.uuid4, alias="_id")
     title: str = Field(...)
     author: str = Field(...)
-    club: str = Field(...)
+    club_id: str = Field(default_factory=uuid.uuid4)
     text: str = Field(...)
     rating: float = Field(...)
 
@@ -14,10 +14,10 @@ class Review(BaseModel):
         allow_population_by_field_name = True
         schema_extra = {
             "example": {
-                "_id": "066de609-b04a-4b30-b46c-32537c7f1f6e",
+                "_id": "066de609-b04a-4b30-b46c-32537c7f1f6f",
                 "title": "Good Club!",
                 "author": "Drew Letvin",
-                "club": "Rocket Project",
+                "club_id": "066de609-b04a-4b30-b46c-32537c7f1f6e",
                 "text": "...",
                 "rating": 4.5
             }
@@ -40,10 +40,14 @@ class ReviewUpdate(BaseModel):
 class Club(BaseModel):
     club_id: str = Field(default_factory=uuid.uuid4, alias="_id")
     name: str = Field(...)
-    about: str = Field(...)
+    description: str = Field(...)
     email: str = Field(...)
     profile_picture: str = Field(...)
     tags: List[str] = Field(...)
+    clubWebsite: str = Field(...)
+    clubSize: str = Field(...)
+    commitmentLevel: str = Field(...)
+    updates: List[object] = Field(...)
 
     class Config:
         allow_population_by_field_name = True
@@ -51,13 +55,17 @@ class Club(BaseModel):
             "example": {
                 "_id": "066de609-b04a-4b30-b46c-32537c7f1f6e",
                 "name": "Rocket Project",
-                "about": "Cool Space Club",
+                "description": "Cool Space Club",
                 "email": "rocket@gmail.com",
                 "profile_picture": "boop",
-                "tags": ["aerospace", "engineering"]
+                "tags": ["aerospace", "engineering"],
+                "clubWebsite": 'www.ucladsp.com',
+                "clubSize": '50-100 ppl',
+                "commitmentLevel": '3-5 hours',
+                "updates": [{'content': "Spring Rush begins April 2nd!"}, {'content': "Info session at 7:30 tonight"}]
+
             }
         }
-
 
 class ClubUpdate(BaseModel):
     name: Optional[str]

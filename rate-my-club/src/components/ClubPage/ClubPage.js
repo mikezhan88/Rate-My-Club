@@ -1,13 +1,15 @@
 import NavBar from '../NavBar/NavBar'
 import React, {useState} from 'react';
 import { BsBookmarkStar, BsFillBookmarkStarFill} from "react-icons/bs";
-import { club } from './ClubInfoArray'
+import { club, reviews } from './ClubInfoArray'
 import { AverageRating, AverageRatingStars } from './ClubRating';
 import ClubReviews from './ClubReviews';
 import ClubUpdates from './ClubUpdates';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import {id} from '../AllClubsPage/ClubCard';
 
 export default function ClubPage() {
+    console.log(id);
     return ( 
         <React.Fragment>
             <NavBar/>
@@ -17,8 +19,8 @@ export default function ClubPage() {
                         <HeaderIcon inactiveIcon={< BsBookmarkStar size={50}/>} activeIcon={<BsFillBookmarkStarFill size={50}/>}></HeaderIcon>
                     </div>
                     <div>
-                        <div className='club-name'>{club.clubName}</div>
-                        <div className='club-tagline'>{club.tagLine}</div>
+                        <div className='club-name'>{club.name}</div>
+                        <div className='club-tagline'>{club.email}</div>
                         <a href={"http://" +club.clubWebsite} ><div className='club-website'>{club.clubWebsite}</div></a>
                     </div>
                     <div className='club-tags'>

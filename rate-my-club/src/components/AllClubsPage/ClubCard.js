@@ -1,15 +1,18 @@
-export default function ClubCard(props) { 
-    console.log("beginnging of club card checkpoint")
-    console.log(props)
+import {Link} from 'react-router-dom'
+
+export var id;
+
+export default function ClubCard(props) {
+    id = props.id;
     return (
-      <a href = "/clubpage">
+      <a href={'/allclubs/' + props.name}>
+        <Link to='/ClubPage'>
         <div className='clubs-display'>
-            <img src={props.img} className='clubs-img' />
-            <div className='club-name-tag'>{props.clubName}</div>
+            <img src={props.profile_picture} className='clubs-img' />
+            <div className='club-name-tag'>{props.name}</div>
             <div className='clubs-card-tags'>
                 {
                     props.tags.map((tag) => {
-                        console.log("club card checkpoint")
                         return (
                             <div className='clubs-tag-item'>{tag}</div>
                         )
@@ -17,6 +20,7 @@ export default function ClubCard(props) {
                 }
             </div>
         </div>
+        </Link>
       </a>
     );
   }
