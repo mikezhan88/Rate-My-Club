@@ -13,7 +13,7 @@ export default function ClubPage() {
     var currpath = window.location.pathname
     clubID = currpath.slice(10)
     console.log(clubID)
-    
+
     return ( 
         <React.Fragment>
             <NavBar/>
