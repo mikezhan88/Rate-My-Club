@@ -1,4 +1,6 @@
 export default function ClubCard(props) { 
+    console.log("beginnging of club card checkpoint")
+    console.log(props)
     return (
       <a href = "/clubpage">
         <div className='clubs-display'>
@@ -7,6 +9,7 @@ export default function ClubCard(props) {
             <div className='clubs-card-tags'>
                 {
                     props.tags.map((tag) => {
+                        console.log("club card checkpoint")
                         return (
                             <div className='clubs-tag-item'>{tag}</div>
                         )

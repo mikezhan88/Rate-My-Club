@@ -1,5 +1,5 @@
 import uuid
-from typing import Optional
+from typing import Optional, List
 from pydantic import BaseModel, Field
 
 class Review(BaseModel):
@@ -43,6 +43,7 @@ class Club(BaseModel):
     about: str = Field(...)
     email: str = Field(...)
     profile_picture: str = Field(...)
+    tags: List[str] = Field(...)
 
     class Config:
         allow_population_by_field_name = True
@@ -52,7 +53,8 @@ class Club(BaseModel):
                 "name": "Rocket Project",
                 "about": "Cool Space Club",
                 "email": "rocket@gmail.com",
-                "profile_picture": "boop"
+                "profile_picture": "boop",
+                "tags": ["aerospace", "engineering"]
             }
         }
 
@@ -62,6 +64,7 @@ class ClubUpdate(BaseModel):
     about: Optional[str]
     email: Optional[str]
     profile_picture: Optional[str]
+    tags: Optional[List[str]]
 
     class Config:
         allow_population_by_field_name = True

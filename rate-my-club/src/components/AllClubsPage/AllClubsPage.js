@@ -29,7 +29,7 @@ export default function AllClubsPage() {
                 <div className='clubs-search-div'>
                   <input type='text' className='clubs-search-bar'placeholder='Search Club Name...' ></input>
                   <img src={require("../images/search-icon.png")} className='clubs-search-icon' alt="search"/>
-                  <ClubList/>
+                  <ClubList />
                 </div>
               </div>   
          </React.Fragment>
