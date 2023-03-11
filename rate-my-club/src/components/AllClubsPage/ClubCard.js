@@ -3,10 +3,9 @@ import {Link} from 'react-router-dom'
 export var id;
 
 export default function ClubCard(props) {
-    id = props.id;
+
     return (
-      <a href={'/allclubs/' + props.name}>
-        <Link to='/ClubPage'>
+      <Link to={'/clubpage/'+props.id}>
         <div className='clubs-display'>
             <img src={props.profile_picture} className='clubs-img' />
             <div className='club-name-tag'>{props.name}</div>
@@ -21,6 +20,5 @@ export default function ClubCard(props) {
             </div>
         </div>
         </Link>
-      </a>
     );
   }

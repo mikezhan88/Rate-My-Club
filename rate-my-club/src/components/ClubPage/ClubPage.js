@@ -6,10 +6,14 @@ import { AverageRating, AverageRatingStars } from './ClubRating';
 import ClubReviews from './ClubReviews';
 import ClubUpdates from './ClubUpdates';
 import {Link} from 'react-router-dom';
-import {id} from '../AllClubsPage/ClubCard';
+
+export var clubID
 
 export default function ClubPage() {
-    console.log(id);
+    var currpath = window.location.pathname
+    clubID = currpath.slice(10)
+    console.log(clubID)
+    
     return ( 
         <React.Fragment>
             <NavBar/>
