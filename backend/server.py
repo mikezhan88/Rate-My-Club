@@ -5,6 +5,7 @@ from dotenv import dotenv_values
 from pymongo import MongoClient
 from routes import reviews_router, clubs_router
 import certifi
+from fastapi.middleware.cors import CORSMiddleware
 
 x = datetime.datetime.now()
 
@@ -15,6 +16,20 @@ config = dotenv_values(".env")
 
 # Initializing fastapi app
 app = FastAPI()
+
+origins = [
+    "http://localhost",
+    "http://localhost:8000",
+    "http://localhost:3000",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.on_event("startup")
 def startup_db_client():

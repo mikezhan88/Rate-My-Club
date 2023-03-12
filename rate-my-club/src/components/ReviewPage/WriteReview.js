@@ -14,8 +14,7 @@ export default function WriteReviewPage(props) {
            <div className='review-page'>
                 <div className='review-page-backdrop'>
                 <div>
-                        <div className='club-name'>{club.clubName}</div>
-                        <div className='club-tagline'>{club.tagLine}</div>
+                        <div className='club-name'>{club.name}</div>
                         
                     </div>
                     <div style={{ borderBottom: "1px solid black ", width: "90%"}}></div>

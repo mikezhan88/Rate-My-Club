@@ -1,9 +1,14 @@
-export default function ClubCard(props) { 
+import {Link} from 'react-router-dom'
+
+export var id;
+
+export default function ClubCard(props) {
+
     return (
-      <a href = "/clubpage">
+      <Link to={'/clubpage/'+props.id}>
         <div className='clubs-display'>
-            <img src={props.img} className='clubs-img' />
-            <div className='club-name-tag'>{props.clubName}</div>
+            <img src={props.profile_picture} className='clubs-img' />
+            <div className='club-name-tag'>{props.name}</div>
             <div className='clubs-card-tags'>
                 {
                     props.tags.map((tag) => {
@@ -14,6 +19,6 @@ export default function ClubCard(props) {
                 }
             </div>
         </div>
-      </a>
+        </Link>
     );
   }
