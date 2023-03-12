@@ -1,8 +1,50 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import NavBar from '../NavBar/NavBar'
 import {Link} from 'react-router-dom'
+import { GoogleLogin, GoogleOAuthProvider  } from '@react-oauth/google';
+//import axios from 'axios';
 
 export default function LoginPage() {
+    const [ user, setUser ] = useState([]);
+    const [ profile, setProfile ] = useState([]);
+    
+    // const login = useGoogleLogin({
+    //     onSuccess: (codeResponse) => setUser(codeResponse),
+    //     onError: (error) => console.log('Login Failed:', error)
+    // });
+
+    // useEffect(
+    //     () => {
+    //         if (user) {
+    //             axios
+    //                 .get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`, {
+    //                     headers: {
+    //                         Authorization: `Bearer ${user.access_token}`,
+    //                         Accept: 'application/json'
+    //                     }
+    //                 })
+    //                 .then((res) => {
+    //                     setProfile(res.data);
+    //                 })
+    //                 .catch((err) => console.log(err));
+    //         }
+    //     },
+    //     [ user ]
+    // );
+
+    const google = () => {
+
+        return (
+            <GoogleLogin
+                onSuccess={credentialResponse => {
+                  console.log(credentialResponse);
+                }}
+                onError={() => {
+                  console.log('Login Failed');
+                }}
+              />
+        )
+    }
     
   return (
     <React.Fragment>
@@ -19,10 +61,22 @@ export default function LoginPage() {
                     <div className='or-text'>OR</div>
                     <hr className='line'></hr>
                 </div>
-                <button className='google-signin' type='button'>
-                    <img src={require("../images/google-logo.png")} className='google-logo' alt="search"/>
-                    Continue with Google
-                </button>
+                <GoogleOAuthProvider clientId="909575788490-asthnc991693hpv8uud4vjmt2u7uaud0.apps.googleusercontent.com">
+                {/* <button className='google-signin' type='button'> */}
+                    {/* <img src={require("../images/google-logo.png")} className='google-logo' alt="search"/> */}
+                   
+                    <GoogleLogin
+                onSuccess={credentialResponse => {
+                  console.log(credentialResponse);
+                }}
+                onError={() => {
+                  console.log('Login Failed');
+                }}
+              />
+                    
+                    {/* Continue with Google */}
+                {/* </button> */}
+                </GoogleOAuthProvider>
                 <span className='register-redirect'>Are you a new club? <span/>
                     <Link to='/register' style={{ textDecoration: 'none' }}>
                         <span className='register-here'>Register here</span>

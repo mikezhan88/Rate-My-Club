@@ -44,9 +44,38 @@ export default function ClubList() {
         );
     });
     
+    // return (
+    //     <div className='allclubs-page-backdrop'>
+    //         { allClubComponents }
+    //     </div>
+    // );
+    // return (
+    //     <div className="club-cards">
+    //         {allClubComponents.length > 0 ? <div className="clubs-smalltext">There are {allClubComponents.length} Results.   
+    //         <div className='allclubs-page-backdrop'>
+    //             {allClubComponents} 
+    //         </div>
+    //         </div> :
+    //          <div className="clubs-smalltext">There are no clubs with your search. Please try again!</div>}
+    //     </div>
+    // );
     return (
-        <div className='allclubs-page-backdrop'>
-            { allClubComponents }
+        <div className="club-cards">
+               { allClubComponents.length === 0
+                    ? <div className="clubs-smalltext">There are no clubs with your search. Please try again!</div>
+                    : (  allClubComponents.length === 1
+                        ? <div className="clubs-smalltext">There is {allClubComponents.length} Result.   
+                        <div className='allclubs-page-backdrop'>
+                            {allClubComponents} 
+                        </div>
+                        </div>
+                        : <div className="clubs-smalltext">There are {allClubComponents.length} Results.   
+                        <div className='allclubs-page-backdrop'>
+                            {allClubComponents} 
+                        </div>
+                        </div>
+                        )
+                }
         </div>
     );
 }
