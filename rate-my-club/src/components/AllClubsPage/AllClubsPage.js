@@ -35,6 +35,11 @@ export default function AllClubsPage() {
     commitment === '{"commitmentLevel" : "5+ hours"}' ? setfivehrsplus(true) : setfivehrsplus(false);
   }, [commitment]);
 
+
+  const[search, setSearch] = useState("");
+  
+  useEffect(() => {}, [search]);
+
   const handleOnChangeSize = (e) => {
     setSize(e.target.value);
     sizeOpt = e.target.value;
@@ -46,8 +51,10 @@ export default function AllClubsPage() {
     commitOpt = e.target.value;
   };
 
-  const handleOnChangeSearch = () => {
-    searchOpt = '{ "name" : { $regex : ".*(' + document.getElementById("searchbar").value + ').*", $options : "i" } }';
+  const handleOnChangeSearch = (e) => {
+    setSearch(e.target.value)
+    searchOpt = '{ "name" : { "$regex" : ".*(' + e.target.value + ').*", "$options" : "i" } }';
+    console.log("SearchOpt: " + searchOpt)
   }
   
 
@@ -80,7 +87,7 @@ export default function AllClubsPage() {
                   </div>
               </div>
                 <div className='clubs-search-div'>
-                  <input id="searchbar" type='text' className='clubs-search-bar'placeholder='Search Club Name...' onChange={handleOnChangeSearch}></input>
+                  <input id="searchbar" type='text' className='clubs-search-bar' placeholder='Search Club Name...' onChange={handleOnChangeSearch}></input>
                   <img src={require("../images/search-icon.png")} className='clubs-search-icon' alt="search"/>
                   <ClubList/>
                 </div>

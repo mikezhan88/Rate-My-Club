@@ -10,6 +10,8 @@ export default function ClubList() {
 
     useEffect(() => {
         const filterClubs = async () => {
+            console.log("SearchOpt: " + searchOpt)
+            console.log("body: " + JSON.stringify(Object.assign({}, JSON.parse(sizeOpt), JSON.parse(commitOpt), JSON.parse(searchOpt))))
             const response = await fetch('http://localhost:8000/clubs/filter', {    
                 method: 'POST',
                 body: JSON.stringify(Object.assign({}, JSON.parse(sizeOpt), JSON.parse(commitOpt), JSON.parse(searchOpt))),
