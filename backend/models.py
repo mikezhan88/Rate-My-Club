@@ -17,7 +17,7 @@ class Review(BaseModel):
                 "author": "Drew Letvin",
                 "club_id": "066de609-b04a-4b30-b46c-32537c7f1f6e",
                 "text": "...",
-                "rating": 4.5
+                "rating": 4
             }
         }
 
