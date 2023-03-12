@@ -5,13 +5,15 @@ import { BsStarFill, BsStar} from "react-icons/bs";
 import React, {useState} from 'react';
 import { genUUID } from '../../App';
 
+var activeStars = 0;
+
 
 export default function WriteReviewPage(props) {
     
     function postReview() {
         var text = document.getElementById('userreview').value
-        var rating = 3;
-        console.log(text)
+        var rating = activeStars;
+        console.log(activeStars)
     
         fetch('http://localhost:8000/review/', {
             method: 'POST',
@@ -66,7 +68,14 @@ function HeaderIcon({ inactiveIcon, activeIcon }) {
     const [isActive, setIsActive] = useState(false);
 
     return (
-        <div onClick={() => setIsActive(!isActive)}>
+        <div onClick={() => {
+            setIsActive(!isActive);
+            if (isActive) {
+                activeStars--;
+            } else {
+                activeStars++;
+            }
+        }}>
         {isActive ? activeIcon : inactiveIcon}
         </div>
     );
