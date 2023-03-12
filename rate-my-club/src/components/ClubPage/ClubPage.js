@@ -49,7 +49,7 @@ export default function ClubPage() {
                                 <div>Overall Rating</div>
                                 <AverageRating reviews={reviews}/>
                                 <AverageRatingStars reviews={reviews}/>
-                                <Link to='/newreview'>
+                                <Link to={'/newreview/'+clubID}>
                                     <button className='club-profile-button'>Write a Review</button>
                                 </Link>
                             </div>

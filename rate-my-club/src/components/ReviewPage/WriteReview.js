@@ -3,11 +3,35 @@ import { club } from '../ClubPage/ClubInfoArray'
 import { AverageRating, AverageRatingStars } from '../ClubPage/ClubRating';
 import { BsStarFill, BsStar} from "react-icons/bs";
 import React, {useState} from 'react';
+import { genUUID } from '../../App';
+import { clubID } from '../ClubPage/ClubPage';
 
-
+var activeStars = 0;
 
 
 export default function WriteReviewPage(props) {
+    
+    function postReview() {
+        var text = document.getElementById('userreview').value
+        var rating = activeStars;
+        console.log(activeStars)
+        
+        var currpath = window.location.pathname
+        var cid = currpath.slice(11)
+        console.log(cid)
+
+        fetch('http://localhost:8000/review/', {
+            method: 'POST',
+            headers: {"Content-type" : "application/json"},
+            body: JSON.stringify({
+                "_id": genUUID(),
+                "author": "Anonymous",
+                "club_id" : cid, //"066de609-b04a-4b30-b46c-32537c7f1ie9",
+                "text": text,
+                "rating": rating
+            })
+        })
+    } 
     return (
           <React.Fragment>
            <NavBar/>
@@ -28,9 +52,13 @@ export default function WriteReviewPage(props) {
                     </div>
 
                     <p>Review</p>
-                    <textarea className='register-description-box'></textarea>
+                    <textarea id="userreview" className='register-description-box'></textarea>
                     <div className='stars'>
-                        <button type='button' className='register-button'>Submit</button>
+                        <div onClick={ postReview }>
+                    
+                            <button className='submit-button'>Submit</button>
+                        
+                        </div>
                     </div>
                 </div>
            </div>      
@@ -39,11 +67,20 @@ export default function WriteReviewPage(props) {
 }
 
 
+
+
 function HeaderIcon({ inactiveIcon, activeIcon }) {
     const [isActive, setIsActive] = useState(false);
 
     return (
-        <div onClick={() => setIsActive(!isActive)}>
+        <div onClick={() => {
+            setIsActive(!isActive);
+            if (isActive) {
+                activeStars--;
+            } else {
+                activeStars++;
+            }
+        }}>
         {isActive ? activeIcon : inactiveIcon}
         </div>
     );

@@ -288,6 +288,26 @@ a:-webkit-any-link {
   border: 0.5px solid #577B5F;
 }
 
+.submit-button {
+  background-color: #577B5F;
+  border-radius: 8px;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  border: none;
+  color: white;  
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  height: 37px;
+  width: 115px;
+  transition-duration: 0.4s;
+}
+
+.submit-button:hover {
+  background-color: white;
+  color: black;
+  border: 0.5px solid #577B5F;
+}
+
 .dropdown-container {
   text-align: left;
   border: 0.5px solid black;
