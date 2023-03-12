@@ -4,6 +4,7 @@ import { AverageRating, AverageRatingStars } from '../ClubPage/ClubRating';
 import { BsStarFill, BsStar} from "react-icons/bs";
 import React, {useState} from 'react';
 import { genUUID } from '../../App';
+import { clubID } from '../ClubPage/ClubPage';
 
 var activeStars = 0;
 
@@ -14,14 +15,18 @@ export default function WriteReviewPage(props) {
         var text = document.getElementById('userreview').value
         var rating = activeStars;
         console.log(activeStars)
-    
+        
+        var currpath = window.location.pathname
+        var cid = currpath.slice(11)
+        console.log(cid)
+
         fetch('http://localhost:8000/review/', {
             method: 'POST',
             headers: {"Content-type" : "application/json"},
             body: JSON.stringify({
                 "_id": genUUID(),
                 "author": "Anonymous",
-                "club_id" : "066de609-b04a-4b30-b46c-32537c7f1ie9",
+                "club_id" : cid, //"066de609-b04a-4b30-b46c-32537c7f1ie9",
                 "text": text,
                 "rating": rating
             })
