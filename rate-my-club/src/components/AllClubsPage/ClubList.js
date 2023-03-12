@@ -1,10 +1,13 @@
 import { AllClubsArray } from "./AllClubsArray";
 import ClubCard from "./ClubCard";
+import { sizeOpt, categoryOpt, commitmentOpt } from "./AllClubsPage";
 
 
 export default function ClubList() {
     
     console.log(AllClubsArray)
+    
+    //add filtering here
     return (
         <div className='allclubs-page-backdrop'>
             { allClubComponents }

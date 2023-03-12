@@ -1,6 +1,7 @@
 import img1 from "../images/dsp.jpg"
 import img2 from "../images/aiche.png"
 import img3 from "../images/pp.png"
+import { sizeOpt, commitOpt } from "./AllClubsPage"
 
 //export var AllClubsArray = new Array()
 
@@ -33,41 +34,42 @@ import img3 from "../images/pp.png"
 // ]
 
 
-export const oldArray =[
-    {
-      "_id": "066de609-b04a-4b30-b46c-32537c7f1f6e",
-      "name": "DSP",
-      "about": "example",
-      "email": "dsp@gmail.com",
-      "profile_picture": "img1",
-      "tags": [
-        "Greek Life"
-      ]
-    },
-    {
-      "_id": "066de609-b04a-4b30-b46c-32537c7fopte",
-      "name": "AIChe",
-      "about": "example",
-      "email": "chem@gmail.com",
-      "profile_picture": "img2",
-      "tags": [
-        "Science"
-      ]
-    },
-    {
-      "_id": "066de609-b04a-4b30-b46c-32537c7foth8",
-      "name": "Rock Club",
-      "about": "example",
-      "email": "rock@gmail.com",
-      "profile_picture": "img3",
-      "tags": [
-        "Science"
-      ]
-    }
-  ]
+// export const oldArray =[
+//     {
+//       "_id": "066de609-b04a-4b30-b46c-32537c7f1f6e",
+//       "name": "DSP",
+//       "about": "example",
+//       "email": "dsp@gmail.com",
+//       "profile_picture": "img1",
+//       "tags": [
+//         "Greek Life"
+//       ]
+//     },
+//     {
+//       "_id": "066de609-b04a-4b30-b46c-32537c7fopte",
+//       "name": "AIChe",
+//       "about": "example",
+//       "email": "chem@gmail.com",
+//       "profile_picture": "img2",
+//       "tags": [
+//         "Science"
+//       ]
+//     },
+//     {
+//       "_id": "066de609-b04a-4b30-b46c-32537c7foth8",
+//       "name": "Rock Club",
+//       "about": "example",
+//       "email": "rock@gmail.com",
+//       "profile_picture": "img3",
+//       "tags": [
+//         "Science"
+//       ]
+//     }
+//   ]
 
 
 export const listClubs = async () => {
+    console.log("list clubs run")
     const response = await fetch('http://localhost:8000/clubs/', {    
         method: 'GET',           
       });
@@ -77,8 +79,8 @@ export const listClubs = async () => {
     for(var i in clubs) {
         i = JSON.parse(i);
     }
-    console.log(oldArray)
-    console.log(Object.values(clubs))
+
+    //console.log(Object.values(clubs))
     
     return Object.values(clubs);
 }

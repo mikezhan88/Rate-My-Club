@@ -123,7 +123,6 @@ async def list_clubs(request: Request, response: Response, name=None):
     response.headers["Access-Control-Allow-Credentials"] = "true"
     clubs = list(request.app.database["clubs"].find(limit=100))
     out = json.dumps(clubs, indent=2)
-    print(out)
     return out
 
 #Get /clubs/{club_id}/reviews
@@ -134,4 +133,11 @@ def find_reviews_by_club(id: str, request: Request, response: Response):
     if (reviews := list(request.app.database["reviews"].find({ "club_id" : id }))) is not None:
         return reviews
     return []
-    #raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Review with club_id {id} not found")
+
+@clubs_router.get("/filter", response_description="Get a list of clubs by a filter")
+async def filter_clubs(request: Request, response: Response, filter: dict):
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    response.headers["Access-Control-Allow-Credentials"] = "true"
+    if (clubs := list(request.app.database["clubs"].find(filter))) is not None:
+        return clubs
+    return []
