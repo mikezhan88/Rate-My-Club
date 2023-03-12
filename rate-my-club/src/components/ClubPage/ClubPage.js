@@ -47,14 +47,14 @@ export default function ClubPage() {
                         <div className='review-display'>
                             <div className='review-summary'>
                                 <div>Overall Rating</div>
-                                <AverageRating club={club}/>
-                                <AverageRatingStars club={club}/>
+                                <AverageRating reviews={reviews}/>
+                                <AverageRatingStars reviews={reviews}/>
                                 <Link to='/newreview'>
                                     <button className='club-profile-button'>Write a Review</button>
                                 </Link>
                             </div>
                             <div className='reviews'> 
-                                <ClubReviews club={club}/>
+                                <ClubReviews reviews={reviews}/>
                             </div>
                         </div>
                     </div>

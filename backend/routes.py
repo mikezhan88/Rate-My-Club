@@ -133,4 +133,5 @@ def find_reviews_by_club(id: str, request: Request, response: Response):
     response.headers["Access-Control-Allow-Credentials"] = "true"
     if (reviews := list(request.app.database["reviews"].find({ "club_id" : id }))) is not None:
         return reviews
-    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Review with club_id {id} not found")
+    return []
+    #raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Review with club_id {id} not found")

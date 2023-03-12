@@ -1,7 +1,7 @@
 import { BsStarFill, BsStar} from "react-icons/bs";
 
 export const AverageRating = props => {
-    var average = props.club.reviews.reduce((a, b) => a + b.rating, 0)/(props.club.reviews.length);
+    var average = props.reviews.reduce((a, b) => a + b.rating, 0)/(props.reviews.length);
     average = average.toFixed(1);
     return (
         <div className='average-rating'>{average}</div>
@@ -9,7 +9,7 @@ export const AverageRating = props => {
 }
 
 export const AverageRatingStars = props => {
-    var average = props.club.reviews.reduce((a, b) => a + b.rating, 0)/(props.club.reviews.length);
+    var average = props.reviews.reduce((a, b) => a + b.rating, 0)/(props.reviews.length);
     average = Math.trunc(average)
     return (
         <div className='stars'>

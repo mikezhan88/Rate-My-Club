@@ -3,7 +3,7 @@ import { BsStarFill, BsStar } from "react-icons/bs";
 
 export default function ClubReviews(props) {
     return (
-        props.club.reviews.map((review) => {
+        props.reviews.map((review) => {
             return (
                 <div className='club-review'>
                     <div className='stars'>
@@ -17,9 +17,9 @@ export default function ClubReviews(props) {
                         }
                     </div>
                     <div className='club-smalltext'>
-                        <a style={{fontWeight: 'bold'}}>Anonymous User</a>
+                        <a style={{fontWeight: 'bold'}}>{review.author}</a>
                     </div>
-                    <p className='review-content'>{review.content}</p>
+                    <p className='review-content'>{review.text}</p>
                 </div>
           );
         })

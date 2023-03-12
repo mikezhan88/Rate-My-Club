@@ -47,7 +47,7 @@ class Club(BaseModel):
     clubWebsite: str = Field(...)
     clubSize: str = Field(...)
     commitmentLevel: str = Field(...)
-    updates: List[object] = Field(...)
+    updates: List[dict] = Field(...)
 
     class Config:
         allow_population_by_field_name = True
