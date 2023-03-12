@@ -20,8 +20,8 @@ import ClubList from './ClubList';
 //   console.log(commitmentOpt)
 // }, [document.getElementById("sizedd"), document.getElementById("commitmentdd"), document.getElementById("categorydd")]);
 
-export var sizeOpt = "none";
-export var commitOpt = "none";
+export var sizeOpt = "{}";
+export var commitOpt = "{}";
 
 export default function AllClubsPage() {
   
@@ -32,9 +32,9 @@ export default function AllClubsPage() {
   const [hundredPlus, setHundredPlus] = useState(false);
 
   useEffect(() => {
-    size === '{clubSize : "< 50 ppl"}' ? setLessFifty(true) : setLessFifty(false);
-    size === '{clubSize : "50-100 ppl"}' ? setFifty2Hundred(true) : setFifty2Hundred(false);
-    size === '{clubSize : "100+ ppl"}' ? setHundredPlus(true) : setHundredPlus(false);
+    size === '{"clubSize" : "< 50 ppl"}' ? setLessFifty(true) : setLessFifty(false);
+    size === '{"clubSize" : "50-100 ppl"}' ? setFifty2Hundred(true) : setFifty2Hundred(false);
+    size === '{"clubSize" : "100+ ppl"}' ? setHundredPlus(true) : setHundredPlus(false);
   }, [size]);
 
   const[commitment, setCommitment] = useState("Commitment Level");
@@ -44,9 +44,9 @@ export default function AllClubsPage() {
   const[fivehrsplus, setfivehrsplus] = useState(false);
   
   useEffect(() => {
-    commitment === '{commitmentLevel : "< 2 hours"}' ? setless2hrs(true) : setless2hrs(false);
-    commitment === '{commitmentLevel : "2-5 hours"}' ? settwotofivehrs(true) : settwotofivehrs(false);
-    commitment === '{commitmentLevel : "5+ hours"}' ? setfivehrsplus(true) : setfivehrsplus(false);
+    commitment === '{"commitmentLevel" : "< 2 hours"}' ? setless2hrs(true) : setless2hrs(false);
+    commitment === '{"commitmentLevel" : "2-5 hours"}' ? settwotofivehrs(true) : settwotofivehrs(false);
+    commitment === '{"commitmentLevel" : "5+ hours"}' ? setfivehrsplus(true) : setfivehrsplus(false);
   }, [commitment]);
 
   const handleOnChangeSize = (e) => {
@@ -75,17 +75,17 @@ export default function AllClubsPage() {
                       <div className='clubs-text' >Filter Clubs</div>
 
                       <select className="size_select" value={size} onChange={handleOnChangeSize}>
-                        <option value="Club Size">Club Size</option>
-                        <option value='{clubSize : "< 50 ppl"}'>Less than 50</option>
-                        <option value='{clubSize : "50-100 ppl"}'>50 to 100</option>
-                        <option value='{clubSize : "100+ ppl"}'>Greater than 100</option>
+                        <option value="{}">Club Size</option>
+                        <option value='{"clubSize" : "< 50 ppl"}'>Less than 50</option>
+                        <option value='{"clubSize" : "50-100 ppl"}'>50 to 100</option>
+                        <option value='{"clubSize" : "100+ ppl"}'>Greater than 100</option>
                       </select>
 
                       <select className="commitment_select" value={commitment} onChange={handleOnChangeCommitment}>
-                        <option value="Commitment Level">Commitment Level</option>
-                        <option value='{commitmentLevel : "< 2 hours"}'>Less than 2 hours</option>
-                        <option value='{commitmentLevel : "2-5 hours"}'>2 to 5 hours</option>
-                        <option value='{commitmentLevel : "5+ hours"}'>Greater than 5 hours</option>
+                        <option value="{}">Commitment Level</option>
+                        <option value='{"commitmentLevel" : "< 2 hours"}'>Less than 2 hours</option>
+                        <option value='{"commitmentLevel" : "2-5 hours"}'>2 to 5 hours</option>
+                        <option value='{"commitmentLevel" : "5+ hours"}'>Greater than 5 hours</option>
                       </select>
 
 

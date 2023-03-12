@@ -1,13 +1,48 @@
-import { AllClubsArray } from "./AllClubsArray";
+//import { AllClubsArray } from "./AllClubsArray";
 import ClubCard from "./ClubCard";
-import { sizeOpt, categoryOpt, commitmentOpt } from "./AllClubsPage";
-
+import { sizeOpt, commitOpt } from "./AllClubsPage";
+import { useState, useEffect } from "react";
 
 export default function ClubList() {
+
+    const [AllClubsArray, setAllClubsArray] = useState(Array());
     
     console.log(AllClubsArray)
+
+    useEffect(() => {
+        const filterClubs = async () => {
+            const response = await fetch('http://localhost:8000/clubs/filter', {    
+                method: 'POST', 
+                body: JSON.stringify(Object.assign({}, JSON.parse(sizeOpt), JSON.parse(commitOpt))), 
+                headers: {"Content-type" : "application/json"}     
+              });
+            const myJson = await response.json(); //extract JSON from the http response
+
+            var clubs = myJson;
+            for(var i in clubs) {
+                i = JSON.parse(i);
+            }
+          
+        
+            setAllClubsArray(Object.values(clubs))
+        }
+        
+        filterClubs();
+
+    }, [sizeOpt, commitOpt]);
     
-    //add filtering here
+
+    const allClubComponents = AllClubsArray.map((club) => { 
+        return (
+            <ClubCard 
+                id={club["_id"]}
+                profile_picture={club["profile_picture"]}
+                name={club["name"]}
+                tags={club["tags"]}
+            />
+        );
+    });
+    
     return (
         <div className='allclubs-page-backdrop'>
             { allClubComponents }
@@ -16,14 +51,4 @@ export default function ClubList() {
 }
 
 
-const allClubComponents = AllClubsArray.map((club) => { 
-    return (
-        <ClubCard 
-            id={club["_id"]}
-            profile_picture={club["profile_picture"]}
-            name={club["name"]}
-            tags={club["tags"]}
-        />
-    );
-});
 
