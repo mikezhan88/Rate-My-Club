@@ -4,7 +4,6 @@ from pydantic import BaseModel, Field
 
 class Review(BaseModel):
     id: str = Field(default_factory=uuid.uuid4, alias="_id")
-    title: str = Field(...)
     author: str = Field(...)
     club_id: str = Field(default_factory=uuid.uuid4)
     text: str = Field(...)
@@ -15,7 +14,6 @@ class Review(BaseModel):
         schema_extra = {
             "example": {
                 "_id": "066de609-b04a-4b30-b46c-32537c7f1f6f",
-                "title": "Good Club!",
                 "author": "Drew Letvin",
                 "club_id": "066de609-b04a-4b30-b46c-32537c7f1f6e",
                 "text": "...",
@@ -24,14 +22,12 @@ class Review(BaseModel):
         }
 
 class ReviewUpdate(BaseModel):
-    title: Optional[str]
     text: Optional[str]
     rating: Optional[float]
 
     class Config:
         schema_extra = {
             "example": {
-                "title": "Bad Club",
                 "author": "Dru Letvin",
                 "rating": 2.0
             }
