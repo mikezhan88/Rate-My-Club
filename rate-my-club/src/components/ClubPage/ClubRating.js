@@ -1,4 +1,5 @@
 import { BsStarFill, BsStar} from "react-icons/bs";
+import { reviewCount } from "./ClubPage";
 
 export const AverageRating = props => {
     var average = props.reviews.reduce((a, b) => a + b.rating, 0)/(props.reviews.length);
@@ -9,8 +10,12 @@ export const AverageRating = props => {
 }
 
 export const AverageRatingStars = props => {
-    var average = props.reviews.reduce((a, b) => a + b.rating, 0)/(props.reviews.length);
-    average = Math.trunc(average)
+    var average = 0;
+    if(reviewCount != 0) {
+        average = props.reviews.reduce((a, b) => a + b.rating, 0)/(props.reviews.length);
+        average = Math.trunc(average)
+    }   
+    
     return (
         <div className='stars'>
             {

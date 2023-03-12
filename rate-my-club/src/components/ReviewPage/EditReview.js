@@ -1,5 +1,5 @@
 import NavBar from '../NavBar/NavBar'
-import { club } from '../ClubPage/ClubInfoArray'
+import { clubExport } from '../ClubPage/ClubPage'; 
 import { AverageRating, AverageRatingStars } from '../ClubPage/ClubRating';
 import { BsStarFill, BsStar} from "react-icons/bs";
 import React, {useState} from 'react';
@@ -17,10 +17,9 @@ export default function EditReviewPage(props) {
            <div className='review-page'>
                 <div className='review-page-backdrop'>
                 <div>
-                        <div className='club-name'>{club.clubName}</div>
-                        <div className='club-tagline'>{club.tagLine}</div>
+                        <div className='club-name'>{clubExport.clubName}</div>
                         
-                    </div>
+                    </div> 
                     <div style={{ borderBottom: "1px solid black ", width: "90%"}}></div>
                     <p>Overall Rating</p>
                     <div className='review-stars'>

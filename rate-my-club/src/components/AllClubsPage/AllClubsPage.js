@@ -5,23 +5,9 @@ import Dropdown from './DropdownAllClubs';
 import { categoriesOptions, sizeOptions, commitmentOptions, sortOptions } from '../RegisterPage/DropdownObjects';
 import ClubList from './ClubList';
 
-// function setddOpts() {
-//   sizeOpt = document.getElementById("sizedd") != null ? document.getElementById("sizedd").value : "none";
-//   commitmentOpt = document.getElementById("commitmentdd") != null ? document.getElementById("commitmentdd").value : "none";
-//   categoryOpt = document.getElementById("categorydd") != null ? document.getElementById("categorydd").value : "none";
-
-// }
-
-// useEffect(() => {
-//   setddOpts()
-//   console.log("trigger")
-//   console.log(sizeOpt)
-//   console.log(categoryOpt)
-//   console.log(commitmentOpt)
-// }, [document.getElementById("sizedd"), document.getElementById("commitmentdd"), document.getElementById("categorydd")]);
-
 export var sizeOpt = "{}";
 export var commitOpt = "{}";
+export var searchOpt = "{}";
 
 export default function AllClubsPage() {
   
@@ -60,6 +46,10 @@ export default function AllClubsPage() {
     commitOpt = e.target.value;
   };
 
+  const handleOnChangeSearch = () => {
+    searchOpt = '{ "name" : { $regex : ".*(' + document.getElementById("searchbar").value + ').*", $options : "i" } }';
+  }
+  
 
   
   return (
@@ -87,20 +77,10 @@ export default function AllClubsPage() {
                         <option value='{"commitmentLevel" : "2-5 hours"}'>2 to 5 hours</option>
                         <option value='{"commitmentLevel" : "5+ hours"}'>Greater than 5 hours</option>
                       </select>
-
-
-                      {/* <Dropdown id="sizedd" null placeholder='Club Size' options={ sizeOptions } onChange={handleOnChange}></Dropdown> */}
-                      {/* <Dropdown id="commitmentdd" null placeholder='Commitment Level' options={ commitmentOptions }></Dropdown> */}
-                      {/* <Dropdown id="categorydd" isMulti placeholder='Categories' options={ categoriesOptions }></Dropdown> */}
                   </div>
-                  {/* <script> { setddOpts() } </script> */}
-                  {/* <div className='clubs-sort'>
-                      <div className='clubs-text'>Sort By</div>
-                      <Dropdown null placeholder='Sort By' options={ sortOptions }></Dropdown>
-                  </div> */}
               </div>
                 <div className='clubs-search-div'>
-                  <input type='text' className='clubs-search-bar'placeholder='Search Club Name...' ></input>
+                  <input id="searchbar" type='text' className='clubs-search-bar'placeholder='Search Club Name...' onChange={handleOnChangeSearch}></input>
                   <img src={require("../images/search-icon.png")} className='clubs-search-icon' alt="search"/>
                   <ClubList/>
                 </div>

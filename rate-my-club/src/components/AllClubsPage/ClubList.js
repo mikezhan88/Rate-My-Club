@@ -1,7 +1,6 @@
-//import { AllClubsArray } from "./AllClubsArray";
 import ClubCard from "./ClubCard";
-import { sizeOpt, commitOpt } from "./AllClubsPage";
 import { useState, useEffect } from "react";
+import { sizeOpt, commitOpt, searchOpt } from "./AllClubsPage";
 
 export default function ClubList() {
 
@@ -12,8 +11,8 @@ export default function ClubList() {
     useEffect(() => {
         const filterClubs = async () => {
             const response = await fetch('http://localhost:8000/clubs/filter', {    
-                method: 'POST', 
-                body: JSON.stringify(Object.assign({}, JSON.parse(sizeOpt), JSON.parse(commitOpt))), 
+                method: 'POST',
+                body: JSON.stringify(Object.assign({}, JSON.parse(sizeOpt), JSON.parse(commitOpt), JSON.parse(searchOpt))),
                 headers: {"Content-type" : "application/json"}     
               });
             const myJson = await response.json(); //extract JSON from the http response
@@ -29,7 +28,7 @@ export default function ClubList() {
         
         filterClubs();
 
-    }, [sizeOpt, commitOpt]);
+    }, [sizeOpt, commitOpt, searchOpt]);
     
 
     const allClubComponents = AllClubsArray.map((club) => { 
