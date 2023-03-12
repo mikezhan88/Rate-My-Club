@@ -1,5 +1,5 @@
 import NavBar from '../NavBar/NavBar'
-import { club } from '../ClubPage/ClubInfoArray'
+import { clubExport } from '../ClubPage/ClubPage'
 import { AverageRating, AverageRatingStars } from '../ClubPage/ClubRating';
 import { BsStarFill, BsStar} from "react-icons/bs";
 import React, {useState} from 'react';
@@ -29,7 +29,7 @@ export default function WriteReviewPage(props) {
                 "club_id" : cid, //"066de609-b04a-4b30-b46c-32537c7f1ie9",
                 "text": text,
                 "rating": rating
-            })
+            }) 
         })
     } 
     return (
@@ -38,7 +38,7 @@ export default function WriteReviewPage(props) {
            <div className='review-page'>
                 <div className='review-page-backdrop'>
                 <div>
-                        <div className='club-name'>{club.name}</div>
+                        <div className='club-name'>{clubExport.name}</div>
                         
                     </div>
                     <div style={{ borderBottom: "1px solid black ", width: "90%"}}></div>

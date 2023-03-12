@@ -57,7 +57,7 @@ class Club(BaseModel):
                 "tags": ["aerospace", "engineering"],
                 "clubWebsite": 'www.ucladsp.com',
                 "clubSize": '50-100 ppl',
-                "commitmentLevel": '3-5 hours',
+                "commitmentLevel": '2-5 hours',
                 "updates": [{'content': "Spring Rush begins April 2nd!"}, {'content': "Info session at 7:30 tonight"}]
 
             }

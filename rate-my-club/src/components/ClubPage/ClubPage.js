@@ -1,18 +1,68 @@
 import NavBar from '../NavBar/NavBar'
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { BsBookmarkStar, BsFillBookmarkStarFill} from "react-icons/bs";
-import { club, reviews } from './ClubInfoArray'
 import { AverageRating, AverageRatingStars } from './ClubRating';
 import ClubReviews from './ClubReviews';
 import ClubUpdates from './ClubUpdates';
 import {Link} from 'react-router-dom';
 
-export var clubID
+var clubID = ""
+export var clubExport;
+export var reviewCount = 0;
 
 export default function ClubPage() {
     var currpath = window.location.pathname
     clubID = currpath.slice(10)
     console.log(clubID)
+
+    const dummyReviews = [
+        {
+            rating: 0,
+        }
+    ]
+
+    const [club, setClub] = useState({tags: Array(), updates: Array()});
+    const [reviews, setReviews] = useState(dummyReviews);
+
+    useEffect(() => {
+        const getClub = async() => {
+            const clubURL = "http://localhost:8000/clubs/" + clubID;
+            console.log(clubURL)
+            const response = await fetch(clubURL, {
+                method: 'GET',
+            });
+            const myJson = await response.json();
+            console.log(myJson)
+            setClub(myJson);
+        }
+        if (clubID != "") { 
+            getClub();
+        };
+        clubExport = club;
+    
+        const getReviews = async() => {
+            const response = await fetch("http://localhost:8000/clubs/" + clubID + "/reviews", {
+                method: 'GET',
+            });
+        
+            const myJson = await response.json(); //extract JSON from the http response
+        
+            console.log(myJson)
+            var reviews = myJson;
+            for(var i in reviews) {
+                i = JSON.parse(i);
+            }
+            
+            setReviews(Object.values(reviews))
+            reviewCount = await Object.values(reviews).length
+        }
+        if (clubID != ""){
+            getReviews();
+        };
+        
+
+    }, [clubID]);
+   
 
     return ( 
         <React.Fragment>

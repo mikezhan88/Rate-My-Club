@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 
-export default function Dropdown({ placeholder, options, isMulti }) {
+export default function Dropdown({ placeholder, options, isMulti, onChange }) {
 
     const [showMenu, setShowMenu] = useState(false);
     const [selectedValue, setSelectedValue] = useState(isMulti ? [] : null);
@@ -74,6 +74,11 @@ export default function Dropdown({ placeholder, options, isMulti }) {
         setSelectedValue(removeOption(option));
     };
 
+    const onSelectItem = (option) => {
+        onItemClick(option)
+        onChange()
+    }
+
     return (
         <div className='all-clubs-dropdown-container'>
             <div onClick={ handleInputClick } className='all-clubs-dropdown-input'>
@@ -87,7 +92,7 @@ export default function Dropdown({ placeholder, options, isMulti }) {
             { showMenu && (
                 <div className='all-clubs-dropdown-menu'>
                 { options.map((option) => (
-                    <div onClick={ () => onItemClick(option) } key={ option.value } className={`all-clubs-dropdown-item ${isSelected(option) && "selected"}`}>
+                    <div onClick={ () => onSelectItem(option) } key={ option.value } className={`all-clubs-dropdown-item ${isSelected(option) && "selected"}`}>
                         { option.label }
                     </div>
                 ))}

@@ -18,19 +18,15 @@ export const categoriesOptions = [
 ];
 
 export const sizeOptions = [
-    { value: 'less than 10', label: 'Less than 10 people'},
-    { value: '10-20', label: '10-20 people'},
-    { value: '20-50', label: '20-50 people'},
+    { value: '<50', label: 'Less than 50 people'},
     { value: '50-100', label: '50-100 people'},
     { value: '100+', label: '100+ people'}
 ];
 
 export const commitmentOptions = [
-    { value: 'less than 1', label: 'Less than 1 hour'},
-    { value: '1-3', label: '1-3 hours'},
-    { value: '3-5', label: '3-5 hours'},
-    { value: '5-7', label: '5-7 hours'},
-    { value: '7+', label: '7+ hours'}
+    { value: '<2', label: 'Less than 2 hours'},
+    { value: '2-5', label: '2-5 hours'},
+    { value: '5+', label: '5+ hours'}
 ];
 
 export const sortOptions = [
