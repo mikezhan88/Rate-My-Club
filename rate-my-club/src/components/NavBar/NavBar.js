@@ -5,7 +5,7 @@ import {CgProfile} from "react-icons/cg";
 
 
 export default function NavBar() {
-  const isLoggedIn = true
+  const isLoggedIn = false
 
   const [open, setOpen] = useState(false);
 
