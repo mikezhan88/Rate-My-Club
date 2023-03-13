@@ -3,11 +3,14 @@ import NavBar from '../NavBar/NavBar'
 import Dropdown from './Dropdown';
 import { categoriesOptions, sizeOptions, commitmentOptions } from './DropdownObjects';
 import { genUUID } from '../../App';
+import { useNavigate } from "react-router-dom";
 
 
 export default function RegisterPage() {
 
-    function postClub() {
+  let navigate = useNavigate();
+
+  function postClub() {
     fetch('http://localhost:8000/clubs/', {
         method: 'POST',
         headers: {"Content-type" : "application/json"},
@@ -24,6 +27,11 @@ export default function RegisterPage() {
             "updates": [{'content': "None at this time :)"}] //not from form
         }) 
     })
+
+    let path = '/allclubs';
+    console.log("path: " + path) 
+    navigate(path);
+    navigate(0);
   } 
 
   const [clubName, setClubName] = useState("");

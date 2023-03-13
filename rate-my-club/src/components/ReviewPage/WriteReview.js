@@ -36,7 +36,6 @@ export default function WriteReviewPage(props) {
         })
 
         let path = '/clubpage/' + cid;
-        console.log("path: " + path) 
         navigate(path);
     } 
     return (
