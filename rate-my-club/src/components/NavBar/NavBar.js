@@ -1,11 +1,17 @@
 import {Link} from 'react-router-dom'
 import React, {useState, useEffect, useRef} from 'react';
+
 import {CgProfile} from "react-icons/cg";
 
 
 
+
+
 export default function NavBar() {
-  const isLoggedIn = false
+
+  const isLoggedIn = true
+
+
 
   const [open, setOpen] = useState(false);
 
@@ -69,8 +75,10 @@ export default function NavBar() {
           <div className='navbar-menu-container' ref={menu}>
               <div className='navbar-menu-trigger'onClick={()=>{setOpen(!open)}}>
                 
+
                   {/* <button className='navBar-button'>User</button> */}
                 <i className = 'navBar-icon'><CgProfile size = {(35)}/> </i>  
+
                  
                 </div>
             

@@ -37,6 +37,7 @@ export default function WriteReviewPage(props) {
 
         let path = '/clubpage/' + cid;
         navigate(path);
+        navigate(0);
     } 
     return (
           <React.Fragment>
