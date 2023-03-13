@@ -4,7 +4,7 @@ import React, {useState, useEffect, useRef} from 'react';
 
 
 export default function NavBar() {
-  const isLoggedIn = true
+  const isLoggedIn = false
 
   const [open, setOpen] = useState(false);
 
@@ -68,7 +68,7 @@ export default function NavBar() {
           <div className='navbar-menu-container' ref={menu}>
               <div className='navbar-menu-trigger'onClick={()=>{setOpen(!open)}}>
                 
-                  <button className='navBar-button'>Register</button>
+                  <button className='navBar-button'>User</button>
                  
                 </div>
             
@@ -96,6 +96,3 @@ function DropdownItem(props){
         </li>
     );
   }
-
-
-
