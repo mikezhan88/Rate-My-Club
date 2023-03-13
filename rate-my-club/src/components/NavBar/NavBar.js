@@ -2,10 +2,7 @@ import {Link} from 'react-router-dom'
 import React, {useState, useEffect, useRef} from 'react';
 import { isLoggedin } from '../Login-Page/LoginPage';
 
-
-
 export default function NavBar() {
-  const isLoggedIn = false
 
   const [open, setOpen] = useState(false);
 
@@ -37,9 +34,7 @@ export default function NavBar() {
           <img src={require("../images/club-logo.png")} className='club-logo' alt="logo" />
         </button>
       </Link>
-      {!isLoggedIn ?
       <span className='navBar-buttons'>
-        
         <Link to='/login'>
           <button className='navBar-button'>Login</button>
         </Link>
@@ -63,28 +58,8 @@ export default function NavBar() {
                     </ul>
                 </div>
             
-          </div> 
+          </div>
           </span>
-          :  <span className='navBar-buttons'> 
-          <div className='navbar-menu-container' ref={menu}>
-              <div className='navbar-menu-trigger'onClick={()=>{setOpen(!open)}}>
-                
-                  <button className='navBar-button'>User</button>
-                 
-                </div>
-            
-                <div className= {`navbar-dropdown-menu ${open? 'active' : 'inactive'}`}>
-                    <ul>
-                        <Link to='/clubpage' style={{ textDecoration: 'none', color: 'black' }}>
-                          <DropdownItem text = {"My Profile"}/>
-                        </Link>
-                          <DropdownItem text = {"Log out"}/> 
-                          {/* on click, set logged in to false */}
-                       
-                    </ul>
-                </div>
-                </div>
-          </span>}
       
     </div>
   )
@@ -97,3 +72,6 @@ function DropdownItem(props){
         </li>
     );
   }
+
+
+
