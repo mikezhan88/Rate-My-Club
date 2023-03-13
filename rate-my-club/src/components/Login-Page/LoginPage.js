@@ -3,14 +3,17 @@ import NavBar from '../NavBar/NavBar'
 import {Link} from 'react-router-dom'
 import { GoogleLogin, GoogleOAuthProvider, googleLogout, useGoogleLogin   } from '@react-oauth/google';
 import axios from 'axios';
+import { genUUID } from '../../App';
 
 export default function LoginPage() {
     const [ user, setUser ] = useState([]);
-    const [ profile, setProfile ] = useState([]);
+    const [ profile, setProfile ] = useState(new Array());
     
     const login = useGoogleLogin({
         onSuccess: (codeResponse) => setUser(codeResponse),
         onError: (error) => console.log('Login Failed:', error)
+
+        
     });
 
     useEffect(
@@ -28,28 +31,78 @@ export default function LoginPage() {
                     })
                     .catch((err) => console.log(err));
             }
+
         },
         [ user ]
     );
 
+    // useEffect( () => {
+    //     console.log("profile use effect: " + profile.email);
+    // }, [profile]);
+    
     const logOut = () => {
         googleLogout();
         setProfile(null);
     };
 
-    const google = () => {
+    useEffect(() => {
+        console.log(profile)
+        if (profile.length != 0){
+            console.log(profile)
+            var username = (profile.email).split('@')[0];
 
-        return (
-            <GoogleLogin
-                onSuccess={(codeResponse) => {
-                    setUser(codeResponse);
-                }}
-                onError={() => {
-                  console.log('Login Failed');
-                }}
-              />
-        )
-    }
+            const create_user = () => { 
+                (console.log("try post user"));
+                fetch('http://localhost:8000/users/', {
+                    method: 'POST',
+                    headers: {"Content-type" : "application/json"},
+                    body: JSON.stringify({
+                        "user_id": genUUID(),
+                        "name": profile.name,
+                        "username" : username
+                    })
+            })};
+            
+            console.log("tried get user")
+            const getUser = async() => {
+                const userURL = "http://localhost:8000/users/" + username;
+                console.log(userURL);
+                const response = await fetch(userURL, {
+                    method: 'GET',
+                })
+                
+                const myJson = await response.json();
+                console.log(myJson);
+                if (myJson.detail == "User not found") {
+                    console.log("ERROR");
+                    create_user();
+                }
+            };
+            getUser();
+        }
+    }, [profile]);
+
+    // const google = () => {
+
+    //     return (
+    //         <GoogleLogin
+    //             onSuccess={(codeResponse) => {
+    //                 setUser(codeResponse);
+    //             }}
+    //             onError={() => {
+    //               console.log('Login Failed');
+    //             }}
+    //           />
+    //     )
+    // }
+
+    const GoogleLoginButton = () => {
+        const { signIn } = useGoogleLogin()
+       
+        const handleSignIn = async () => {
+          const googleUser = await signIn() // if you need immediate access to `googleUser`, get it from signIn() directly
+        }
+      }
     
   return (
     <React.Fragment>
@@ -57,7 +110,7 @@ export default function LoginPage() {
         <div className='login-page'>
         <img src={require("../images/logo.png")} className='login-logo' alt="logo" />
             <div className='login-container'>
-                <span className='login-bigtext'>LOGIN</span>
+                {/* <span className='login-bigtext'>LOGIN</span>
                 <input type='text' className='login-input' placeholder='Email Address' ></input>
                 <input type='text' className='login-input' placeholder='Password' ></input>
                 <button className='login-button' type='button'>LOGIN</button>
@@ -65,7 +118,7 @@ export default function LoginPage() {
                     <hr className='line'></hr>
                     <div className='or-text'>OR</div>
                     <hr className='line'></hr>
-                </div>
+                </div> */}
                 
                 <button className='google-signin' type='button' onClick={() => login()}>
                     <img src={require("../images/google-logo.png")} className='google-logo' alt="search" />
@@ -81,7 +134,8 @@ export default function LoginPage() {
                     
                     Continue with Google
                     {
-                        console.log(profile.name)
+                        
+                        console.log(profile.email)
                     }
                 </button>
                 

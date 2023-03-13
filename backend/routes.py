@@ -147,7 +147,9 @@ async def filter_clubs(request: Request, response: Response, filter: dict = Body
 
 #POST /users
 @users_router.post("/", response_description="Create new user", status_code=status.HTTP_201_CREATED, response_model=User)
-def create_user(request: Request, user: User = Body(...)):
+def create_user(request: Request, response: Response, user: User = Body(...)):
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    response.headers["Access-Control-Allow-Credentials"] = "true"
     user = jsonable_encoder(user)
     new_user = request.app.database["users"].insert_one(user)
     created_user = request.app.database["users"].find_one(
@@ -157,8 +159,11 @@ def create_user(request: Request, user: User = Body(...)):
     return created_user
 
 #Get /user{id}
-@users_router.get("/{id}", response_description="Get a single user by id", response_model=User)
-def find_user(id: str, request: Request):
-    if (user := request.app.database["users"].find_one({"_id": id})) is not None:
+@users_router.get("/{username}", response_description="Get a single user by email", response_model=User)
+def find_user(username: str, request: Request, response: Response):
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    response.headers["Access-Control-Allow-Credentials"] = "true"
+    if (user := request.app.database["users"].find_one({"username": username})) is not None:
         return user
-    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"User with ID {id} not found")
+    
+    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"User not found")
