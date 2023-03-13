@@ -1,43 +1,48 @@
 import React, { useState, useEffect } from 'react'
 import NavBar from '../NavBar/NavBar'
 import {Link} from 'react-router-dom'
-import { GoogleLogin, GoogleOAuthProvider  } from '@react-oauth/google';
-//import axios from 'axios';
+import { GoogleLogin, GoogleOAuthProvider, googleLogout, useGoogleLogin   } from '@react-oauth/google';
+import axios from 'axios';
 
 export default function LoginPage() {
     const [ user, setUser ] = useState([]);
     const [ profile, setProfile ] = useState([]);
     
-    // const login = useGoogleLogin({
-    //     onSuccess: (codeResponse) => setUser(codeResponse),
-    //     onError: (error) => console.log('Login Failed:', error)
-    // });
+    const login = useGoogleLogin({
+        onSuccess: (codeResponse) => setUser(codeResponse),
+        onError: (error) => console.log('Login Failed:', error)
+    });
 
-    // useEffect(
-    //     () => {
-    //         if (user) {
-    //             axios
-    //                 .get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`, {
-    //                     headers: {
-    //                         Authorization: `Bearer ${user.access_token}`,
-    //                         Accept: 'application/json'
-    //                     }
-    //                 })
-    //                 .then((res) => {
-    //                     setProfile(res.data);
-    //                 })
-    //                 .catch((err) => console.log(err));
-    //         }
-    //     },
-    //     [ user ]
-    // );
+    useEffect(
+        () => {
+            if (user) {
+                axios
+                    .get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`, {
+                        headers: {
+                            Authorization: `Bearer ${user.access_token}`,
+                            Accept: 'application/json'
+                        }
+                    })
+                    .then((res) => {
+                        setProfile(res.data);
+                    })
+                    .catch((err) => console.log(err));
+            }
+        },
+        [ user ]
+    );
+
+    const logOut = () => {
+        googleLogout();
+        setProfile(null);
+    };
 
     const google = () => {
 
         return (
             <GoogleLogin
-                onSuccess={credentialResponse => {
-                  console.log(credentialResponse);
+                onSuccess={(codeResponse) => {
+                    setUser(codeResponse);
                 }}
                 onError={() => {
                   console.log('Login Failed');
@@ -61,22 +66,25 @@ export default function LoginPage() {
                     <div className='or-text'>OR</div>
                     <hr className='line'></hr>
                 </div>
-                <GoogleOAuthProvider clientId="909575788490-asthnc991693hpv8uud4vjmt2u7uaud0.apps.googleusercontent.com">
-                {/* <button className='google-signin' type='button'> */}
-                    {/* <img src={require("../images/google-logo.png")} className='google-logo' alt="search"/> */}
+                
+                <button className='google-signin' type='button' onClick={() => login()}>
+                    <img src={require("../images/google-logo.png")} className='google-logo' alt="search" />
                    
-                    <GoogleLogin
+                    {/* <GoogleLogin
                 onSuccess={credentialResponse => {
                   console.log(credentialResponse);
                 }}
                 onError={() => {
                   console.log('Login Failed');
                 }}
-              />
+              /> */}
                     
-                    {/* Continue with Google */}
-                {/* </button> */}
-                </GoogleOAuthProvider>
+                    Continue with Google
+                    {
+                        console.log(profile.name)
+                    }
+                </button>
+                
                 <span className='register-redirect'>Are you a new club? <span/>
                     <Link to='/register' style={{ textDecoration: 'none' }}>
                         <span className='register-here'>Register here</span>
