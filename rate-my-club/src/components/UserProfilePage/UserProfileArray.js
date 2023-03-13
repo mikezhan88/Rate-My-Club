@@ -1,6 +1,6 @@
 import img1 from "../images/dsp.jpg"
 import img2 from "../images/aiche.png"
-import img3 from "../images/pp.png"
+import img3 from "../images/rocketproj.jpg"
 
 export const user = {
     name: 'Chilly Tiger',

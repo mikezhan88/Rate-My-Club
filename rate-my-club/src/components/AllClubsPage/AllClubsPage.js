@@ -1,16 +1,32 @@
 import NavBar from '../NavBar/NavBar'
 import Form from 'react-bootstrap/Form';
 import React, {useState, useEffect, useRef, useCallback} from 'react';
-import Dropdown from './DropdownAllClubs';
-import { categoriesOptions, sizeOptions, commitmentOptions, sortOptions } from '../RegisterPage/DropdownObjects';
+//import Dropdown from './DropdownAllClubs';
 import ClubList from './ClubList';
+import { withRouter } from '../../WithRouter';
 
 export var sizeOpt = "{}";
 export var commitOpt = "{}";
 export var searchOpt = "{}";
+//var landingPageSearch = "";
+
 
 export default function AllClubsPage() {
+
+  // var currpath = window.location.pathname;
+  // console.log(currpath);
+  // landingPageSearch = currpath.slice(11)
+  //console.log(landingPageSearch)
+
+  // const [globalSearch, setGlobalSearch] = useState(landingPageSearch);
   
+  // useEffect(() => {
+  //   console.log("use effect triggered")
+  //   setGlobalSearch(landingPageSearch)
+  //   searchOpt = '{ "name" : { "$regex" : ".*(' + globalSearch + ').*", "$options" : "i" } }';
+  //   console.log("Global SearchOpt: " + searchOpt)
+  // }, [landingPageSearch]);
+
   const [size, setSize] = useState("Club Size");
 
   const [lessFifty, setLessFifty] = useState(false);
@@ -36,9 +52,10 @@ export default function AllClubsPage() {
   }, [commitment]);
 
 
-  const[search, setSearch] = useState("");
+  const[localSearch, setLocalSearch] = useState("");
   
-  useEffect(() => {}, [search]);
+  useEffect(() => {}, [localSearch]);
+  
 
   const handleOnChangeSize = (e) => {
     setSize(e.target.value);
@@ -52,11 +69,18 @@ export default function AllClubsPage() {
   };
 
   const handleOnChangeSearch = (e) => {
-    setSearch(e.target.value)
+    setLocalSearch(e.target.value)
     searchOpt = '{ "name" : { "$regex" : ".*(' + e.target.value + ').*", "$options" : "i" } }';
-    console.log("SearchOpt: " + searchOpt)
+    console.log("Local SearchOpt: " + searchOpt)
   }
+
+  // const handleOnChangeGlobalSearch = (e) => {
+  //   setGlobalSearch(e)
+  //   searchOpt = '{ "name" : { "$regex" : ".*(' + e + ').*", "$options" : "i" } }';
+  //   console.log("GLobal SearchOpt: " + searchOpt)
+  // }
   
+
 
   
   return (
@@ -94,6 +118,6 @@ export default function AllClubsPage() {
               </div>   
          </React.Fragment>
   )
-}
+};
 
 
