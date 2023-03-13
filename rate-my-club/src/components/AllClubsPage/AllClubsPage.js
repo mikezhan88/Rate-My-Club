@@ -8,24 +8,24 @@ import { withRouter } from '../../WithRouter';
 export var sizeOpt = "{}";
 export var commitOpt = "{}";
 export var searchOpt = "{}";
-var landingPageSearch = "";
+//var landingPageSearch = "";
 
 
 export default function AllClubsPage() {
 
-  var currpath = window.location.pathname;
-  console.log(currpath);
-  landingPageSearch = currpath.slice(11)
-  console.log(landingPageSearch)
+  // var currpath = window.location.pathname;
+  // console.log(currpath);
+  // landingPageSearch = currpath.slice(11)
+  //console.log(landingPageSearch)
 
-  const [globalSearch, setGlobalSearch] = useState(landingPageSearch);
+  // const [globalSearch, setGlobalSearch] = useState(landingPageSearch);
   
-  useEffect(() => {
-    console.log("use effect triggered")
-    setGlobalSearch(landingPageSearch)
-    searchOpt = '{ "name" : { "$regex" : ".*(' + globalSearch + ').*", "$options" : "i" } }';
-    console.log("Global SearchOpt: " + searchOpt)
-  }, [landingPageSearch]);
+  // useEffect(() => {
+  //   console.log("use effect triggered")
+  //   setGlobalSearch(landingPageSearch)
+  //   searchOpt = '{ "name" : { "$regex" : ".*(' + globalSearch + ').*", "$options" : "i" } }';
+  //   console.log("Global SearchOpt: " + searchOpt)
+  // }, [landingPageSearch]);
 
   const [size, setSize] = useState("Club Size");
 
