@@ -1,11 +1,16 @@
 import {Link} from 'react-router-dom'
 import React, {useState, useEffect, useRef} from 'react';
-import { isLoggedin } from '../Login-Page/LoginPage';
+
+import {CgProfile} from "react-icons/cg";
+
+
 
 
 
 export default function NavBar() {
-  const isLoggedIn = false
+
+  const isLoggedIn = true
+
 
   const [open, setOpen] = useState(false);
 
@@ -53,7 +58,7 @@ export default function NavBar() {
             
                 <div className= {`navbar-dropdown-menu ${open? 'active' : 'inactive'}`}>
                     <ul>
-                        <Link to='/registerClub' style={{ textDecoration: 'none', color: 'black' }}>
+                        <Link to='/register' style={{ textDecoration: 'none', color: 'black' }}>
                           <DropdownItem text = {"Create a New Club"}/>
                         </Link>
                         <Link to='/registerUser' style={{ textDecoration: 'none', color: 'black' }}>
@@ -69,7 +74,10 @@ export default function NavBar() {
           <div className='navbar-menu-container' ref={menu}>
               <div className='navbar-menu-trigger'onClick={()=>{setOpen(!open)}}>
                 
-                  <button className='navBar-button'>User</button>
+
+                  {/* <button className='navBar-button'>User</button> */}
+                <i className = 'navBar-icon'><CgProfile size = {(35)}/> </i>  
+
                  
                 </div>
             
