@@ -75,10 +75,9 @@ a:-webkit-any-link {
 
 .search-icon {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  top: 465px;
-  margin-left: 505px;
+  width: 45px;
+  height: 45px;
+  padding-left: 4px;
 }
 
 .button-container {
