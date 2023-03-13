@@ -7,6 +7,8 @@ import { genUUID } from '../../App';
 import { useNavigate } from "react-router-dom";
 
 
+export var isLoggedin = false;
+
 export default function LoginPage() {
 
     let navigate = useNavigate();
@@ -66,7 +68,11 @@ export default function LoginPage() {
                         "name": profile.name,
                         "username" : username
                     })
-            })};
+                })
+
+                isLoggedin = true
+            
+            };
             
             console.log("tried get user")
             const getUser = async() => {
@@ -81,6 +87,8 @@ export default function LoginPage() {
                 if (myJson.detail == "User not found") {
                     console.log("ERROR");
                     create_user();
+                } else {
+                    isLoggedin = true
                 }
             };
             getUser();

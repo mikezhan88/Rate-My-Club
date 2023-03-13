@@ -1,5 +1,6 @@
 import {Link} from 'react-router-dom'
 import React, {useState, useEffect, useRef} from 'react';
+import { isLoggedin } from '../Login-Page/LoginPage';
 
 export default function NavBar() {
 
