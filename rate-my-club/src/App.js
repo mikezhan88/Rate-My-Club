@@ -17,7 +17,7 @@ function App() {
     <React.Fragment>
       <Routes>
         <Route exact path="/" element= {<LandingPage/>} />
-        <Route exact path="/register" element= {<RegisterPage/>} />
+        <Route exact path="/registerClub" element= {<RegisterPage/>} />
         <Route exact path="/login" element= {<LoginPage/>} />
         <Route exact path="/registeruser" element= {<RegisterUserPage/>} />
         <Route exact path="/allclubs*" element= {<AllClubsPage />} />

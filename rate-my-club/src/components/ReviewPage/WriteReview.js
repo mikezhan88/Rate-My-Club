@@ -5,12 +5,15 @@ import { BsStarFill, BsStar} from "react-icons/bs";
 import React, {useState} from 'react';
 import { genUUID } from '../../App';
 import { clubID } from '../ClubPage/ClubPage';
+import { useNavigate } from "react-router-dom";
 
 var activeStars = 0;
 
 
 export default function WriteReviewPage(props) {
     
+    let navigate = useNavigate();
+
     function postReview() {
         var text = document.getElementById('userreview').value
         var rating = activeStars;
@@ -31,6 +34,9 @@ export default function WriteReviewPage(props) {
                 "rating": rating
             }) 
         })
+
+        let path = '/clubpage/' + cid;
+        navigate(path);
     } 
     return (
           <React.Fragment>
