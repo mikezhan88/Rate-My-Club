@@ -5,13 +5,11 @@ import { sizeOpt, commitOpt, searchOpt } from "./AllClubsPage";
 export default function ClubList() {
 
     const [AllClubsArray, setAllClubsArray] = useState(Array());
-    
-    console.log(AllClubsArray)
 
     useEffect(() => {
         const filterClubs = async () => {
-            console.log("SearchOpt: " + searchOpt)
-            console.log("body: " + JSON.stringify(Object.assign({}, JSON.parse(sizeOpt), JSON.parse(commitOpt), JSON.parse(searchOpt))))
+            // console.log("SearchOpt: " + searchOpt)
+            // console.log("body: " + JSON.stringify(Object.assign({}, JSON.parse(sizeOpt), JSON.parse(commitOpt), JSON.parse(searchOpt))))
             const response = await fetch('http://localhost:8000/clubs/filter', {    
                 method: 'POST',
                 body: JSON.stringify(Object.assign({}, JSON.parse(sizeOpt), JSON.parse(commitOpt), JSON.parse(searchOpt))),
