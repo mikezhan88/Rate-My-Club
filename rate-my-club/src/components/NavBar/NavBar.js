@@ -12,6 +12,14 @@ export default function NavBar() {
 
 
   const [open, setOpen] = useState(false);
+  const [LoggedIn, setLoggedIn] = useState(isLoggedIn);
+
+  // useEffect(() => {
+
+  //   isLoggedIn = LoggedIn;
+
+  // }
+  // , [LoggedIn]);
 
   let menu = useRef();
 
@@ -82,10 +90,20 @@ export default function NavBar() {
             
                 <div className= {`navbar-dropdown-menu ${open? 'active' : 'inactive'}`}>
                     <ul>
-                        <Link to='/clubpage' style={{ textDecoration: 'none', color: 'black' }}>
+                        <Link to='/userpage' style={{ textDecoration: 'none', color: 'black' }}>
                           <DropdownItem text = {"My Profile"}/>
                         </Link>
-                          <DropdownItem text = {"Log out"}/> 
+                        
+                        
+                        <Link to='/' style={{ textDecoration: 'none', color: 'black' }} onClick={() => setLoggedIn(false)}>
+                          <DropdownItem text = {"Log out"} /> 
+                        </Link>
+                        
+                        {
+                        
+                          console.log(LoggedIn)
+                        }
+                        
                           {/* on click, set logged in to false */}
                        
                     </ul>
