@@ -47,7 +47,7 @@ export default function NavBar() {
             
                 <div className= {`navbar-dropdown-menu ${open? 'active' : 'inactive'}`}>
                     <ul>
-                        <Link to='/register' style={{ textDecoration: 'none', color: 'black' }}>
+                        <Link to='/registerClub' style={{ textDecoration: 'none', color: 'black' }}>
                           <DropdownItem text = {"Create a New Club"}/>
                         </Link>
                         <Link to='/registerUser' style={{ textDecoration: 'none', color: 'black' }}>
