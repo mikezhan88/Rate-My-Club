@@ -1,23 +1,13 @@
 import {Link} from 'react-router-dom'
 import React, {useState, useEffect, useRef} from 'react';
-<<<<<<< Updated upstream
-
 import {CgProfile} from "react-icons/cg";
-
-
-=======
 import { isLoggedIn } from '../Login-Page/LoginPage';
->>>>>>> Stashed changes
-
 
 
 export default function NavBar() {
-<<<<<<< Updated upstream
 
   const isLoggedIn = true
 
-=======
->>>>>>> Stashed changes
 
   const [open, setOpen] = useState(false);
 
