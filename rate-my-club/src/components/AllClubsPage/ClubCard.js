@@ -1,6 +1,8 @@
 import {Link} from 'react-router-dom'
 import React, {useState, useEffect} from 'react';
+
 export var id;
+
 
 export default function ClubCard(props) {
     const [state, setState] = useState(false);
@@ -16,7 +18,9 @@ export default function ClubCard(props) {
     return (
       <Link to={'/clubpage/'+props.id} onClick={() => handleclick(setState)}>
         <div className='clubs-display'>
-            <img src={props.profile_picture} className='clubs-img' />
+            {!props.profile_picture ?  <img src={require("../images/default_club.png")} className='clubs-img' /> :
+            <img src={require("../images/"+ props.profile_picture)} className='clubs-img' />}
+
             <div className='club-name-tag'>{props.name}</div>
             <div className='clubs-card-tags'>
                 {

@@ -73,12 +73,12 @@ a:-webkit-any-link {
   top: 450px;
 }
 
+
 .search-icon {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  top: 465px;
-  margin-left: 505px;
+  width: 45px;
+  height: 45px;
+  padding-left: 4px;
 }
 
 .button-container {
@@ -101,6 +101,24 @@ a:-webkit-any-link {
   width: 50px;
   height: 50px;
 }
+
+
+.icon:hover {
+  color: #577B5F;
+}
+/* 
+.profile-icon:hover {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+}
+
+.clubs-icon:hover {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  padding-bottom: 10px;
+} */
 
 .landing-button {
   border: none;
