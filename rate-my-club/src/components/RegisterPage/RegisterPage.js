@@ -17,7 +17,7 @@ export default function RegisterPage() {
             "description": text,
             "email": email,
             "profile_picture": "default_club.png", //not from form
-            "tags": ["aerospace", "engineering"],
+            "tags": ["new club!!!"], //not from form
             "clubWebsite": website,
             "clubSize": size,
             "commitmentLevel": commitment,
@@ -78,7 +78,7 @@ export default function RegisterPage() {
                         <option value="< 50 ppl">Less than 50</option>
                         <option value="50-100 ppl">50 to 100</option>
                         <option value="100+ ppl">Greater than 100</option>
-                   </select>
+                  </select>
 
                   {/* <Dropdown null placeholder='Commitment Level *' options={ commitmentOptions }></Dropdown> */}
                   <select className="commitment_select" value={commitment} onChange={handleOnChangeCommitment}>
@@ -86,7 +86,7 @@ export default function RegisterPage() {
                         <option value="< 2 hours">Less than 2 hours</option>
                         <option value="2-5 hours">2 to 5 hours</option>
                         <option value="5+ hours">Greater than 5 hours</option>
-                    </select>
+                  </select>
 
                   <div className='club-description-text'>Club Description *</div>
                   <textarea className='register-description-box' value={text} onChange={handleOnChangeText}></textarea>
