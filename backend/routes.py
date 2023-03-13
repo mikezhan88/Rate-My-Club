@@ -8,6 +8,7 @@ from models import *
 
 reviews_router = APIRouter()
 clubs_router = APIRouter()
+users_router = APIRouter()
 
 #POST /review
 @reviews_router.post("/", response_description="Create a new review", status_code=status.HTTP_201_CREATED, response_model=Review)
@@ -142,3 +143,27 @@ async def filter_clubs(request: Request, response: Response, filter: dict = Body
     if (clubs := list(request.app.database["clubs"].find(filter))) is not None:
         return clubs
     return []
+
+
+#POST /users
+@users_router.post("/", response_description="Create new user", status_code=status.HTTP_201_CREATED, response_model=User)
+def create_user(request: Request, response: Response, user: User = Body(...)):
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    response.headers["Access-Control-Allow-Credentials"] = "true"
+    user = jsonable_encoder(user)
+    new_user = request.app.database["users"].insert_one(user)
+    created_user = request.app.database["users"].find_one(
+        {"_id": new_user.inserted_id}
+    )
+
+    return created_user
+
+#Get /user{id}
+@users_router.get("/{username}", response_description="Get a single user by email", response_model=User)
+def find_user(username: str, request: Request, response: Response):
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    response.headers["Access-Control-Allow-Credentials"] = "true"
+    if (user := request.app.database["users"].find_one({"username": username})) is not None:
+        return user
+    
+    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"User not found")
