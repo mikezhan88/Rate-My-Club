@@ -1051,7 +1051,7 @@ a:-webkit-any-link {
   display: flex;
   flex-direction: column;
   justify-content: left;
-  margin-right: 3vw;
+  margin-right: 10%;
   margin-left: 3vw;
   row-gap: 50px;
 }

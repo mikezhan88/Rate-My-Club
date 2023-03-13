@@ -7,21 +7,30 @@ import { genUUID } from '../../App';
 import { useNavigate } from "react-router-dom";
 
 
-export var isLoggedIn = false;
+
+
+export var isLoggedIn
 
 export default function LoginPage() {
 
     let navigate = useNavigate();
-
+    
+    console.log(isLoggedIn)
     const [ user, setUser ] = useState([]);
     const [ profile, setProfile ] = useState(new Array());
-    
+    if (user.length === 0) {
+        isLoggedIn = false
+    }
+  
     const login = useGoogleLogin({
         onSuccess: (codeResponse) => setUser(codeResponse),
         onError: (error) => console.log('Login Failed:', error)
 
         
     });
+
+    // const { isSignedIn } = useGoogleLogin()
+
 
     useEffect(
         () => {
@@ -37,6 +46,12 @@ export default function LoginPage() {
                         setProfile(res.data);
                     })
                     .catch((err) => console.log(err));
+                
+                if (user.length != 0){
+                    isLoggedIn = true;
+                    console.log(isLoggedIn)
+                }
+               
             }
 
         },
@@ -75,6 +90,7 @@ export default function LoginPage() {
                 console.log("login page isloggedin: " + isLoggedIn)
                 navigate(path);
                 navigate(0);
+
             
             };
             
@@ -91,6 +107,7 @@ export default function LoginPage() {
                 if (myJson.detail == "User not found") {
                     console.log("ERROR");
                     create_user();
+
                 } else {
                     isLoggedIn = true
                     username = myJson.username;
@@ -121,14 +138,6 @@ export default function LoginPage() {
     //           />
     //     )
     // }
-
-    const GoogleLoginButton = () => {
-        const { signIn } = useGoogleLogin()
-       
-        const handleSignIn = async () => {
-          const googleUser = await signIn() // if you need immediate access to `googleUser`, get it from signIn() directly
-        }
-      }
     
   return (
     <React.Fragment>
