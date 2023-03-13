@@ -79,3 +79,19 @@ class ClubUpdate(BaseModel):
                 "email": "dsp@xio.com"
             }
         }
+
+
+class User(BaseModel):
+    user_id: str = Field(default_factory=uuid.uuid4, alias="_id")
+    name: str = Field(...)
+    email: str = Field(...)
+
+    class Config:
+        allow_population_by_field_name = True
+        schema_extra = {
+            "example": {
+                "_id": "066de609-b04a-4b30-b46c-32537c7f1ffd",
+                "name": "Rocket Project",
+                "email": "rocket@gmail.com",
+            }
+        }
