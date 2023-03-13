@@ -89,7 +89,7 @@ export default function LoginPage() {
                 let path = '/userpage/' + username;
                 console.log("login page isloggedin: " + isLoggedIn)
                 navigate(path);
-                navigate(0);
+                //navigate(0);
 
             
             };
@@ -114,7 +114,7 @@ export default function LoginPage() {
                     let path = '/userpage/' + username;
                     console.log("login page isLoggedIn: " + isLoggedIn)
                     navigate(path);
-                    navigate(0);
+                    //navigate(0);
                 }
 
                 

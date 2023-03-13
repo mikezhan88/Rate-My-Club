@@ -9,13 +9,14 @@ import { useNavigate } from "react-router-dom";
 export default function RegisterPage() {
 
   let navigate = useNavigate();
+  var uid = genUUID();
 
   function postClub() {
     fetch('http://localhost:8000/clubs/', {
         method: 'POST',
         headers: {"Content-type" : "application/json"},
         body: JSON.stringify({
-            "_id": genUUID(), //not from form
+            "_id": uid, //not from form
             "name": clubName,
             "description": text,
             "email": email,
@@ -28,7 +29,7 @@ export default function RegisterPage() {
         }) 
     })
 
-    let path = '/allclubs';
+    let path = '/clubpage/' + uid;
     console.log("path: " + path) 
     navigate(path);
     navigate(0);
