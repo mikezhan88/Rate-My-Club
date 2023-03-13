@@ -1,22 +1,22 @@
 import React from 'react'
-import { user } from './UserProfileArray'
 import ClubReview from './ClubReview';
 
-export default function UserReview() {
-  return (
-    <div className='user-review-display'>
-        { reviews }
-    </div>
-  )
-}
+export default function UserReview(props) {
 
-const reviews = user.reviews.map((e) => {
+  const userReviews = props.reviews.map((e) => {
     return (
         <ClubReview 
             rating={e.rating}
             clubName={e.clubName}
             date={e.date}
-            content={e.content}
+            content={e.text}
         />
     );
 })
+
+  return (
+    <div className='user-review-display'>
+        { userReviews }
+    </div>
+  )
+}

@@ -167,3 +167,12 @@ def find_user(username: str, request: Request, response: Response):
         return user
     
     raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"User not found")
+
+@users_router.get("/{username}/reviews", response_description="Get a list of reviews associated with a user")
+def find_reviews_by_user(username: str, request: Request, response: Response):
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    response.headers["Access-Control-Allow-Credentials"] = "true"
+    if (reviews := list(request.app.database["reviews"].find({ "username" : username }))) is not None:
+        return reviews
+    
+    return []
