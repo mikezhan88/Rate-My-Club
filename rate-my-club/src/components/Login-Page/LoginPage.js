@@ -4,8 +4,13 @@ import {Link} from 'react-router-dom'
 import { GoogleLogin, GoogleOAuthProvider, googleLogout, useGoogleLogin   } from '@react-oauth/google';
 import axios from 'axios';
 import { genUUID } from '../../App';
+import { useNavigate } from "react-router-dom";
+
 
 export default function LoginPage() {
+
+    let navigate = useNavigate();
+
     const [ user, setUser ] = useState([]);
     const [ profile, setProfile ] = useState(new Array());
     
@@ -79,6 +84,9 @@ export default function LoginPage() {
                 }
             };
             getUser();
+            let path = '/userpage';
+            navigate(path);
+            navigate(0);
         }
     }, [profile]);
 
