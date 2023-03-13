@@ -4,10 +4,16 @@ import {Link} from 'react-router-dom'
 import { GoogleLogin, GoogleOAuthProvider, googleLogout, useGoogleLogin   } from '@react-oauth/google';
 import axios from 'axios';
 import { genUUID } from '../../App';
+import { useNavigate } from "react-router-dom";
+
+
+export var isLoggedin = false;
 
 export var isLoggedIn
 
 export default function LoginPage() {
+
+    let navigate = useNavigate();
     
     console.log(isLoggedIn)
     const [ user, setUser ] = useState([]);
@@ -77,7 +83,11 @@ export default function LoginPage() {
                         "name": profile.name,
                         "username" : username
                     })
-            })};
+                })
+
+                isLoggedin = true
+            
+            };
             
             console.log("tried get user")
             const getUser = async() => {
@@ -92,9 +102,14 @@ export default function LoginPage() {
                 if (myJson.detail == "User not found") {
                     console.log("ERROR");
                     create_user();
+                } else {
+                    isLoggedin = true
                 }
             };
             getUser();
+            let path = '/userpage';
+            navigate(path);
+            navigate(0);
             // console.log(isSignedIn)
         }
     }, [profile]);

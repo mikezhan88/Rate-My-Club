@@ -176,6 +176,15 @@ a:-webkit-any-link {
   color: black;
 }
 
+.navBar-icon{
+  color: #577B5F
+}
+
+.navBar-icon:hover{
+  color: #fff
+}
+
+
 
 .navbar-dropdown-menu{
   position: absolute;
