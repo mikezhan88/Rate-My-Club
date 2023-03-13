@@ -3,7 +3,7 @@ from fastapi import FastAPI
 import datetime
 from dotenv import dotenv_values
 from pymongo import MongoClient
-from routes import reviews_router, clubs_router
+from routes import reviews_router, clubs_router, users_router
 import certifi
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -48,6 +48,7 @@ async def root():
 #include routes for /review
 app.include_router(reviews_router, tags=["reviews"], prefix="/review")
 app.include_router(clubs_router, tags=["clubs"], prefix="/clubs")
+app.include_router(users_router, tags=["users"], prefix="/users")
 
 '''
 # Route for seeing a data
