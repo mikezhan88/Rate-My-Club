@@ -8,6 +8,7 @@ class Review(BaseModel):
     club_id: str = Field(default_factory=uuid.uuid4)
     text: str = Field(...)
     rating: float = Field(...)
+    username: str = Field(...)
 
     class Config:
         allow_population_by_field_name = True
@@ -17,7 +18,8 @@ class Review(BaseModel):
                 "author": "Drew Letvin",
                 "club_id": "066de609-b04a-4b30-b46c-32537c7f1f6e",
                 "text": "...",
-                "rating": 4
+                "rating": 4,
+                "username": "mikezhan8"
             }
         }
 

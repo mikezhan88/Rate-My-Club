@@ -24,6 +24,7 @@ export default function ClubList() {
           
         
             setAllClubsArray(Object.values(clubs))
+            
         }
         
         filterClubs();
@@ -31,6 +32,7 @@ export default function ClubList() {
     }, [sizeOpt, commitOpt, searchOpt]);
     
 
+    //console.log(JSON.stringify(AllClubsArray))
     const allClubComponents = AllClubsArray.map((club) => { 
         return (
             <ClubCard 

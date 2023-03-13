@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
+
 export var isLoggedIn
 
 export default function LoginPage() {
@@ -68,11 +69,11 @@ export default function LoginPage() {
 
     useEffect(() => {
         console.log(profile)
+
         if (profile.length != 0){
-            console.log(profile)
             var username = (profile.email).split('@')[0];
 
-            const create_user = () => { 
+            const create_user = () => {
                 (console.log("try post user"));
                 fetch('http://localhost:8000/users/', {
                     method: 'POST',
@@ -83,6 +84,12 @@ export default function LoginPage() {
                         "username" : username
                     })
                 })
+
+                isLoggedIn = true
+                let path = '/userpage/' + username;
+                console.log("login page isloggedin: " + isLoggedIn)
+                navigate(path);
+                navigate(0);
 
             
             };
@@ -100,14 +107,23 @@ export default function LoginPage() {
                 if (myJson.detail == "User not found") {
                     console.log("ERROR");
                     create_user();
-                } 
+
+                } else {
+                    isLoggedIn = true
+                    username = myJson.username;
+                    let path = '/userpage/' + username;
+                    console.log("login page isLoggedIn: " + isLoggedIn)
+                    navigate(path);
+                    navigate(0);
+                }
+
+                
             };
             getUser();
-            let path = '/userpage';
-            navigate(path);
-            // navigate(0);
+
         }
     }, [profile]);
+
 
     // const google = () => {
 

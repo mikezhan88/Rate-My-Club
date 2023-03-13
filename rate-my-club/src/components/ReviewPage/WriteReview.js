@@ -31,7 +31,8 @@ export default function WriteReviewPage(props) {
                 "author": "Anonymous",
                 "club_id" : cid, //"066de609-b04a-4b30-b46c-32537c7f1ie9",
                 "text": text,
-                "rating": rating
+                "rating": rating,
+                "username": ""
             }) 
         })
 

@@ -1,26 +1,27 @@
 import React, {useState} from 'react';
-import { user } from './UserProfileArray'
+import { bookmarks } from './UserProfileArray'
 import ClubCard from '../AllClubsPage/ClubCard';
 import { BsBookmarkStar, BsFillBookmarkStarFill} from "react-icons/bs";
 
 export default function UserBookmark() {
   return (
         <div className='user-review-display'>
-            { bookmarks }
+            { userBookmarks }
         </div>
   )
 }
 
-const bookmarks = user.bookmarks.map((e) => {
+const userBookmarks = bookmarks.bookmarks.map((club) => {
     return (
         <div className='bookmark-club-display'> 
             <div className='userpage-bookmark'> 
                 <HeaderIcon inactiveIcon={< BsFillBookmarkStarFill size={43}/>} activeIcon={<BsBookmarkStar size={43}/>}></HeaderIcon>
             </div>
             <ClubCard 
-                img={e.img}
-                clubName={e.clubName}
-                tags={e.tags}
+                id={club["_id"]}
+                profile_picture={club["profile_picture"]}
+                name={club["name"]}
+                tags={club["tags"]}
             />
         </div>
     );

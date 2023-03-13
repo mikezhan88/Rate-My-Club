@@ -1,11 +1,7 @@
 import {Link} from 'react-router-dom'
 import React, {useState, useEffect, useRef} from 'react';
 import { isLoggedIn } from '../Login-Page/LoginPage';
-
 import {CgProfile} from "react-icons/cg";
-
-
-
 
 
 export default function NavBar() {
