@@ -1,5 +1,6 @@
 import {Link} from 'react-router-dom'
 import React, {useState, useEffect, useRef} from 'react';
+import { isLoggedIn } from '../Login-Page/LoginPage';
 
 import {CgProfile} from "react-icons/cg";
 
@@ -8,9 +9,6 @@ import {CgProfile} from "react-icons/cg";
 
 
 export default function NavBar() {
-
-  const isLoggedIn = true
-
 
 
   const [open, setOpen] = useState(false);

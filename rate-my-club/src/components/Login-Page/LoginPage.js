@@ -7,7 +7,6 @@ import { genUUID } from '../../App';
 import { useNavigate } from "react-router-dom";
 
 
-export var isLoggedin = false;
 
 export var isLoggedIn
 
@@ -85,7 +84,6 @@ export default function LoginPage() {
                     })
                 })
 
-                isLoggedin = true
             
             };
             
@@ -102,15 +100,12 @@ export default function LoginPage() {
                 if (myJson.detail == "User not found") {
                     console.log("ERROR");
                     create_user();
-                } else {
-                    isLoggedin = true
-                }
+                } 
             };
             getUser();
             let path = '/userpage';
             navigate(path);
-            navigate(0);
-            // console.log(isSignedIn)
+            // navigate(0);
         }
     }, [profile]);
 
