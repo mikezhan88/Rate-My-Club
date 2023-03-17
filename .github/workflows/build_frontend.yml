@@ -28,6 +28,12 @@ jobs:
         run: | 
           npm ci
       - name: Run build
-        run: CI=false npm run build --if-present
+        run: |
+          if [ "$RUNNER_OS" == "Windows" ]; then
+              $env:CI=$false; npm run build;
+          else
+              CI=false npm run build --if-present
+          fi
+          
       # - name: Run tests
       #   run: npm test
