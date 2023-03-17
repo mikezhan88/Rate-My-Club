@@ -21,14 +21,13 @@ jobs:
         with:
           node-version: '14.x'
       - name: Install dependencies
+        working-directory: ./rate-my-club
         run: | 
-          ls
-          echo "-------------------------------------"
-          cd rate-my-club | ls
-          echo "-------------------------------------"
-          cd Rate-My-Club | ls
+          npm ci
           
       - name: Run build
+        working-directory: ./rate-my-club
         run: npm run build --if-present
       - name: Run tests
+        working-directory: ./rate-my-club
         run: npm test
