@@ -22,8 +22,12 @@ jobs:
           node-version: '14.x'
       - name: Install dependencies
         run: | 
-          cd rate-my-club/rate-my-club | ls
-          npm install
+          ls
+          echo "-------------------------------------"
+          cd rate-my-club | ls
+          echo "-------------------------------------"
+          cd Rate-My-Club | ls
+          
       - name: Run build
         run: npm run build --if-present
       - name: Run tests
