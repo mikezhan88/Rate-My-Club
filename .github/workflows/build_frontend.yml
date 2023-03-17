@@ -27,14 +27,12 @@ jobs:
       - name: Install dependencies
         run: | 
           npm ci
-      - name: Run build
-        run: |
-          if [ "$RUNNER_OS" == "Windows" ]; then
-              $env:CI=$false; npm run build;
-          else
-              CI=false npm run build --if-present
-          fi
-        shell: bash
+      - if: runner.os == 'Windows'
+        name: Run Windows build
+        run: $env:CI=$false; npm run build;
+      - if: runner.os != 'Windows'
+        name: Run Linux/Mac Build
+        run: CI=false npm run build --if-present
           
       # - name: Run tests
       #   run: npm test
