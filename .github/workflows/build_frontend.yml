@@ -9,6 +9,10 @@ jobs:
 
     runs-on: ${{ matrix.os }}
 
+    defaults:
+      run:
+        working-directory: ./rate-my-club
+
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
@@ -21,13 +25,11 @@ jobs:
         with:
           node-version: '14.x'
       - name: Install dependencies
-        working-directory: ./rate-my-club
         run: | 
+          ls -l
+          pwd
           npm ci
-          
       - name: Run build
-        working-directory: ./rate-my-club
         run: npm run build --if-present
       - name: Run tests
-        working-directory: ./rate-my-club
         run: npm test
