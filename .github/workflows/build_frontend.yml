@@ -22,7 +22,7 @@ jobs:
           node-version: '14.x'
       - name: Install dependencies
         run: | 
-          cd rate-my-club
+          cd rate-my-club | ls
           npm install
       - name: Run build
         run: npm run build --if-present
