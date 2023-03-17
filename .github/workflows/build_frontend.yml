@@ -28,7 +28,7 @@ jobs:
         run: | 
           ls -l
           pwd
-          npm ci
+          npm install
       - name: Run build
         run: npm run build --if-present
       - name: Run tests
