@@ -35,17 +35,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: Set up Python 3.9.12
         uses: actions/setup-python@v4
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: '3.9.12'
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pwd
-          ls
-          cd .. | ls
-          cd .. | cd .. | ls
           pip install -r requirements.txt
           python -m uvicorn backend/server:app --reload
     
