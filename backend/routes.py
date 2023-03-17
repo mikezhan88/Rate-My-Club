@@ -10,6 +10,13 @@ reviews_router = APIRouter()
 clubs_router = APIRouter()
 users_router = APIRouter()
 
+def inc(x):
+    return x + 1
+
+def test_answer():
+    assert inc(3) == 5
+
+
 #POST /review
 @reviews_router.post("/", response_description="Create a new review", status_code=status.HTTP_201_CREATED, response_model=Review)
 def create_review(request: Request, review: Review = Body(...)):
