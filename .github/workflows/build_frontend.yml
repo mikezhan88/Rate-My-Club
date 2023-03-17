@@ -23,7 +23,6 @@ jobs:
       - name: Install dependencies
         run: | 
           cd rate-my-club
-          rm -rf node_modules
           npm ci
       - name: Run build
         run: npm run build --if-present
