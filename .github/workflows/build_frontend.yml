@@ -26,8 +26,10 @@ jobs:
           node-version: '14.x'
       - name: Install dependencies
         run: | 
-          ls
-
+          npm cache clean --force
+          rm -rf node_modules
+          rm package-lock.json
+          npm install
       - name: Run build
         run: npm run build --if-present
       - name: Run tests
