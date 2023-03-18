@@ -64,7 +64,7 @@ def delete_review(id: str, request: Request, response: Response):
     delete_result = request.app.database["reviews"].delete_one({"_id": id})
 
     if delete_result.deleted_count == 1:
-        response.status_code = status.HTTP_202_ACCEPTED
+        response.status_code = status.HTTP_200_OK
         return response
 
     raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Review with ID {id} not found")
@@ -105,7 +105,7 @@ def delete_club(id: str, request: Request, response: Response):
     delete_result = request.app.database["clubs"].delete_one({"_id": id})
 
     if delete_result.deleted_count == 1:
-        response.status_code = status.HTTP_202_ACCEPTED
+        response.status_code = status.HTTP_200_OK
         return response
 
     raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Club with ID {id} not found")
