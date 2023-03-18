@@ -39,6 +39,7 @@ jobs:
       - name: Test with pytest
         run: |
           python -m uvicorn server:app & sleep 5
+          ping ac-3tsoefc-shard-00-02.ad0kwzt.mongodb.net
           pytest
     
     
