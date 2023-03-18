@@ -35,6 +35,18 @@ def test_post_review():
 
     assert response.status_code == post_response
 
+def test_find_reviews_by_club():
+    data = {
+        "_id" : "066de609-1111-0000-1111-32537c7f1f6e"
+    }
+
+    url = "http://localhost:8000/clubs/066de609-1111-0000-1111-32537c7f1f6e/reviews"
+    response = requests.get(url, json=data)
+
+    get_response = 200
+
+    assert response.status_code == get_response
+
 
 def test_find_reviews_by_user():
     data = {
