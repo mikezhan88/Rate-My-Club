@@ -38,7 +38,7 @@ jobs:
       - run: chromedriver --url-base=/wd/hub &
       - name: Test with pytest
         run: |
-          python -m uvicorn server:app & sleep 5
+          python server.py & sleep 5
           python -m pytest -U http://localhost:8000/ --browser headless-chrome
     
     
