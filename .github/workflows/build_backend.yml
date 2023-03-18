@@ -35,7 +35,7 @@ jobs:
           pip install -r requirements.txt
           pip install msedge-selenium-tools
       - uses: nanasess/setup-chromedriver@v1
-      - run: chromedriver --url-base=/wd/hub &amp;
+      - run: chromedriver --url-base=/wd/hub;
       - name: Lint with flake8
         run: |
           # stop the build if there are Python syntax errors or undefined names
