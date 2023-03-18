@@ -45,7 +45,7 @@ jobs:
       - name: Run Server and Kill
         run: |
           python -m uvicorn server:app & PID=$! & sleep 5
-          kill $PID
+          kill -INT $PID
           
     
     
