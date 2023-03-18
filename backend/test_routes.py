@@ -83,3 +83,13 @@ def test_delete_club():
     post_response = 200
 
     assert response.status_code == post_response
+
+def test_filter_clubs():
+    url = "http://localhost:8000/clubs/filter"
+    data = { "name" : { "$regex" : ".*(' + rock + ').*", "$options" : "i" } }
+    response = requests.post(url, json=data)
+
+    post_response = 200
+
+    assert response.status_code == post_response
+
