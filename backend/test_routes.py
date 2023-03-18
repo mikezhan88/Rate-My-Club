@@ -56,6 +56,23 @@ def test_post_club():
     assert response.status_code == post_response
 
 
+def test_list_clubs():
+    url = "http://localhost:8000/clubs/"
+    response = requests.get(url)
+
+    post_response = 200
+
+    assert response.status_code == post_response
+
+
+def test_get_club():
+    url = "http://localhost:8000/clubs/066de609-1111-0000-1111-32537c7f1pop"
+    response = requests.get(url)
+
+    post_response = 200
+
+    assert response.status_code == post_response
+
 
 def test_delete_club():
     data = {"_id": "066de609-1111-0000-1111-32537c7f1pop"}
