@@ -169,6 +169,18 @@ def find_user(username: str, request: Request, response: Response):
     
     raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"User not found")
 
+#DELTE /user/{id}
+@users_router.delete("/{id}", response_description="Delete User")
+def delete_user(id: str, request: Request, response: Response):
+    delete_result = request.app.database["users"].delete_one({"_id": id})
+
+    if delete_result.deleted_count == 1:
+        response.status_code = status.HTTP_200_OK
+        return response
+
+    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"User with ID {id} not found")
+
+#Get /{username}/reviews
 @users_router.get("/{username}/reviews", response_description="Get a list of reviews associated with a user")
 def find_reviews_by_user(username: str, request: Request, response: Response):
     response.headers["Access-Control-Allow-Origin"] = "*"
