@@ -16,4 +16,4 @@ def test_post_review():
 
     post_response = 201
 
-    assert response == post_response
+    assert response.status_code == post_response
