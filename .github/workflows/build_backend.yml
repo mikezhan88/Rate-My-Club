@@ -44,8 +44,8 @@ jobs:
       - run: chromedriver --url-base=/wd/hub &
       - name: Run Server and Kill
         run: |
-          python -m uvicorn server:app & sleep 5
-          kill -INT 888
+          python -m uvicorn server:app & PID=$! & sleep 5
+          kill $PID
           
     
     
