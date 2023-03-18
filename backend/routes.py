@@ -10,8 +10,6 @@ reviews_router = APIRouter()
 clubs_router = APIRouter()
 users_router = APIRouter()
 
-def inc(x):
-    return x + 1
 
 #POST /review
 @reviews_router.post("/", response_description="Create a new review", status_code=status.HTTP_201_CREATED, response_model=Review)
@@ -66,7 +64,7 @@ def delete_review(id: str, request: Request, response: Response):
     delete_result = request.app.database["reviews"].delete_one({"_id": id})
 
     if delete_result.deleted_count == 1:
-        response.status_code = status.HTTP_202_ACCEPTED
+        response.status_code = status.HTTP_200_OK
         return response
 
     raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Review with ID {id} not found")
@@ -107,7 +105,7 @@ def delete_club(id: str, request: Request, response: Response):
     delete_result = request.app.database["clubs"].delete_one({"_id": id})
 
     if delete_result.deleted_count == 1:
-        response.status_code = status.HTTP_202_ACCEPTED
+        response.status_code = status.HTTP_200_OK
         return response
 
     raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Club with ID {id} not found")
@@ -171,6 +169,18 @@ def find_user(username: str, request: Request, response: Response):
     
     raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"User not found")
 
+#DELTE /user/{id}
+@users_router.delete("/{id}", response_description="Delete User")
+def delete_user(id: str, request: Request, response: Response):
+    delete_result = request.app.database["users"].delete_one({"_id": id})
+
+    if delete_result.deleted_count == 1:
+        response.status_code = status.HTTP_200_OK
+        return response
+
+    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"User with ID {id} not found")
+
+#Get /{username}/reviews
 @users_router.get("/{username}/reviews", response_description="Get a list of reviews associated with a user")
 def find_reviews_by_user(username: str, request: Request, response: Response):
     response.headers["Access-Control-Allow-Origin"] = "*"
